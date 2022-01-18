@@ -1,0 +1,42 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="UserIcons" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="FavColor" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">Crimson</Value>
+    </Setting>
+    <Setting Name="FirstRun" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="UserName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Panoptes</Value>
+    </Setting>
+    <Setting Name="WindowsTheme" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Argus Purple Dark</Value>
+    </Setting>
+    <Setting Name="WebSearchProvider" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Duck</Value>
+    </Setting>
+    <Setting Name="ArgusDir" Type="System.String" Scope="User">
+      <Value Profile="(Default)">A:\Argus\</Value>
+    </Setting>
+    <Setting Name="UserImageDir" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ThemeUniversal" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Light</Value>
+    </Setting>
+    <Setting Name="AppLocalRunPref" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="LauncherPos" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Top</Value>
+    </Setting>
+    <Setting Name="LastPos" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">25, 25</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

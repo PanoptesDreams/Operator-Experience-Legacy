@@ -1,9 +1,15 @@
-﻿Public Class FormSettings
+﻿Imports Argus.ArgusCommon
 
+Public Class FormSettings
+    Dim BGs As Windows.Forms.TabPage() = {TabArgusBehavior, TabArgusPersonalization, TabArgusMisc}
 
+    'Start/Load
     Private Sub FormSettings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        FormUserMenu.Dispose()
+        Theme()
+
+        'Behavior
+        ComboBoxAutohideUsermenu.Text = My.Settings.AutohideUsermenu
 
         'Personalization
         picFavColor.BackColor = My.Settings.FavColor
@@ -18,11 +24,50 @@
         ComboBoxWebSearchProvider.Text = My.Settings.WebSearchProvider
 
 
+
     End Sub
 
 
+    'Themer
+    Public Sub Theme()
 
-    Private Sub btnApply_Click(sender As Object, e As EventArgs) Handles btnApplyPersonalization.Click
+        Dim BgColor As Color = BgColorPicker()
+
+        Me.BackColor = BgColor
+
+        SettingsTab1Argus.BackColor = BgColor
+        SettingsTab2Win.BackColor = BgColor
+
+        TabArgusBehavior.BackColor = BgColor
+        TabArgusMisc.BackColor = BgColor
+        TabArgusPersonalization.BackColor = BgColor
+
+
+    End Sub
+
+
+    'Activation
+    Private Sub FormSettings_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+
+        HideUsermenu()
+
+    End Sub
+
+
+    'Apply Behaviors
+    Private Sub ButtonApplyBehaviors_Click(sender As Object, e As EventArgs) Handles ButtonApplyBehaviors.Click
+
+        'Autohide usermenu when an argus applet is invoked
+        My.Settings.AutohideUsermenu = ComboBoxAutohideUsermenu.Text
+
+        'Save Settings
+        My.Settings.Save()
+
+    End Sub
+
+
+    'Apply Personalization
+    Private Sub btnApplyPersonalization_Click(sender As Object, e As EventArgs) Handles btnApplyPersonalization.Click
 
         'Favorite Color
         'My.Settings.FavColor = picFavColor.BackColor
@@ -35,6 +80,7 @@
         My.Settings.LauncherPos = ComboBoxLauncherPOS.Text
         My.Settings.ThemeUniversal = ComboBoxTheme.Text
         FormHeader.Theme()
+        Theme()
 
         My.Settings.WebSearchProvider = ComboBoxWebSearchProvider.Text
 
@@ -44,19 +90,9 @@
     End Sub
 
 
-
-    Private Sub ComboBoxDarkTheme_TextUpdate(sender As Object, e As EventArgs) Handles ComboBoxTheme.TextUpdate
-
-        ComboBoxTheme.Text = ComboBoxTheme.Text.ToLower
-
-        If ComboBoxTheme.Text IsNot "true" Or "false" Then
-            ComboBoxTheme.Text = My.Settings.ThemeUniversal
-        End If
-
-    End Sub
-
-
-
+    'Argus
+    'Personalization
+    'Favorite Color Picker
     Private Sub picFavColor_Click(sender As Object, e As EventArgs) Handles picFavColor.Click
 
 
@@ -76,7 +112,6 @@
 
 
     End Sub
-
 
 
 End Class

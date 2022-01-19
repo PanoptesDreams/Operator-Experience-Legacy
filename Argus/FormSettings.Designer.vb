@@ -25,6 +25,10 @@ Partial Class FormSettings
         Me.TabControlSettings = New System.Windows.Forms.TabControl()
         Me.SettingsTab1Argus = New System.Windows.Forms.TabPage()
         Me.TabControlArgus = New System.Windows.Forms.TabControl()
+        Me.TabArgusBehavior = New System.Windows.Forms.TabPage()
+        Me.ButtonApplyBehaviors = New System.Windows.Forms.Button()
+        Me.ComboBoxAutohideUsermenu = New System.Windows.Forms.ComboBox()
+        Me.lblAutohideUserMenu = New System.Windows.Forms.Label()
         Me.TabArgusPersonalization = New System.Windows.Forms.TabPage()
         Me.picUserImage = New System.Windows.Forms.PictureBox()
         Me.ComboBoxLauncherPOS = New System.Windows.Forms.ComboBox()
@@ -45,6 +49,7 @@ Partial Class FormSettings
         Me.TabControlSettings.SuspendLayout()
         Me.SettingsTab1Argus.SuspendLayout()
         Me.TabControlArgus.SuspendLayout()
+        Me.TabArgusBehavior.SuspendLayout()
         Me.TabArgusPersonalization.SuspendLayout()
         CType(Me.picUserImage, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picFavColor, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -65,7 +70,6 @@ Partial Class FormSettings
         '
         'SettingsTab1Argus
         '
-        Me.SettingsTab1Argus.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.SettingsTab1Argus.Controls.Add(Me.TabControlArgus)
         Me.SettingsTab1Argus.Location = New System.Drawing.Point(4, 31)
         Me.SettingsTab1Argus.Margin = New System.Windows.Forms.Padding(5)
@@ -77,8 +81,9 @@ Partial Class FormSettings
         '
         'TabControlArgus
         '
-        Me.TabControlArgus.Controls.Add(Me.TabArgusPersonalization)
+        Me.TabControlArgus.Controls.Add(Me.TabArgusBehavior)
         Me.TabControlArgus.Controls.Add(Me.TabArgusMisc)
+        Me.TabControlArgus.Controls.Add(Me.TabArgusPersonalization)
         Me.TabControlArgus.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControlArgus.Location = New System.Drawing.Point(5, 5)
         Me.TabControlArgus.Margin = New System.Windows.Forms.Padding(5)
@@ -87,9 +92,54 @@ Partial Class FormSettings
         Me.TabControlArgus.Size = New System.Drawing.Size(864, 511)
         Me.TabControlArgus.TabIndex = 1
         '
+        'TabArgusBehavior
+        '
+        Me.TabArgusBehavior.Controls.Add(Me.ButtonApplyBehaviors)
+        Me.TabArgusBehavior.Controls.Add(Me.ComboBoxAutohideUsermenu)
+        Me.TabArgusBehavior.Controls.Add(Me.lblAutohideUserMenu)
+        Me.TabArgusBehavior.Location = New System.Drawing.Point(4, 31)
+        Me.TabArgusBehavior.Name = "TabArgusBehavior"
+        Me.TabArgusBehavior.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabArgusBehavior.Size = New System.Drawing.Size(856, 476)
+        Me.TabArgusBehavior.TabIndex = 2
+        Me.TabArgusBehavior.Text = "Behavior"
+        Me.TabArgusBehavior.UseVisualStyleBackColor = True
+        '
+        'ButtonApplyBehaviors
+        '
+        Me.ButtonApplyBehaviors.AutoSize = True
+        Me.ButtonApplyBehaviors.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.ButtonApplyBehaviors.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.ButtonApplyBehaviors.Location = New System.Drawing.Point(3, 441)
+        Me.ButtonApplyBehaviors.Margin = New System.Windows.Forms.Padding(5)
+        Me.ButtonApplyBehaviors.Name = "ButtonApplyBehaviors"
+        Me.ButtonApplyBehaviors.Size = New System.Drawing.Size(850, 32)
+        Me.ButtonApplyBehaviors.TabIndex = 11
+        Me.ButtonApplyBehaviors.Text = "Apply Behaviors"
+        Me.ButtonApplyBehaviors.UseVisualStyleBackColor = True
+        '
+        'ComboBoxAutohideUsermenu
+        '
+        Me.ComboBoxAutohideUsermenu.FormattingEnabled = True
+        Me.ComboBoxAutohideUsermenu.Items.AddRange(New Object() {"True", "False"})
+        Me.ComboBoxAutohideUsermenu.Location = New System.Drawing.Point(224, 45)
+        Me.ComboBoxAutohideUsermenu.Margin = New System.Windows.Forms.Padding(5)
+        Me.ComboBoxAutohideUsermenu.Name = "ComboBoxAutohideUsermenu"
+        Me.ComboBoxAutohideUsermenu.Size = New System.Drawing.Size(133, 30)
+        Me.ComboBoxAutohideUsermenu.TabIndex = 10
+        '
+        'lblAutohideUserMenu
+        '
+        Me.lblAutohideUserMenu.AutoSize = True
+        Me.lblAutohideUserMenu.Location = New System.Drawing.Point(26, 48)
+        Me.lblAutohideUserMenu.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.lblAutohideUserMenu.Name = "lblAutohideUserMenu"
+        Me.lblAutohideUserMenu.Size = New System.Drawing.Size(188, 22)
+        Me.lblAutohideUserMenu.TabIndex = 9
+        Me.lblAutohideUserMenu.Text = "Autohide User Menu -"
+        '
         'TabArgusPersonalization
         '
-        Me.TabArgusPersonalization.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.TabArgusPersonalization.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabArgusPersonalization.Controls.Add(Me.picUserImage)
         Me.TabArgusPersonalization.Controls.Add(Me.ComboBoxLauncherPOS)
@@ -174,13 +224,13 @@ Partial Class FormSettings
         Me.btnApplyPersonalization.Name = "btnApplyPersonalization"
         Me.btnApplyPersonalization.Size = New System.Drawing.Size(844, 32)
         Me.btnApplyPersonalization.TabIndex = 4
-        Me.btnApplyPersonalization.Text = "Apply All"
+        Me.btnApplyPersonalization.Text = "Apply Personalizations"
         Me.btnApplyPersonalization.UseVisualStyleBackColor = True
         '
         'ComboBoxTheme
         '
         Me.ComboBoxTheme.FormattingEnabled = True
-        Me.ComboBoxTheme.Items.AddRange(New Object() {"Light", "Dark"})
+        Me.ComboBoxTheme.Items.AddRange(New Object() {"Light", "Dark", "User"})
         Me.ComboBoxTheme.Location = New System.Drawing.Point(224, 85)
         Me.ComboBoxTheme.Margin = New System.Windows.Forms.Padding(5)
         Me.ComboBoxTheme.Name = "ComboBoxTheme"
@@ -254,18 +304,18 @@ Partial Class FormSettings
         '
         'Button1
         '
+        Me.Button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.Button1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Button1.Location = New System.Drawing.Point(5, 430)
+        Me.Button1.Location = New System.Drawing.Point(5, 437)
         Me.Button1.Margin = New System.Windows.Forms.Padding(5)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(844, 39)
+        Me.Button1.Size = New System.Drawing.Size(844, 32)
         Me.Button1.TabIndex = 5
-        Me.Button1.Text = "Apply All"
+        Me.Button1.Text = "Apply Miscellaneous"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'SettingsTab2Win
         '
-        Me.SettingsTab2Win.BackColor = System.Drawing.SystemColors.ControlDarkDark
         Me.SettingsTab2Win.Location = New System.Drawing.Point(4, 31)
         Me.SettingsTab2Win.Margin = New System.Windows.Forms.Padding(5)
         Me.SettingsTab2Win.Name = "SettingsTab2Win"
@@ -283,7 +333,7 @@ Partial Class FormSettings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 22.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.BackColor = System.Drawing.Color.MidnightBlue
         Me.ClientSize = New System.Drawing.Size(882, 556)
         Me.Controls.Add(Me.TabControlSettings)
         Me.Font = New System.Drawing.Font("Fira Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -299,6 +349,8 @@ Partial Class FormSettings
         Me.TabControlSettings.ResumeLayout(False)
         Me.SettingsTab1Argus.ResumeLayout(False)
         Me.TabControlArgus.ResumeLayout(False)
+        Me.TabArgusBehavior.ResumeLayout(False)
+        Me.TabArgusBehavior.PerformLayout()
         Me.TabArgusPersonalization.ResumeLayout(False)
         Me.TabArgusPersonalization.PerformLayout()
         CType(Me.picUserImage, System.ComponentModel.ISupportInitialize).EndInit()
@@ -329,4 +381,8 @@ Partial Class FormSettings
     Friend WithEvents ComboBoxLauncherPOS As ComboBox
     Friend WithEvents lblLauncherPOS As Label
     Friend WithEvents picUserImage As PictureBox
+    Friend WithEvents TabArgusBehavior As TabPage
+    Friend WithEvents ComboBoxAutohideUsermenu As ComboBox
+    Friend WithEvents lblAutohideUserMenu As Label
+    Friend WithEvents ButtonApplyBehaviors As Button
 End Class

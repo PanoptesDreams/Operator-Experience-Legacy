@@ -119,6 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="ArgusCommon.vb" />
     <Compile Include="argus_launcher.Designer.vb">
       <DependentUpon>argus_launcher.vb</DependentUpon>
     </Compile>
@@ -245,7 +246,7 @@
     <None Include="Resources\icons\game.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons\menu.png" />
+    <None Include="Resources\icons\collections.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons\movie.png" />

@@ -1,32 +1,50 @@
-﻿Public Class FormUserMenu
+﻿Imports Argus.ArgusCommon
 
+Public Class FormUserMenu
 
+    'Start/Load
     Private Sub FormUserMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-
+        'Set Location
         Me.Location = New Point((Screen.PrimaryScreen.Bounds.Width / 2 - (Me.Width / 2)), (Screen.PrimaryScreen.Bounds.Height / 2 - (Me.Height / 2)))
 
-        picSettings.Image = New Bitmap(FormHeader.ResizeImage(My.Resources.settings, picSettings.Height))
-        picExit.Image = New Bitmap(FormHeader.ResizeImage(My.Resources.logout, picExit.Height))
+        'Set Button 4
+        lblOption4.Text = "Settings"
+        picOption4.Image = New Bitmap(ResizeImage(My.Resources.settings, picOption4.Height))
+
+        'Set Exit Button
+        picExit.Image = New Bitmap(ResizeImage(My.Resources.logout, picExit.Height))
 
     End Sub
 
 
+    'Settings Button
+    Private Sub lblSettings_Click(sender As Object, e As EventArgs) Handles lblOption4.Click
+
+        FormSettings.Show()
+        FormSettings.Activate()
+
+    End Sub
+
+    Private Sub picSettings_Click(sender As Object, e As EventArgs) Handles picOption4.Click
+
+        FormSettings.Show()
+        FormSettings.Activate()
+
+    End Sub
+
+
+    'Exit Button
     Private Sub lblExit_Click(sender As Object, e As EventArgs) Handles lblExit.Click
 
         FormHeader.Close()
 
     End Sub
 
+    Private Sub picExit_Click(sender As Object, e As EventArgs) Handles picExit.Click
 
+        FormHeader.Close()
 
-    Private Sub lblSettings_Click(sender As Object, e As EventArgs) Handles lblSettings.Click
-        FormSettings.Show()
     End Sub
-
-    Private Sub picSettings_Click(sender As Object, e As EventArgs) Handles picSettings.Click
-        FormSettings.Show()
-    End Sub
-
 
 End Class

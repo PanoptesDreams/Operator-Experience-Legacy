@@ -1,4 +1,5 @@
 ﻿Imports System.Text
+Imports Argus.ArgusCommon
 
 Public Class FormHeader
 
@@ -8,6 +9,7 @@ Public Class FormHeader
 
     Dim lastPOS As Point = My.Settings.LastPos
 
+    'Start/Load
     Private Sub Launcher_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         'Checks environment variable
@@ -32,6 +34,16 @@ Public Class FormHeader
 
     End Sub
 
+
+    'Activation
+    Private Sub FormHeader_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+
+        HideUsermenu()
+
+    End Sub
+
+
+    'Portable Mode
     Public Sub Portable()
 
         'Add check for portable
@@ -62,6 +74,8 @@ Public Class FormHeader
 1:
     End Sub
 
+
+    'Themer
     Public Sub Theme()
 
         Dim LauncherPOS As String = My.Settings.LauncherPos
@@ -79,6 +93,11 @@ Public Class FormHeader
                 ThemePen = Color.Silver
                 Me.BackgroundImage = My.Resources.strip
 
+            Case = "User"
+                'Please add user customizations
+                ThemePen = Color.Silver
+                Me.BackgroundImage = My.Resources.strip
+                '^^ these are placeholders!
         End Select
 
         lblGreet.ForeColor = ThemePen
@@ -107,35 +126,44 @@ Public Class FormHeader
     End Sub
 
 
-
+    'Border Drawerer
     Protected Overrides Sub OnPaint(e As PaintEventArgs)
         ' Call the base class
         MyBase.OnPaint(e)
 
-        Dim ThemeColor As New Pen(Brushes.Silver)
+        Dim UserTheme As String = My.Settings.ThemeUniversal
+        Dim ThemePen As New Pen(Brushes.Silver)
 
-        If My.Settings.ThemeUniversal = "Light" Then
-            ThemeColor = Pens.Silver
-        ElseIf My.Settings.ThemeUniversal = "Dark" Then
-            ThemeColor = Pens.Black
-        End If
 
+        Select Case UserTheme
+
+            Case = "Light"
+                ThemePen = Pens.Silver
+
+            Case = "Dark"
+                ThemePen = Pens.Black
+
+            Case = "User"
+                ThemePen = Pens.White
+
+        End Select
 
 
         'Top
-        e.Graphics.DrawLine(ThemeColor, 0, 0, Me.Width - 1, 0)
+        e.Graphics.DrawLine(ThemePen, 0, 0, Me.Width - 1, 0)
         'Left
-        e.Graphics.DrawLine(ThemeColor, 0, 1, 0, 48)
+        e.Graphics.DrawLine(ThemePen, 0, 1, 0, 48)
         'Right
-        e.Graphics.DrawLine(ThemeColor, Me.Width - 1, 1, Me.Width - 1, 48)
+        e.Graphics.DrawLine(ThemePen, Me.Width - 1, 1, Me.Width - 1, 48)
         'Bottom
-        e.Graphics.DrawLine(ThemeColor, 0, 49, Me.Width - 1, 49)
+        e.Graphics.DrawLine(ThemePen, 0, 49, Me.Width - 1, 49)
 
 
 
     End Sub
 
 
+    'Greeter
     Public Sub Greeting()
 
 
@@ -159,6 +187,7 @@ Public Class FormHeader
     End Sub
 
 
+    'Clock and Date
     Public Sub SetTime()
 
         'Set days array
@@ -187,10 +216,13 @@ Public Class FormHeader
     End Sub
 
 
-    Public Shared Function ResizeImage(ByVal InputImage As Image, ByVal IcoSize As Integer) As Image
-        Return New Bitmap(InputImage, New Size(IcoSize, IcoSize))
-    End Function
+    'User Menu
+    Private Sub PicUser_Click(sender As Object, e As EventArgs) Handles PicUser.Click
 
+        FormUserMenu.Show()
+        FormUserMenu.Activate()
+
+    End Sub
 
     Private Sub TimerClockTick_Tick(sender As Object, e As EventArgs) Handles TimerClockTick.Tick
 
@@ -205,14 +237,11 @@ Public Class FormHeader
     End Sub
 
 
-
-
-
     Private Sub TmrFixEgg_Tick(sender As Object, e As EventArgs)
 
     End Sub
 
-
+    'Debug Button 1
     Private Sub DebugButton_Click(sender As Object, e As EventArgs) Handles BtnDebug.Click
 
         'Test button for testing shit
@@ -222,37 +251,17 @@ Public Class FormHeader
 
         'Check for environment variable
         'MsgBox(Environment.GetEnvironmentVariable("argus"))
-
-        My.Settings.ThemeUniversal = False
-
-    End Sub
-
-
-    Private Sub PicUser_Click(sender As Object, e As EventArgs) Handles PicUser.Click
-
-        FormUserMenu.Show()
+        MsgBox("Hi")
 
     End Sub
 
-
-    Private Sub FormHeader_Click(sender As Object, e As EventArgs) Handles MyBase.Click
-
-        'Checks if user menu form is open
-        If FormUserMenu.Enabled = True Then
-            'Close user menu
-            FormUserMenu.Dispose()
-        End If
-
-    End Sub
-
-
-
+    'Debug Button 2
     Private Sub btnDebug2_Click(sender As Object, e As EventArgs) Handles btnDebug2.Click
-        My.Settings.ThemeUniversal = "Light"
+
     End Sub
 
 
-
+    'Move form with click drag
     Private Sub FormHeader_MouseDown(sender As Object, e As MouseEventArgs) Handles MyBase.MouseDown
         drag = True
 
@@ -280,6 +289,10 @@ Public Class FormHeader
         End If
 
     End Sub
+
+
+    'End Move form click drag
+
 
 
 

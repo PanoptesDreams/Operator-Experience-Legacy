@@ -29,6 +29,10 @@ Partial Class FormSettings
         Me.ButtonApplyBehaviors = New System.Windows.Forms.Button()
         Me.ComboBoxAutohideUsermenu = New System.Windows.Forms.ComboBox()
         Me.lblAutohideUserMenu = New System.Windows.Forms.Label()
+        Me.TabArgusMisc = New System.Windows.Forms.TabPage()
+        Me.ComboBoxWebSearchProvider = New System.Windows.Forms.ComboBox()
+        Me.lblWebsearchProvider = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.TabArgusPersonalization = New System.Windows.Forms.TabPage()
         Me.picUserImage = New System.Windows.Forms.PictureBox()
         Me.ComboBoxLauncherPOS = New System.Windows.Forms.ComboBox()
@@ -40,20 +44,33 @@ Partial Class FormSettings
         Me.lblTheme = New System.Windows.Forms.Label()
         Me.picFavColor = New System.Windows.Forms.PictureBox()
         Me.lblFaveColor = New System.Windows.Forms.Label()
-        Me.TabArgusMisc = New System.Windows.Forms.TabPage()
-        Me.ComboBoxWebSearchProvider = New System.Windows.Forms.ComboBox()
-        Me.lblWebsearchProvider = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.SettingsTab2Win = New System.Windows.Forms.TabPage()
         Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
+        Me.TabArgusApplets = New System.Windows.Forms.TabPage()
+        Me.PicAppletCollections = New System.Windows.Forms.PictureBox()
+        Me.LabelAppletCollections = New System.Windows.Forms.Label()
+        Me.LabelAppeltSocial = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.LabelApplet3 = New System.Windows.Forms.Label()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.LabelApplet4 = New System.Windows.Forms.Label()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.LabelApplet5 = New System.Windows.Forms.Label()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.TabControlSettings.SuspendLayout()
         Me.SettingsTab1Argus.SuspendLayout()
         Me.TabControlArgus.SuspendLayout()
         Me.TabArgusBehavior.SuspendLayout()
+        Me.TabArgusMisc.SuspendLayout()
         Me.TabArgusPersonalization.SuspendLayout()
         CType(Me.picUserImage, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picFavColor, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabArgusMisc.SuspendLayout()
+        Me.TabArgusApplets.SuspendLayout()
+        CType(Me.PicAppletCollections, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControlSettings
@@ -81,6 +98,7 @@ Partial Class FormSettings
         '
         'TabControlArgus
         '
+        Me.TabControlArgus.Controls.Add(Me.TabArgusApplets)
         Me.TabControlArgus.Controls.Add(Me.TabArgusBehavior)
         Me.TabControlArgus.Controls.Add(Me.TabArgusMisc)
         Me.TabControlArgus.Controls.Add(Me.TabArgusPersonalization)
@@ -137,6 +155,53 @@ Partial Class FormSettings
         Me.lblAutohideUserMenu.Size = New System.Drawing.Size(188, 22)
         Me.lblAutohideUserMenu.TabIndex = 9
         Me.lblAutohideUserMenu.Text = "Autohide User Menu -"
+        '
+        'TabArgusMisc
+        '
+        Me.TabArgusMisc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TabArgusMisc.Controls.Add(Me.ComboBoxWebSearchProvider)
+        Me.TabArgusMisc.Controls.Add(Me.lblWebsearchProvider)
+        Me.TabArgusMisc.Controls.Add(Me.Button1)
+        Me.TabArgusMisc.Location = New System.Drawing.Point(4, 31)
+        Me.TabArgusMisc.Margin = New System.Windows.Forms.Padding(5)
+        Me.TabArgusMisc.Name = "TabArgusMisc"
+        Me.TabArgusMisc.Padding = New System.Windows.Forms.Padding(5)
+        Me.TabArgusMisc.Size = New System.Drawing.Size(856, 476)
+        Me.TabArgusMisc.TabIndex = 1
+        Me.TabArgusMisc.Text = "Misc"
+        Me.TabArgusMisc.UseVisualStyleBackColor = True
+        '
+        'ComboBoxWebSearchProvider
+        '
+        Me.ComboBoxWebSearchProvider.FormattingEnabled = True
+        Me.ComboBoxWebSearchProvider.Items.AddRange(New Object() {"Bing", "Duck", "Frontpage", "Google", "Yahoo"})
+        Me.ComboBoxWebSearchProvider.Location = New System.Drawing.Point(239, 31)
+        Me.ComboBoxWebSearchProvider.Margin = New System.Windows.Forms.Padding(5)
+        Me.ComboBoxWebSearchProvider.Name = "ComboBoxWebSearchProvider"
+        Me.ComboBoxWebSearchProvider.Size = New System.Drawing.Size(285, 30)
+        Me.ComboBoxWebSearchProvider.TabIndex = 7
+        '
+        'lblWebsearchProvider
+        '
+        Me.lblWebsearchProvider.AutoSize = True
+        Me.lblWebsearchProvider.Location = New System.Drawing.Point(35, 34)
+        Me.lblWebsearchProvider.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.lblWebsearchProvider.Name = "lblWebsearchProvider"
+        Me.lblWebsearchProvider.Size = New System.Drawing.Size(193, 22)
+        Me.lblWebsearchProvider.TabIndex = 6
+        Me.lblWebsearchProvider.Text = "Web Search Provider -"
+        '
+        'Button1
+        '
+        Me.Button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.Button1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Button1.Location = New System.Drawing.Point(5, 437)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(5)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(844, 32)
+        Me.Button1.TabIndex = 5
+        Me.Button1.Text = "Apply Miscellaneous"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'TabArgusPersonalization
         '
@@ -267,53 +332,6 @@ Partial Class FormSettings
         Me.lblFaveColor.TabIndex = 0
         Me.lblFaveColor.Text = "Favorite Color -"
         '
-        'TabArgusMisc
-        '
-        Me.TabArgusMisc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TabArgusMisc.Controls.Add(Me.ComboBoxWebSearchProvider)
-        Me.TabArgusMisc.Controls.Add(Me.lblWebsearchProvider)
-        Me.TabArgusMisc.Controls.Add(Me.Button1)
-        Me.TabArgusMisc.Location = New System.Drawing.Point(4, 31)
-        Me.TabArgusMisc.Margin = New System.Windows.Forms.Padding(5)
-        Me.TabArgusMisc.Name = "TabArgusMisc"
-        Me.TabArgusMisc.Padding = New System.Windows.Forms.Padding(5)
-        Me.TabArgusMisc.Size = New System.Drawing.Size(856, 476)
-        Me.TabArgusMisc.TabIndex = 1
-        Me.TabArgusMisc.Text = "Misc"
-        Me.TabArgusMisc.UseVisualStyleBackColor = True
-        '
-        'ComboBoxWebSearchProvider
-        '
-        Me.ComboBoxWebSearchProvider.FormattingEnabled = True
-        Me.ComboBoxWebSearchProvider.Items.AddRange(New Object() {"Bing", "Duck", "Frontpage", "Google", "Yahoo"})
-        Me.ComboBoxWebSearchProvider.Location = New System.Drawing.Point(239, 31)
-        Me.ComboBoxWebSearchProvider.Margin = New System.Windows.Forms.Padding(5)
-        Me.ComboBoxWebSearchProvider.Name = "ComboBoxWebSearchProvider"
-        Me.ComboBoxWebSearchProvider.Size = New System.Drawing.Size(285, 30)
-        Me.ComboBoxWebSearchProvider.TabIndex = 7
-        '
-        'lblWebsearchProvider
-        '
-        Me.lblWebsearchProvider.AutoSize = True
-        Me.lblWebsearchProvider.Location = New System.Drawing.Point(35, 34)
-        Me.lblWebsearchProvider.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.lblWebsearchProvider.Name = "lblWebsearchProvider"
-        Me.lblWebsearchProvider.Size = New System.Drawing.Size(193, 22)
-        Me.lblWebsearchProvider.TabIndex = 6
-        Me.lblWebsearchProvider.Text = "Web Search Provider -"
-        '
-        'Button1
-        '
-        Me.Button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.Button1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Button1.Location = New System.Drawing.Point(5, 437)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(5)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(844, 32)
-        Me.Button1.TabIndex = 5
-        Me.Button1.Text = "Apply Miscellaneous"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'SettingsTab2Win
         '
         Me.SettingsTab2Win.Location = New System.Drawing.Point(4, 31)
@@ -328,6 +346,111 @@ Partial Class FormSettings
         '
         Me.ColorDialog1.AnyColor = True
         Me.ColorDialog1.SolidColorOnly = True
+        '
+        'TabArgusApplets
+        '
+        Me.TabArgusApplets.Controls.Add(Me.LabelApplet5)
+        Me.TabArgusApplets.Controls.Add(Me.PictureBox5)
+        Me.TabArgusApplets.Controls.Add(Me.LabelApplet4)
+        Me.TabArgusApplets.Controls.Add(Me.PictureBox4)
+        Me.TabArgusApplets.Controls.Add(Me.LabelApplet3)
+        Me.TabArgusApplets.Controls.Add(Me.PictureBox3)
+        Me.TabArgusApplets.Controls.Add(Me.LabelAppeltSocial)
+        Me.TabArgusApplets.Controls.Add(Me.PictureBox2)
+        Me.TabArgusApplets.Controls.Add(Me.LabelAppletCollections)
+        Me.TabArgusApplets.Controls.Add(Me.PicAppletCollections)
+        Me.TabArgusApplets.Location = New System.Drawing.Point(4, 31)
+        Me.TabArgusApplets.Name = "TabArgusApplets"
+        Me.TabArgusApplets.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabArgusApplets.Size = New System.Drawing.Size(856, 476)
+        Me.TabArgusApplets.TabIndex = 3
+        Me.TabArgusApplets.Text = "Applets"
+        Me.TabArgusApplets.UseVisualStyleBackColor = True
+        '
+        'PicAppletCollections
+        '
+        Me.PicAppletCollections.Location = New System.Drawing.Point(30, 25)
+        Me.PicAppletCollections.Name = "PicAppletCollections"
+        Me.PicAppletCollections.Size = New System.Drawing.Size(99, 88)
+        Me.PicAppletCollections.TabIndex = 0
+        Me.PicAppletCollections.TabStop = False
+        '
+        'LabelAppletCollections
+        '
+        Me.LabelAppletCollections.AutoSize = True
+        Me.LabelAppletCollections.Location = New System.Drawing.Point(26, 116)
+        Me.LabelAppletCollections.Name = "LabelAppletCollections"
+        Me.LabelAppletCollections.Size = New System.Drawing.Size(101, 22)
+        Me.LabelAppletCollections.TabIndex = 1
+        Me.LabelAppletCollections.Text = "Collections"
+        '
+        'LabelAppeltSocial
+        '
+        Me.LabelAppeltSocial.AutoSize = True
+        Me.LabelAppeltSocial.Location = New System.Drawing.Point(172, 116)
+        Me.LabelAppeltSocial.Name = "LabelAppeltSocial"
+        Me.LabelAppeltSocial.Size = New System.Drawing.Size(60, 22)
+        Me.LabelAppeltSocial.TabIndex = 3
+        Me.LabelAppeltSocial.Text = "Social"
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Location = New System.Drawing.Point(176, 25)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(99, 88)
+        Me.PictureBox2.TabIndex = 2
+        Me.PictureBox2.TabStop = False
+        '
+        'LabelApplet3
+        '
+        Me.LabelApplet3.AutoSize = True
+        Me.LabelApplet3.Location = New System.Drawing.Point(315, 116)
+        Me.LabelApplet3.Name = "LabelApplet3"
+        Me.LabelApplet3.Size = New System.Drawing.Size(77, 22)
+        Me.LabelApplet3.TabIndex = 5
+        Me.LabelApplet3.Text = "Applet 3"
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Location = New System.Drawing.Point(319, 25)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(99, 88)
+        Me.PictureBox3.TabIndex = 4
+        Me.PictureBox3.TabStop = False
+        '
+        'LabelApplet4
+        '
+        Me.LabelApplet4.AutoSize = True
+        Me.LabelApplet4.Location = New System.Drawing.Point(473, 116)
+        Me.LabelApplet4.Name = "LabelApplet4"
+        Me.LabelApplet4.Size = New System.Drawing.Size(78, 22)
+        Me.LabelApplet4.TabIndex = 7
+        Me.LabelApplet4.Text = "Applet 4"
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Location = New System.Drawing.Point(477, 25)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(99, 88)
+        Me.PictureBox4.TabIndex = 6
+        Me.PictureBox4.TabStop = False
+        '
+        'LabelApplet5
+        '
+        Me.LabelApplet5.AutoSize = True
+        Me.LabelApplet5.Location = New System.Drawing.Point(618, 116)
+        Me.LabelApplet5.Name = "LabelApplet5"
+        Me.LabelApplet5.Size = New System.Drawing.Size(77, 22)
+        Me.LabelApplet5.TabIndex = 9
+        Me.LabelApplet5.Text = "Applet 5"
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.Location = New System.Drawing.Point(622, 25)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(99, 88)
+        Me.PictureBox5.TabIndex = 8
+        Me.PictureBox5.TabStop = False
         '
         'FormSettings
         '
@@ -351,12 +474,19 @@ Partial Class FormSettings
         Me.TabControlArgus.ResumeLayout(False)
         Me.TabArgusBehavior.ResumeLayout(False)
         Me.TabArgusBehavior.PerformLayout()
+        Me.TabArgusMisc.ResumeLayout(False)
+        Me.TabArgusMisc.PerformLayout()
         Me.TabArgusPersonalization.ResumeLayout(False)
         Me.TabArgusPersonalization.PerformLayout()
         CType(Me.picUserImage, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picFavColor, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabArgusMisc.ResumeLayout(False)
-        Me.TabArgusMisc.PerformLayout()
+        Me.TabArgusApplets.ResumeLayout(False)
+        Me.TabArgusApplets.PerformLayout()
+        CType(Me.PicAppletCollections, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -385,4 +515,15 @@ Partial Class FormSettings
     Friend WithEvents ComboBoxAutohideUsermenu As ComboBox
     Friend WithEvents lblAutohideUserMenu As Label
     Friend WithEvents ButtonApplyBehaviors As Button
+    Friend WithEvents TabArgusApplets As TabPage
+    Friend WithEvents LabelApplet5 As Label
+    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents LabelApplet4 As Label
+    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents LabelApplet3 As Label
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents LabelAppeltSocial As Label
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents LabelAppletCollections As Label
+    Friend WithEvents PicAppletCollections As PictureBox
 End Class

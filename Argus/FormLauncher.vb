@@ -273,6 +273,7 @@ Public Class FormHeader
 
     Private Sub FormHeader_MouseUp(sender As Object, e As MouseEventArgs) Handles MyBase.MouseUp
         drag = False
+
         My.Settings.LastPos = Me.Location
         My.Settings.Save()
     End Sub
@@ -285,6 +286,8 @@ Public Class FormHeader
             Me.Top = Windows.Forms.Cursor.Position.Y - mousey
 
             Me.Left = Windows.Forms.Cursor.Position.X - mousex
+
+
 
         End If
 

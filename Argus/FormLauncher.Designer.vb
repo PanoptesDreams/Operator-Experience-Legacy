@@ -23,6 +23,7 @@ Partial Class FormHeader
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormHeader))
         Me.lblClock = New System.Windows.Forms.Label()
         Me.TimerClockTick = New System.Windows.Forms.Timer(Me.components)
         Me.lblDay = New System.Windows.Forms.Label()
@@ -157,14 +158,12 @@ Partial Class FormHeader
         Me.btnDebug2.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.btnDebug2.BackColor = System.Drawing.Color.LightCoral
         Me.btnDebug2.Cursor = System.Windows.Forms.Cursors.Help
-        Me.btnDebug2.Enabled = False
         Me.btnDebug2.Location = New System.Drawing.Point(423, 27)
         Me.btnDebug2.Name = "btnDebug2"
         Me.btnDebug2.Size = New System.Drawing.Size(75, 23)
         Me.btnDebug2.TabIndex = 8
         Me.btnDebug2.Text = "DEBUG 2"
         Me.btnDebug2.UseVisualStyleBackColor = False
-        Me.btnDebug2.Visible = False
         '
         'PictureBox1
         '
@@ -198,6 +197,7 @@ Partial Class FormHeader
         Me.Controls.Add(Me.PicUser)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FormHeader"

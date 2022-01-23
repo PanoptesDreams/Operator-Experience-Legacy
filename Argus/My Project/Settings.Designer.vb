@@ -209,6 +209,42 @@ Namespace My
                 Me("AutohideUsermenu") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property PersistCollections() As Boolean
+            Get
+                Return CType(Me("PersistCollections"),Boolean)
+            End Get
+            Set
+                Me("PersistCollections") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property PersistSocial() As Boolean
+            Get
+                Return CType(Me("PersistSocial"),Boolean)
+            End Get
+            Set
+                Me("PersistSocial") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property PersistToolbox() As Boolean
+            Get
+                Return CType(Me("PersistToolbox"),Boolean)
+            End Get
+            Set
+                Me("PersistToolbox") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

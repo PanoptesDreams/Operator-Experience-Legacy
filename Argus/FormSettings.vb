@@ -2,11 +2,19 @@
 
 Public Class FormSettings
     Dim BGs As Windows.Forms.TabPage() = {TabArgusBehavior, TabArgusPersonalization, TabArgusMisc}
+    Dim PersistCollections As Boolean = My.Settings.PersistCollections
 
     'Start/Load
     Private Sub FormSettings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Theme()
+
+        'Applet
+        If PersistCollections = True Then
+            PicAppletCollections.BackColor = Color.Green
+        ElseIf PersistCollections = False Then
+            PicAppletCollections.BackColor = Color.DarkRed
+        End If
 
         'Behavior
         ComboBoxAutohideUsermenu.Text = My.Settings.AutohideUsermenu
@@ -113,5 +121,18 @@ Public Class FormSettings
 
     End Sub
 
+    Private Sub PicAppletCollections_Click(sender As Object, e As EventArgs) Handles PicAppletCollections.Click
 
+        If PersistCollections = True Then
+            My.Settings.PersistCollections = False
+            PersistCollections = False
+            PicAppletCollections.BackColor = Color.DarkRed
+        ElseIf PersistCollections = False Then
+            My.Settings.PersistCollections = True
+            PersistCollections = True
+            PicAppletCollections.BackColor = Color.Green
+        End If
+
+
+    End Sub
 End Class

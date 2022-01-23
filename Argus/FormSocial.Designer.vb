@@ -44,7 +44,7 @@ Partial Class FormSocial
         Me.PictureBox2.TabIndex = 1
         Me.PictureBox2.TabStop = False
         '
-        'Social
+        'FormSocial
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -53,7 +53,8 @@ Partial Class FormSocial
         Me.Controls.Add(Me.PictureBox1)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Name = "Social"
+        Me.Name = "FormSocial"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Social"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

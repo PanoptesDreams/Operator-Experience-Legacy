@@ -29,14 +29,14 @@ Partial Class FormHeader
         Me.lblDay = New System.Windows.Forms.Label()
         Me.lblLongDate = New System.Windows.Forms.Label()
         Me.lblYear = New System.Windows.Forms.Label()
-        Me.BtnDebug = New System.Windows.Forms.Button()
+        Me.ButtonDebug = New System.Windows.Forms.Button()
         Me.PicUser = New System.Windows.Forms.PictureBox()
         Me.lblUser = New System.Windows.Forms.Label()
         Me.lblGreet = New System.Windows.Forms.Label()
-        Me.btnDebug2 = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.ButtonDebug2 = New System.Windows.Forms.Button()
+        Me.PicCollections = New System.Windows.Forms.PictureBox()
         CType(Me.PicUser, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PicCollections, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblClock
@@ -100,17 +100,17 @@ Partial Class FormHeader
         Me.lblYear.Text = "XXXX"
         Me.lblYear.UseMnemonic = False
         '
-        'BtnDebug
+        'ButtonDebug
         '
-        Me.BtnDebug.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.BtnDebug.BackColor = System.Drawing.Color.LightCoral
-        Me.BtnDebug.Cursor = System.Windows.Forms.Cursors.Help
-        Me.BtnDebug.Location = New System.Drawing.Point(423, 4)
-        Me.BtnDebug.Name = "BtnDebug"
-        Me.BtnDebug.Size = New System.Drawing.Size(75, 23)
-        Me.BtnDebug.TabIndex = 5
-        Me.BtnDebug.Text = "DEBUG"
-        Me.BtnDebug.UseVisualStyleBackColor = False
+        Me.ButtonDebug.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.ButtonDebug.BackColor = System.Drawing.Color.LightCoral
+        Me.ButtonDebug.Cursor = System.Windows.Forms.Cursors.Help
+        Me.ButtonDebug.Location = New System.Drawing.Point(423, 4)
+        Me.ButtonDebug.Name = "ButtonDebug"
+        Me.ButtonDebug.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonDebug.TabIndex = 5
+        Me.ButtonDebug.Text = "DEBUG"
+        Me.ButtonDebug.UseVisualStyleBackColor = False
         '
         'PicUser
         '
@@ -153,30 +153,30 @@ Partial Class FormHeader
         Me.lblGreet.Text = "Greetings,"
         Me.lblGreet.UseMnemonic = False
         '
-        'btnDebug2
+        'ButtonDebug2
         '
-        Me.btnDebug2.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.btnDebug2.BackColor = System.Drawing.Color.LightCoral
-        Me.btnDebug2.Cursor = System.Windows.Forms.Cursors.Help
-        Me.btnDebug2.Location = New System.Drawing.Point(423, 27)
-        Me.btnDebug2.Name = "btnDebug2"
-        Me.btnDebug2.Size = New System.Drawing.Size(75, 23)
-        Me.btnDebug2.TabIndex = 8
-        Me.btnDebug2.Text = "DEBUG 2"
-        Me.btnDebug2.UseVisualStyleBackColor = False
+        Me.ButtonDebug2.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.ButtonDebug2.BackColor = System.Drawing.Color.LightCoral
+        Me.ButtonDebug2.Cursor = System.Windows.Forms.Cursors.Help
+        Me.ButtonDebug2.Location = New System.Drawing.Point(423, 27)
+        Me.ButtonDebug2.Name = "ButtonDebug2"
+        Me.ButtonDebug2.Size = New System.Drawing.Size(75, 23)
+        Me.ButtonDebug2.TabIndex = 8
+        Me.ButtonDebug2.Text = "DEBUG 2"
+        Me.ButtonDebug2.UseVisualStyleBackColor = False
         '
-        'PictureBox1
+        'PicCollections
         '
-        Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.BackgroundImage = Global.Argus.My.Resources.Resources.collections
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox1.Location = New System.Drawing.Point(540, 0)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(50, 50)
-        Me.PictureBox1.TabIndex = 9
-        Me.PictureBox1.TabStop = False
+        Me.PicCollections.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PicCollections.BackColor = System.Drawing.Color.Transparent
+        Me.PicCollections.BackgroundImage = Global.Argus.My.Resources.Resources.collections
+        Me.PicCollections.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PicCollections.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PicCollections.Location = New System.Drawing.Point(540, 0)
+        Me.PicCollections.Name = "PicCollections"
+        Me.PicCollections.Size = New System.Drawing.Size(50, 50)
+        Me.PicCollections.TabIndex = 9
+        Me.PicCollections.TabStop = False
         '
         'FormHeader
         '
@@ -185,11 +185,11 @@ Partial Class FormHeader
         Me.BackColor = System.Drawing.Color.MidnightBlue
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(600, 50)
-        Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.btnDebug2)
+        Me.Controls.Add(Me.PicCollections)
+        Me.Controls.Add(Me.ButtonDebug2)
         Me.Controls.Add(Me.lblUser)
         Me.Controls.Add(Me.lblGreet)
-        Me.Controls.Add(Me.BtnDebug)
+        Me.Controls.Add(Me.ButtonDebug)
         Me.Controls.Add(Me.lblYear)
         Me.Controls.Add(Me.lblLongDate)
         Me.Controls.Add(Me.lblDay)
@@ -205,7 +205,7 @@ Partial Class FormHeader
         Me.Text = "Here Be Dragons"
         Me.TopMost = True
         CType(Me.PicUser, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PicCollections, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -217,9 +217,9 @@ Partial Class FormHeader
     Friend WithEvents lblDay As Label
     Friend WithEvents lblLongDate As Label
     Friend WithEvents lblYear As Label
-    Friend WithEvents BtnDebug As Button
+    Friend WithEvents ButtonDebug As Button
     Friend WithEvents lblUser As Label
     Friend WithEvents lblGreet As Label
-    Friend WithEvents btnDebug2 As Button
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents ButtonDebug2 As Button
+    Friend WithEvents PicCollections As PictureBox
 End Class

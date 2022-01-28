@@ -1,6 +1,8 @@
 ﻿Imports System.Text
 Imports Argus.ArgusCommon
 
+
+'Header a.k.a Launcher
 Public Class FormHeader
 
     Dim drag As Boolean
@@ -9,8 +11,14 @@ Public Class FormHeader
 
     Dim lastPOS As Point = My.Settings.LastPos
 
+    Dim OSKParam As String = Command() 'REMOVE ME
+
+
     'Start/Load
     Private Sub Launcher_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        'Are we in debug mode?
+        DebugFeatures()
 
         'Checks environment variable
         Portable()
@@ -32,6 +40,7 @@ Public Class FormHeader
         FormUserMenu.Activate()
         FormUserMenu.Show()
 
+
     End Sub
 
 
@@ -42,6 +51,26 @@ Public Class FormHeader
 
     End Sub
 
+    'Debug Features
+    Public Sub DebugFeatures()
+
+        Dim DebugOn As Boolean = My.Settings.DebugFeatures
+
+        If DebugOn = True Then
+            ButtonDebug.Enabled = True
+            ButtonDebug2.Enabled = True
+            ButtonDebug.Visible = True
+            ButtonDebug2.Visible = True
+        End If
+
+        If DebugOn = False Then
+            ButtonDebug.Enabled = False
+            ButtonDebug2.Enabled = False
+            ButtonDebug.Visible = False
+            ButtonDebug2.Visible = False
+        End If
+
+    End Sub
 
     'Portable Mode
     Public Sub Portable()
@@ -224,6 +253,17 @@ Public Class FormHeader
 
     End Sub
 
+
+    'Collections
+    Private Sub PicCollections_Click(sender As Object, e As EventArgs) Handles PicCollections.Click
+
+        FormCollections.Show()
+        FormUserMenu.Activate()
+
+    End Sub
+
+
+
     Private Sub TimerClockTick_Tick(sender As Object, e As EventArgs) Handles TimerClockTick.Tick
 
         'Static midnight As Boolean
@@ -241,8 +281,11 @@ Public Class FormHeader
 
     End Sub
 
+
+
+
     'Debug Button 1
-    Private Sub DebugButton_Click(sender As Object, e As EventArgs) Handles BtnDebug.Click
+    Private Sub DebugButton_Click(sender As Object, e As EventArgs) Handles ButtonDebug.Click
 
         'Test button for testing shit
 
@@ -256,7 +299,7 @@ Public Class FormHeader
     End Sub
 
     'Debug Button 2
-    Private Sub btnDebug2_Click(sender As Object, e As EventArgs) Handles btnDebug2.Click
+    Private Sub btnDebug2_Click(sender As Object, e As EventArgs) Handles ButtonDebug2.Click
 
     End Sub
 
@@ -292,6 +335,8 @@ Public Class FormHeader
         End If
 
     End Sub
+
+
 
 
     'End Move form click drag

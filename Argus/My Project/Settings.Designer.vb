@@ -245,6 +245,42 @@ Namespace My
                 Me("PersistToolbox") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property DebugFeatures() As Boolean
+            Get
+                Return CType(Me("DebugFeatures"),Boolean)
+            End Get
+            Set
+                Me("DebugFeatures") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Right")>  _
+        Public Property CollectionsPos() As String
+            Get
+                Return CType(Me("CollectionsPos"),String)
+            End Get
+            Set
+                Me("CollectionsPos") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("25, 25")>  _
+        Public Property CollectionsLastPos() As Global.System.Drawing.Point
+            Get
+                Return CType(Me("CollectionsLastPos"),Global.System.Drawing.Point)
+            End Get
+            Set
+                Me("CollectionsLastPos") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

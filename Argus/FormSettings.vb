@@ -28,9 +28,13 @@ Public Class FormSettings
 
         ComboBoxLauncherPOS.Text = My.Settings.LauncherPos
 
+        ComboBoxCollectionsPOS.Text = My.Settings.CollectionsPos
+
+
         'Misc
         ComboBoxWebSearchProvider.Text = My.Settings.WebSearchProvider
 
+        ComboBoxDebugFeatures.Text = My.Settings.DebugFeatures
 
 
     End Sub
@@ -38,6 +42,7 @@ Public Class FormSettings
 
     'Themer
     Public Sub Theme()
+
 
         Dim BgColor As Color = BgColorPicker()
 
@@ -62,20 +67,38 @@ Public Class FormSettings
     End Sub
 
 
+#Region "Buttons"
+
     'Apply Behaviors
     Private Sub ButtonApplyBehaviors_Click(sender As Object, e As EventArgs) Handles ButtonApplyBehaviors.Click
 
         'Autohide usermenu when an argus applet is invoked
         My.Settings.AutohideUsermenu = ComboBoxAutohideUsermenu.Text
 
-        'Save Settings
-        My.Settings.Save()
+
+        ASave()
+
+    End Sub
+
+
+    'Apply Miscellaneous
+    Private Sub ButtonApplyMisc_Click(sender As Object, e As EventArgs) Handles ButtonApplyMisc.Click
+
+        'Web Search Provider
+        My.Settings.WebSearchProvider = ComboBoxWebSearchProvider.Text
+
+        'Enable or disable User Debugger features
+        My.Settings.DebugFeatures = ComboBoxDebugFeatures.Text
+
+        ASave()
+
+        FormHeader.DebugFeatures()
 
     End Sub
 
 
     'Apply Personalization
-    Private Sub btnApplyPersonalization_Click(sender As Object, e As EventArgs) Handles btnApplyPersonalization.Click
+    Private Sub btnApplyPersonalization_Click(sender As Object, e As EventArgs) Handles ButtonApplyPersonalization.Click
 
         'Favorite Color
         'My.Settings.FavColor = picFavColor.BackColor
@@ -90,13 +113,14 @@ Public Class FormSettings
         FormHeader.Theme()
         Theme()
 
-        My.Settings.WebSearchProvider = ComboBoxWebSearchProvider.Text
+        My.Settings.CollectionsPos = ComboBoxCollectionsPOS.Text
+        FormCollections.Themer()
 
-        'Save Settings
-        My.Settings.Save()
+        ASave()
 
     End Sub
 
+#End Region
 
     'Argus
     'Personalization
@@ -135,4 +159,6 @@ Public Class FormSettings
 
 
     End Sub
+
+
 End Class

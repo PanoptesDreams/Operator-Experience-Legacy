@@ -48,5 +48,15 @@
 
     End Function
 
+    'Settings Saver
+    Public Function ASave() ' Hi
+
+
+        My.Settings.Save()
+
+        My.Settings.Reload()
+
+    End Function
+
 
 End Module

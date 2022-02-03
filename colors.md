@@ -2,6 +2,8 @@
 
 Black - #000000
 
+Grey (Click) - #666666 - R102 G102 B102
+
 Grey (Text) - #737373
 
 Grey (Border) - #767676

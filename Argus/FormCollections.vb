@@ -1,4 +1,6 @@
-﻿Public Class FormCollections
+﻿Imports Argus.ArgusCommon
+
+Public Class FormCollections
 
     Dim lastPOS As Point = My.Settings.CollectionsLastPos
 
@@ -6,12 +8,14 @@
 
         Themer()
 
+
     End Sub
 
 
     Public Sub Themer()
 
         Dim MyPos As String = My.Settings.CollectionsPos
+        Dim ThemeColor As Color
 
         Select Case MyPos
             Case = "Right"
@@ -22,15 +26,10 @@
                 Me.Location = My.Settings.CollectionsLastPos
         End Select
 
-    End Sub
 
-
-    Private Sub FormCollections_Move(sender As Object, e As EventArgs) Handles MyBase.Move
-
-        My.Settings.CollectionsLastPos = lastPOS
-        ASave()
-
-        Themer()
+        UniThemer(Me, ThemeColor)
 
     End Sub
+
+
 End Class

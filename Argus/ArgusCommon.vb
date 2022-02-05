@@ -26,15 +26,16 @@
 
 
     'Themer
-    Public Function BgColorPicker()
+    Public Function UniThemer(UserForm As Form, ThemePen As Color)
 
         Dim UserTheme As String = My.Settings.ThemeUniversal
         Dim BgColor As New Color
 
+        'Choose background coloring for common forms
         Select Case UserTheme
 
             Case = "Light"
-                BgColor = Color.White
+                BgColor = Color.White 'replace with smoky white
 
             Case = "Dark"
                 BgColor = ControlPaint.ContrastControlDark
@@ -44,9 +45,30 @@
 
         End Select
 
+
+        'Set background images and font pen
+        Select Case UserTheme
+
+            Case = "Light"
+                ThemePen = Color.Black
+                UserForm.BackgroundImage = My.Resources.strip_light
+
+            Case = "Dark"
+                ThemePen = Color.Silver
+                UserForm.BackgroundImage = My.Resources.strip
+
+            Case = "User"
+                'Please add user customizations
+                ThemePen = Color.Silver
+                UserForm.BackgroundImage = My.Resources.strip
+                '^^ these are placeholders!
+        End Select
+
+
         Return BgColor
 
     End Function
+
 
     'Settings Saver
     Public Function ASave() ' Hi
@@ -58,5 +80,21 @@
 
     End Function
 
+
+    'Button GLow
+    Public Function ButtonGlow(TButton As PictureBox)
+
+        TButton.BackgroundImage = My.Resources.frame
+
+    End Function
+
+
+    'Button GLow
+    Public Function ButtonUnGlow(TButton As PictureBox)
+
+        TButton.BackgroundImage = My.Resources.frame_empty
+
+
+    End Function
 
 End Module

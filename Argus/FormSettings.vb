@@ -43,8 +43,9 @@ Public Class FormSettings
     'Themer
     Public Sub Theme()
 
+        Dim ThemeColor As Color
 
-        Dim BgColor As Color = BgColorPicker()
+        Dim BgColor As Color = UniThemer(Me, ThemeColor)
 
         Me.BackColor = BgColor
 
@@ -160,5 +161,45 @@ Public Class FormSettings
 
     End Sub
 
+    Private Sub PicOption1_MouseHover(sender As Object, e As EventArgs) Handles PicOption1.MouseEnter
+
+        ButtonGlow(PicOption1)
+
+    End Sub
+
+    Private Sub PicOption1_MouseLeave(sender As Object, e As EventArgs) Handles PicOption1.MouseLeave
+
+        ButtonUnGlow(PicOption1)
+
+    End Sub
+
+    Private Sub PicOption2_MouseHover(sender As Object, e As EventArgs) Handles PicOption2.MouseEnter
+
+        ButtonGlow(PicOption2)
+
+    End Sub
+
+    Private Sub PicOption2_MouseLeave(sender As Object, e As EventArgs) Handles PicOption2.MouseLeave
+
+        ButtonUnGlow(PicOption2)
+    End Sub
+
+    Private Sub PicOption3_MouseHover(sender As Object, e As EventArgs) Handles PicOption3.MouseEnter
+        ButtonGlow(PicOption3)
+    End Sub
+
+    Private Sub PicOption3_MouseLeave(sender As Object, e As EventArgs) Handles PicOption3.MouseLeave
+
+        ButtonUnGlow(PicOption3)
+    End Sub
+
+    Private Sub PicOption0_MouseHover(sender As Object, e As EventArgs) Handles PicOption0.MouseEnter
+        ButtonGlow(PicOption0)
+    End Sub
+
+    Private Sub PicOption0_MouseLeave(sender As Object, e As EventArgs) Handles PicOption0.MouseLeave
+
+        ButtonUnGlow(PicOption0)
+    End Sub
 
 End Class

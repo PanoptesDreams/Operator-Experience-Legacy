@@ -111,23 +111,7 @@ Public Class FormHeader
         Dim UserTheme As String = My.Settings.ThemeUniversal
         Dim ThemePen As Color
 
-
-        Select Case UserTheme
-
-            Case = "Light"
-                ThemePen = Color.Black
-                Me.BackgroundImage = My.Resources.strip_light
-
-            Case = "Dark"
-                ThemePen = Color.Silver
-                Me.BackgroundImage = My.Resources.strip
-
-            Case = "User"
-                'Please add user customizations
-                ThemePen = Color.Silver
-                Me.BackgroundImage = My.Resources.strip
-                '^^ these are placeholders!
-        End Select
+        UniThemer(Me, ThemePen)
 
         lblGreet.ForeColor = ThemePen
         lblUser.ForeColor = ThemePen

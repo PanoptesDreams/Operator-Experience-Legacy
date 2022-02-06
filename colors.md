@@ -31,7 +31,7 @@ Dark Orange - #C46210 - R196 G98 B16
 
 Dark Purple - #260D68 - R38 G13 B104
 
-▲ Purple - #9F23FF - R159 G35 B255
+▲ Purple - #9F2FFF - R159 G47 B255
 
 Tyrian (Royal) Purple - #66023C - R102 G2 B60
 

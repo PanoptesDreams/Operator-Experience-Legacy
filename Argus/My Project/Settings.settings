@@ -59,5 +59,8 @@
     <Setting Name="CollectionsLastPos" Type="System.Drawing.Point" Scope="User">
       <Value Profile="(Default)">25, 25</Value>
     </Setting>
+    <Setting Name="LauncherAoT" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

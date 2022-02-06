@@ -37,19 +37,22 @@ Public Class FormHeader
 
 
 
-        FormUserMenu.Activate()
-        FormUserMenu.Show()
-
-
     End Sub
 
 
     'Activation
     Private Sub FormHeader_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
 
-        HideUsermenu()
 
     End Sub
+
+    'AlwaysOnTop
+    Public Sub AlwaysOnTop()
+
+        Me.TopMost = My.Settings.LauncherAoT
+
+    End Sub
+
 
     'Debug Features
     Public Sub DebugFeatures()

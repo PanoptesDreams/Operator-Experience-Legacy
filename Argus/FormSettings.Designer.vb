@@ -74,13 +74,15 @@ Partial Class FormSettings
         Me.PictureBox11 = New System.Windows.Forms.PictureBox()
         Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
         Me.SettingsPanel = New System.Windows.Forms.Panel()
+        Me.PicOption1 = New System.Windows.Forms.PictureBox()
+        Me.PicOption2 = New System.Windows.Forms.PictureBox()
+        Me.PicOption3 = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.LabelUser = New System.Windows.Forms.Label()
         Me.PicOption0 = New System.Windows.Forms.PictureBox()
-        Me.PicOption3 = New System.Windows.Forms.PictureBox()
-        Me.PicOption1 = New System.Windows.Forms.PictureBox()
-        Me.PicOption2 = New System.Windows.Forms.PictureBox()
+        Me.ComboBoxLauncherAlwaysonTop = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.TabControlSettings.SuspendLayout()
         Me.SettingsTab1Argus.SuspendLayout()
         Me.TabControlArgus.SuspendLayout()
@@ -102,10 +104,10 @@ Partial Class FormSettings
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SettingsPanel.SuspendLayout()
-        CType(Me.PicOption0, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PicOption3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PicOption1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PicOption2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PicOption3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PicOption0, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControlSettings
@@ -254,6 +256,8 @@ Partial Class FormSettings
         'TabArgusBehavior
         '
         Me.TabArgusBehavior.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TabArgusBehavior.Controls.Add(Me.ComboBoxLauncherAlwaysonTop)
+        Me.TabArgusBehavior.Controls.Add(Me.Label4)
         Me.TabArgusBehavior.Controls.Add(Me.ButtonApplyBehaviors)
         Me.TabArgusBehavior.Controls.Add(Me.ComboBoxAutohideUsermenu)
         Me.TabArgusBehavior.Controls.Add(Me.lblAutohideUserMenu)
@@ -687,6 +691,51 @@ Partial Class FormSettings
         Me.SettingsPanel.Size = New System.Drawing.Size(130, 556)
         Me.SettingsPanel.TabIndex = 1
         '
+        'PicOption1
+        '
+        Me.PicOption1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PicOption1.BackColor = System.Drawing.Color.Transparent
+        Me.PicOption1.BackgroundImage = CType(resources.GetObject("PicOption1.BackgroundImage"), System.Drawing.Image)
+        Me.PicOption1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PicOption1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PicOption1.Location = New System.Drawing.Point(20, 14)
+        Me.PicOption1.Margin = New System.Windows.Forms.Padding(5)
+        Me.PicOption1.Name = "PicOption1"
+        Me.PicOption1.Padding = New System.Windows.Forms.Padding(5)
+        Me.PicOption1.Size = New System.Drawing.Size(100, 50)
+        Me.PicOption1.TabIndex = 10
+        Me.PicOption1.TabStop = False
+        '
+        'PicOption2
+        '
+        Me.PicOption2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PicOption2.BackColor = System.Drawing.Color.Transparent
+        Me.PicOption2.BackgroundImage = CType(resources.GetObject("PicOption2.BackgroundImage"), System.Drawing.Image)
+        Me.PicOption2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PicOption2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PicOption2.Location = New System.Drawing.Point(20, 74)
+        Me.PicOption2.Margin = New System.Windows.Forms.Padding(5)
+        Me.PicOption2.Name = "PicOption2"
+        Me.PicOption2.Padding = New System.Windows.Forms.Padding(5)
+        Me.PicOption2.Size = New System.Drawing.Size(100, 50)
+        Me.PicOption2.TabIndex = 11
+        Me.PicOption2.TabStop = False
+        '
+        'PicOption3
+        '
+        Me.PicOption3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PicOption3.BackColor = System.Drawing.Color.Transparent
+        Me.PicOption3.BackgroundImage = CType(resources.GetObject("PicOption3.BackgroundImage"), System.Drawing.Image)
+        Me.PicOption3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PicOption3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PicOption3.Location = New System.Drawing.Point(20, 134)
+        Me.PicOption3.Margin = New System.Windows.Forms.Padding(5)
+        Me.PicOption3.Name = "PicOption3"
+        Me.PicOption3.Padding = New System.Windows.Forms.Padding(5)
+        Me.PicOption3.Size = New System.Drawing.Size(100, 50)
+        Me.PicOption3.TabIndex = 12
+        Me.PicOption3.TabStop = False
+        '
         'Label3
         '
         Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -735,50 +784,25 @@ Partial Class FormSettings
         Me.PicOption0.TabIndex = 13
         Me.PicOption0.TabStop = False
         '
-        'PicOption3
+        'ComboBoxLauncherAlwaysonTop
         '
-        Me.PicOption3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PicOption3.BackColor = System.Drawing.Color.Transparent
-        Me.PicOption3.BackgroundImage = CType(resources.GetObject("PicOption3.BackgroundImage"), System.Drawing.Image)
-        Me.PicOption3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PicOption3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PicOption3.Location = New System.Drawing.Point(20, 134)
-        Me.PicOption3.Margin = New System.Windows.Forms.Padding(5)
-        Me.PicOption3.Name = "PicOption3"
-        Me.PicOption3.Padding = New System.Windows.Forms.Padding(5)
-        Me.PicOption3.Size = New System.Drawing.Size(100, 50)
-        Me.PicOption3.TabIndex = 12
-        Me.PicOption3.TabStop = False
+        Me.ComboBoxLauncherAlwaysonTop.FormattingEnabled = True
+        Me.ComboBoxLauncherAlwaysonTop.Items.AddRange(New Object() {"False", "True"})
+        Me.ComboBoxLauncherAlwaysonTop.Location = New System.Drawing.Point(224, 89)
+        Me.ComboBoxLauncherAlwaysonTop.Margin = New System.Windows.Forms.Padding(5)
+        Me.ComboBoxLauncherAlwaysonTop.Name = "ComboBoxLauncherAlwaysonTop"
+        Me.ComboBoxLauncherAlwaysonTop.Size = New System.Drawing.Size(133, 30)
+        Me.ComboBoxLauncherAlwaysonTop.TabIndex = 13
         '
-        'PicOption1
+        'Label4
         '
-        Me.PicOption1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PicOption1.BackColor = System.Drawing.Color.Transparent
-        Me.PicOption1.BackgroundImage = CType(resources.GetObject("PicOption1.BackgroundImage"), System.Drawing.Image)
-        Me.PicOption1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PicOption1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PicOption1.Location = New System.Drawing.Point(20, 14)
-        Me.PicOption1.Margin = New System.Windows.Forms.Padding(5)
-        Me.PicOption1.Name = "PicOption1"
-        Me.PicOption1.Padding = New System.Windows.Forms.Padding(5)
-        Me.PicOption1.Size = New System.Drawing.Size(100, 50)
-        Me.PicOption1.TabIndex = 10
-        Me.PicOption1.TabStop = False
-        '
-        'PicOption2
-        '
-        Me.PicOption2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PicOption2.BackColor = System.Drawing.Color.Transparent
-        Me.PicOption2.BackgroundImage = CType(resources.GetObject("PicOption2.BackgroundImage"), System.Drawing.Image)
-        Me.PicOption2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PicOption2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PicOption2.Location = New System.Drawing.Point(20, 74)
-        Me.PicOption2.Margin = New System.Windows.Forms.Padding(5)
-        Me.PicOption2.Name = "PicOption2"
-        Me.PicOption2.Padding = New System.Windows.Forms.Padding(5)
-        Me.PicOption2.Size = New System.Drawing.Size(100, 50)
-        Me.PicOption2.TabIndex = 11
-        Me.PicOption2.TabStop = False
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(0, 92)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(221, 22)
+        Me.Label4.TabIndex = 12
+        Me.Label4.Text = "Launcher Always on Top -"
         '
         'FormSettings
         '
@@ -826,10 +850,10 @@ Partial Class FormSettings
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SettingsPanel.ResumeLayout(False)
         Me.SettingsPanel.PerformLayout()
-        CType(Me.PicOption0, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PicOption3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PicOption1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PicOption2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PicOption3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PicOption0, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -892,4 +916,6 @@ Partial Class FormSettings
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents LabelUser As Label
+    Friend WithEvents ComboBoxLauncherAlwaysonTop As ComboBox
+    Friend WithEvents Label4 As Label
 End Class

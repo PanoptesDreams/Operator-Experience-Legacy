@@ -18,6 +18,7 @@ Public Class FormSettings
 
         'Behavior
         ComboBoxAutohideUsermenu.Text = My.Settings.AutohideUsermenu
+        ComboBoxLauncherAlwaysonTop.Text = My.Settings.LauncherAoT
 
         'Personalization
         picFavColor.BackColor = My.Settings.FavColor
@@ -76,8 +77,12 @@ Public Class FormSettings
         'Autohide usermenu when an argus applet is invoked
         My.Settings.AutohideUsermenu = ComboBoxAutohideUsermenu.Text
 
+        My.Settings.LauncherAoT = ComboBoxLauncherAlwaysonTop.Text
 
         ASave()
+
+        FormHeader.AlwaysOnTop()
+
 
     End Sub
 

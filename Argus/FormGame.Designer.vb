@@ -47,7 +47,7 @@ Partial Class FormGame
         Me.lstGames.FormattingEnabled = True
         Me.lstGames.ItemHeight = 17
         Me.lstGames.Location = New System.Drawing.Point(1001, 22)
-        Me.lstGames.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lstGames.Margin = New System.Windows.Forms.Padding(4)
         Me.lstGames.Name = "lstGames"
         Me.lstGames.Size = New System.Drawing.Size(293, 582)
         Me.lstGames.TabIndex = 0
@@ -55,6 +55,7 @@ Partial Class FormGame
         'lblGameTitle
         '
         Me.lblGameTitle.AutoSize = True
+        Me.lblGameTitle.BackColor = System.Drawing.Color.Transparent
         Me.lblGameTitle.Font = New System.Drawing.Font("Consolas", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblGameTitle.Location = New System.Drawing.Point(63, 29)
         Me.lblGameTitle.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
@@ -67,15 +68,16 @@ Partial Class FormGame
         '
         Me.panelTMP.Controls.Add(Me.picInstalled)
         Me.panelTMP.Location = New System.Drawing.Point(16, 613)
-        Me.panelTMP.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.panelTMP.Margin = New System.Windows.Forms.Padding(4)
         Me.panelTMP.Name = "panelTMP"
         Me.panelTMP.Size = New System.Drawing.Size(1280, 170)
         Me.panelTMP.TabIndex = 5
         '
         'picInstalled
         '
+        Me.picInstalled.BackColor = System.Drawing.Color.Transparent
         Me.picInstalled.Location = New System.Drawing.Point(21, 18)
-        Me.picInstalled.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.picInstalled.Margin = New System.Windows.Forms.Padding(4)
         Me.picInstalled.Name = "picInstalled"
         Me.picInstalled.Size = New System.Drawing.Size(43, 42)
         Me.picInstalled.TabIndex = 3
@@ -83,8 +85,9 @@ Partial Class FormGame
         '
         'picPlatform
         '
+        Me.picPlatform.BackColor = System.Drawing.Color.Transparent
         Me.picPlatform.Location = New System.Drawing.Point(925, 540)
-        Me.picPlatform.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.picPlatform.Margin = New System.Windows.Forms.Padding(4)
         Me.picPlatform.Name = "picPlatform"
         Me.picPlatform.Size = New System.Drawing.Size(68, 65)
         Me.picPlatform.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
@@ -93,8 +96,9 @@ Partial Class FormGame
         '
         'PictureBox4
         '
+        Me.PictureBox4.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox4.Location = New System.Drawing.Point(16, 143)
-        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(43, 42)
         Me.PictureBox4.TabIndex = 3
@@ -102,8 +106,9 @@ Partial Class FormGame
         '
         'picGameIcon
         '
+        Me.picGameIcon.BackColor = System.Drawing.Color.Transparent
         Me.picGameIcon.Location = New System.Drawing.Point(16, 22)
-        Me.picGameIcon.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.picGameIcon.Margin = New System.Windows.Forms.Padding(4)
         Me.picGameIcon.Name = "picGameIcon"
         Me.picGameIcon.Size = New System.Drawing.Size(43, 42)
         Me.picGameIcon.TabIndex = 2
@@ -111,10 +116,11 @@ Partial Class FormGame
         '
         'picPoster
         '
-        Me.picPoster.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.picPoster.BackgroundImage = Global.Argus.My.Resources.Resources.game_poster_mask
+        Me.picPoster.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.picPoster.InitialImage = Nothing
         Me.picPoster.Location = New System.Drawing.Point(667, 22)
-        Me.picPoster.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.picPoster.Margin = New System.Windows.Forms.Padding(4)
         Me.picPoster.Name = "picPoster"
         Me.picPoster.Size = New System.Drawing.Size(327, 392)
         Me.picPoster.TabIndex = 2
@@ -123,7 +129,7 @@ Partial Class FormGame
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(16, 564)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(100, 30)
         Me.Button1.TabIndex = 6
@@ -133,6 +139,7 @@ Partial Class FormGame
         'LblGenre
         '
         Me.LblGenre.AutoSize = True
+        Me.LblGenre.BackColor = System.Drawing.Color.Transparent
         Me.LblGenre.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblGenre.Location = New System.Drawing.Point(16, 68)
         Me.LblGenre.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
@@ -144,6 +151,7 @@ Partial Class FormGame
         'LblGameDir
         '
         Me.LblGameDir.AutoSize = True
+        Me.LblGameDir.BackColor = System.Drawing.Color.Transparent
         Me.LblGameDir.Font = New System.Drawing.Font("Consolas", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblGameDir.Location = New System.Drawing.Point(344, 320)
         Me.LblGameDir.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
@@ -156,7 +164,6 @@ Partial Class FormGame
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.MediumBlue
         Me.ClientSize = New System.Drawing.Size(1312, 799)
         Me.Controls.Add(Me.LblGameDir)
         Me.Controls.Add(Me.LblGenre)
@@ -171,11 +178,10 @@ Partial Class FormGame
         Me.Font = New System.Drawing.Font("Fira Sans", 9.333333!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeColor = System.Drawing.Color.Silver
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "FormGame"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Argus • Games"
-        Me.TopMost = True
         Me.panelTMP.ResumeLayout(False)
         CType(Me.picInstalled, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picPlatform, System.ComponentModel.ISupportInitialize).EndInit()

@@ -56,18 +56,6 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
-        Public Property UserIcons() As Boolean
-            Get
-                Return CType(Me("UserIcons"),Boolean)
-            End Get
-            Set
-                Me("UserIcons") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("Crimson")>  _
         Public Property FavColor() As Global.System.Drawing.Color
             Get
@@ -189,12 +177,12 @@ Namespace My
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("25, 25")>  _
-        Public Property LastPos() As Global.System.Drawing.Point
+        Public Property LauncherLastPos() As Global.System.Drawing.Point
             Get
-                Return CType(Me("LastPos"),Global.System.Drawing.Point)
+                Return CType(Me("LauncherLastPos"),Global.System.Drawing.Point)
             End Get
             Set
-                Me("LastPos") = value
+                Me("LauncherLastPos") = value
             End Set
         End Property
         

@@ -9,7 +9,7 @@ Public Class FormHeader
     Dim mousex As Integer
     Dim mousey As Integer
 
-    Dim lastPOS As Point = My.Settings.LastPos
+    Dim lastPOS As Point = My.Settings.LauncherLastPos
 
     Dim OSKParam As String = Command() 'REMOVE ME
 
@@ -24,18 +24,28 @@ Public Class FormHeader
         Portable()
 
         'Set theme
-        Theme()
+        UniThemer(Me)
+
+        'Set position
+        Positioner(Me, My.Settings.LauncherPos, My.Settings.LauncherLastPos)
 
         'Set greeting
-        Greeting()
+        labelGreeter.Text = Greeter()
+
+        'Set Username
+        labelUsername.Text = My.Settings.UserName
 
         'Call set: day of week, time, date/month, year
         SetTime()
 
-        'Set username
-        lblUser.Text = My.Settings.UserName
 
 
+        'Set Form width from monitor width
+        Me.Width = Math.Round(Screen.PrimaryScreen.Bounds.Width * 0.33)
+
+
+
+        PersitingApp()
 
     End Sub
 
@@ -52,6 +62,7 @@ Public Class FormHeader
         Me.TopMost = My.Settings.LauncherAoT
 
     End Sub
+
 
 
     'Debug Features
@@ -107,39 +118,7 @@ Public Class FormHeader
     End Sub
 
 
-    'Themer
-    Public Sub Theme()
 
-        Dim LauncherPOS As String = My.Settings.LauncherPos
-        Dim UserTheme As String = My.Settings.ThemeUniversal
-        Dim ThemePen As Color
-
-        UniThemer(Me, ThemePen)
-
-        lblGreet.ForeColor = ThemePen
-        lblUser.ForeColor = ThemePen
-        lblDay.ForeColor = ThemePen
-        lblLongDate.ForeColor = ThemePen
-        lblClock.ForeColor = ThemePen
-        lblYear.ForeColor = ThemePen
-
-        Select Case LauncherPOS
-            Case = "Top"
-                Me.Location = New Point((Screen.PrimaryScreen.Bounds.Width / 2 - (Me.Width / 2)), 20)
-            Case = "Bottom"
-                Me.Location = New Point((Screen.PrimaryScreen.Bounds.Width / 2 - (Me.Width / 2)), (Screen.PrimaryScreen.Bounds.Height - 70))
-            Case = "User"
-                Me.Location = My.Settings.LastPos
-        End Select
-
-
-
-
-        'Set Form width from monitor width
-        Me.Width = Math.Round(Screen.PrimaryScreen.Bounds.Width * 0.33)
-
-
-    End Sub
 
 
     'Border Drawerer
@@ -179,29 +158,6 @@ Public Class FormHeader
     End Sub
 
 
-    'Greeter
-    Public Sub Greeting()
-
-
-        'Sets time of day greeting, formated to 24 hour
-        Select Case Now.ToString("HH")
-
-            'Morning case, from 00 (midnight) to 11am
-            Case "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11"
-                lblGreet.Text = "Good Morning,"
-
-            'Afternoon case, from 12pm (mid day) to 5pm
-            Case "12", "13", "14", "15", "16", "17"
-                lblGreet.Text = "Good Afternoon,"
-
-            'Evening case, from 6pm to 11pm
-            Case "18", "19", "20", "21", "22", "23"
-                lblGreet.Text = "Good Evening,"
-        End Select
-
-
-    End Sub
-
 
     'Clock and Date
     Public Sub SetTime()
@@ -217,45 +173,26 @@ Public Class FormHeader
         '0=null 1=jan 2=feb 3=mar 4=april 5=may 6=jun 7=jul 8=aug 9=sep 10=oct 11=nov 12=dec'Sets the date
 
         'Set clock
-        lblClock.Text = Now.ToShortTimeString
+        labelClock.Text = Now.ToShortTimeString
 
         'Set day of week
-        lblDay.Text = day(Now.DayOfWeek)
+        labelToday.Text = day(Now.DayOfWeek)
 
         'Set Long date, XX MONTH
-        lblLongDate.Text = Now.Day.ToString + " " + month(Now.Month)
+        labelLongDate.Text = Now.Day.ToString + " " + month(Now.Month)
 
         'Set Year
-        lblYear.Text = Now.Year.ToString
+        labelYear.Text = Now.Year.ToString
 
 
     End Sub
 
-
-    'User Menu
-    Private Sub PicUser_Click(sender As Object, e As EventArgs) Handles PicUser.Click
-
-        FormUserMenu.Show()
-        FormUserMenu.Activate()
-
-    End Sub
-
-
-    'Collections
-    Private Sub PicCollections_Click(sender As Object, e As EventArgs) Handles PicCollections.Click
-
-        FormCollections.Show()
-        FormUserMenu.Activate()
-
-    End Sub
-
-
-
+    'Clock tick
     Private Sub TimerClockTick_Tick(sender As Object, e As EventArgs) Handles TimerClockTick.Tick
 
         'Static midnight As Boolean
 
-        lblClock.Text = Now.ToShortTimeString
+        labelClock.Text = Now.ToShortTimeString
 
         If Now.ToShortTimeString = "12:00 AM" Then
             SetTime()
@@ -264,24 +201,32 @@ Public Class FormHeader
     End Sub
 
 
-    Private Sub TmrFixEgg_Tick(sender As Object, e As EventArgs)
+    'User Menu
+    Private Sub PicUser_Click(sender As Object, e As EventArgs) Handles picUserImage.Click
+
+        Summon(FormUserMenu)
 
     End Sub
 
 
+    'Collections
+    Private Sub PicCollections_Click(sender As Object, e As EventArgs) Handles PicCollections.Click
+
+        Summon(FormCollections)
+
+    End Sub
 
 
     'Debug Button 1
     Private Sub DebugButton_Click(sender As Object, e As EventArgs) Handles ButtonDebug.Click
 
-        'Test button for testing shit
+        'Test button for testing things
 
         'returns current time as 00:00 AM format
         'MsgBox(Now.ToShortTimeString)
 
         'Check for environment variable
         'MsgBox(Environment.GetEnvironmentVariable("argus"))
-        MsgBox("Hi")
 
     End Sub
 
@@ -293,35 +238,38 @@ Public Class FormHeader
 
     'Move form with click drag
     Private Sub FormHeader_MouseDown(sender As Object, e As MouseEventArgs) Handles MyBase.MouseDown
+
         drag = True
 
-        mousex = Windows.Forms.Cursor.Position.X - Me.Left 'Sets variable mousex
+        mousex = Windows.Forms.Cursor.Position.X - sender.Left 'Sets variable mousex
 
-        mousey = Windows.Forms.Cursor.Position.Y - Me.Top 'Sets variable mousey
+        mousey = Windows.Forms.Cursor.Position.Y - sender.Top 'Sets variable mousey
+
 
     End Sub
 
     Private Sub FormHeader_MouseUp(sender As Object, e As MouseEventArgs) Handles MyBase.MouseUp
+
+        My.Settings.LauncherLastPos = sender.Location
+        ASave()
+
         drag = False
 
-        My.Settings.LastPos = Me.Location
-        My.Settings.Save()
     End Sub
 
     Private Sub FormHeader_MouseMove(sender As Object, e As MouseEventArgs) Handles MyBase.MouseMove
-        'If drag is set to true then move the form accordingly.
 
         If drag Then
 
-            Me.Top = Windows.Forms.Cursor.Position.Y - mousey
+            sender.Top = Windows.Forms.Cursor.Position.Y - mousey
 
-            Me.Left = Windows.Forms.Cursor.Position.X - mousex
-
-
+            sender.Left = Windows.Forms.Cursor.Position.X - mousex
 
         End If
 
     End Sub
+
+
 
 
 

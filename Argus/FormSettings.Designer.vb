@@ -22,7 +22,6 @@ Partial Class FormSettings
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormSettings))
         Me.TabControlSettings = New System.Windows.Forms.TabControl()
         Me.SettingsTab1Argus = New System.Windows.Forms.TabPage()
         Me.TabControlArgus = New System.Windows.Forms.TabControl()
@@ -38,6 +37,8 @@ Partial Class FormSettings
         Me.LabelAppletCollections = New System.Windows.Forms.Label()
         Me.PicAppletCollections = New System.Windows.Forms.PictureBox()
         Me.TabArgusBehavior = New System.Windows.Forms.TabPage()
+        Me.ComboBoxLauncherAlwaysonTop = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.ButtonApplyBehaviors = New System.Windows.Forms.Button()
         Me.ComboBoxAutohideUsermenu = New System.Windows.Forms.ComboBox()
         Me.lblAutohideUserMenu = New System.Windows.Forms.Label()
@@ -60,6 +61,7 @@ Partial Class FormSettings
         Me.lblFaveColor = New System.Windows.Forms.Label()
         Me.picUserImage = New System.Windows.Forms.PictureBox()
         Me.picFavColor = New System.Windows.Forms.PictureBox()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.SettingsTab2Win = New System.Windows.Forms.TabPage()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
@@ -74,15 +76,9 @@ Partial Class FormSettings
         Me.PictureBox11 = New System.Windows.Forms.PictureBox()
         Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
         Me.SettingsPanel = New System.Windows.Forms.Panel()
-        Me.PicOption1 = New System.Windows.Forms.PictureBox()
-        Me.PicOption2 = New System.Windows.Forms.PictureBox()
-        Me.PicOption3 = New System.Windows.Forms.PictureBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.LabelUser = New System.Windows.Forms.Label()
-        Me.PicOption0 = New System.Windows.Forms.PictureBox()
-        Me.ComboBoxLauncherAlwaysonTop = New System.Windows.Forms.ComboBox()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.LabelSettings0 = New System.Windows.Forms.Label()
+        Me.LabelSettingsWindows = New System.Windows.Forms.Label()
+        Me.LabelSettingsUser = New System.Windows.Forms.Label()
         Me.TabControlSettings.SuspendLayout()
         Me.SettingsTab1Argus.SuspendLayout()
         Me.TabControlArgus.SuspendLayout()
@@ -104,10 +100,6 @@ Partial Class FormSettings
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SettingsPanel.SuspendLayout()
-        CType(Me.PicOption1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PicOption2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PicOption3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PicOption0, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControlSettings
@@ -124,6 +116,7 @@ Partial Class FormSettings
         '
         'SettingsTab1Argus
         '
+        Me.SettingsTab1Argus.BackColor = System.Drawing.Color.Transparent
         Me.SettingsTab1Argus.Controls.Add(Me.TabControlArgus)
         Me.SettingsTab1Argus.Location = New System.Drawing.Point(4, 31)
         Me.SettingsTab1Argus.Margin = New System.Windows.Forms.Padding(5)
@@ -139,6 +132,7 @@ Partial Class FormSettings
         Me.TabControlArgus.Controls.Add(Me.TabArgusBehavior)
         Me.TabControlArgus.Controls.Add(Me.TabArgusMisc)
         Me.TabControlArgus.Controls.Add(Me.TabArgusPersonalization)
+        Me.TabControlArgus.Controls.Add(Me.TabPage3)
         Me.TabControlArgus.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControlArgus.Location = New System.Drawing.Point(5, 5)
         Me.TabControlArgus.Margin = New System.Windows.Forms.Padding(5)
@@ -149,6 +143,7 @@ Partial Class FormSettings
         '
         'TabArgusApplets
         '
+        Me.TabArgusApplets.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabArgusApplets.Controls.Add(Me.LabelApplet5)
         Me.TabArgusApplets.Controls.Add(Me.PictureBox5)
         Me.TabArgusApplets.Controls.Add(Me.LabelApplet4)
@@ -166,7 +161,6 @@ Partial Class FormSettings
         Me.TabArgusApplets.Size = New System.Drawing.Size(833, 476)
         Me.TabArgusApplets.TabIndex = 3
         Me.TabArgusApplets.Text = "Applets"
-        Me.TabArgusApplets.UseVisualStyleBackColor = True
         '
         'LabelApplet5
         '
@@ -268,7 +262,26 @@ Partial Class FormSettings
         Me.TabArgusBehavior.Size = New System.Drawing.Size(833, 476)
         Me.TabArgusBehavior.TabIndex = 2
         Me.TabArgusBehavior.Text = "Behavior"
-        Me.TabArgusBehavior.UseVisualStyleBackColor = True
+        '
+        'ComboBoxLauncherAlwaysonTop
+        '
+        Me.ComboBoxLauncherAlwaysonTop.FormattingEnabled = True
+        Me.ComboBoxLauncherAlwaysonTop.Items.AddRange(New Object() {"False", "True"})
+        Me.ComboBoxLauncherAlwaysonTop.Location = New System.Drawing.Point(224, 89)
+        Me.ComboBoxLauncherAlwaysonTop.Margin = New System.Windows.Forms.Padding(5)
+        Me.ComboBoxLauncherAlwaysonTop.Name = "ComboBoxLauncherAlwaysonTop"
+        Me.ComboBoxLauncherAlwaysonTop.Size = New System.Drawing.Size(133, 30)
+        Me.ComboBoxLauncherAlwaysonTop.TabIndex = 13
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(0, 92)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(221, 22)
+        Me.Label4.TabIndex = 12
+        Me.Label4.Text = "Launcher Always on Top -"
         '
         'ButtonApplyBehaviors
         '
@@ -318,7 +331,6 @@ Partial Class FormSettings
         Me.TabArgusMisc.Size = New System.Drawing.Size(833, 476)
         Me.TabArgusMisc.TabIndex = 1
         Me.TabArgusMisc.Text = "Misc"
-        Me.TabArgusMisc.UseVisualStyleBackColor = True
         '
         'ComboBoxDebugFeatures
         '
@@ -376,6 +388,7 @@ Partial Class FormSettings
         '
         'TabArgusPersonalization
         '
+        Me.TabArgusPersonalization.BackColor = System.Drawing.Color.Transparent
         Me.TabArgusPersonalization.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabArgusPersonalization.Controls.Add(Me.ComboBoxCollectionsPOS)
         Me.TabArgusPersonalization.Controls.Add(Me.lblCollectionsPOS)
@@ -527,6 +540,15 @@ Partial Class FormSettings
         Me.picFavColor.TabIndex = 1
         Me.picFavColor.TabStop = False
         '
+        'TabPage3
+        '
+        Me.TabPage3.Location = New System.Drawing.Point(4, 31)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage3.Size = New System.Drawing.Size(833, 476)
+        Me.TabPage3.TabIndex = 4
+        Me.TabPage3.Text = "TabPage3"
+        '
         'SettingsTab2Win
         '
         Me.SettingsTab2Win.Controls.Add(Me.TabControl1)
@@ -587,7 +609,6 @@ Partial Class FormSettings
         '
         'TabPage4
         '
-        Me.TabPage4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabPage4.Controls.Add(Me.PictureBox10)
         Me.TabPage4.Controls.Add(Me.TextBox1)
         Me.TabPage4.Controls.Add(Me.Label9)
@@ -608,7 +629,7 @@ Partial Class FormSettings
         Me.PictureBox10.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox10.BackgroundImage = Global.Argus.My.Resources.Resources.user
         Me.PictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox10.Location = New System.Drawing.Point(565, 31)
+        Me.PictureBox10.Location = New System.Drawing.Point(567, 31)
         Me.PictureBox10.Margin = New System.Windows.Forms.Padding(5)
         Me.PictureBox10.Name = "PictureBox10"
         Me.PictureBox10.Size = New System.Drawing.Size(241, 221)
@@ -618,7 +639,7 @@ Partial Class FormSettings
         'TextBox1
         '
         Me.TextBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox1.Location = New System.Drawing.Point(565, 262)
+        Me.TextBox1.Location = New System.Drawing.Point(567, 262)
         Me.TextBox1.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(241, 29)
@@ -630,7 +651,7 @@ Partial Class FormSettings
         Me.Label9.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Fira Sans Medium", 8.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(649, 296)
+        Me.Label9.Location = New System.Drawing.Point(651, 296)
         Me.Label9.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(72, 14)
@@ -642,10 +663,10 @@ Partial Class FormSettings
         Me.Button4.AutoSize = True
         Me.Button4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.Button4.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Button4.Location = New System.Drawing.Point(5, 437)
+        Me.Button4.Location = New System.Drawing.Point(5, 439)
         Me.Button4.Margin = New System.Windows.Forms.Padding(5)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(821, 32)
+        Me.Button4.Size = New System.Drawing.Size(823, 32)
         Me.Button4.TabIndex = 4
         Me.Button4.Text = "Apply Personalizations"
         Me.Button4.UseVisualStyleBackColor = True
@@ -676,13 +697,10 @@ Partial Class FormSettings
         '
         'SettingsPanel
         '
-        Me.SettingsPanel.Controls.Add(Me.PicOption1)
-        Me.SettingsPanel.Controls.Add(Me.PicOption2)
-        Me.SettingsPanel.Controls.Add(Me.PicOption3)
-        Me.SettingsPanel.Controls.Add(Me.Label3)
-        Me.SettingsPanel.Controls.Add(Me.Label2)
-        Me.SettingsPanel.Controls.Add(Me.LabelUser)
-        Me.SettingsPanel.Controls.Add(Me.PicOption0)
+        Me.SettingsPanel.BackColor = System.Drawing.Color.Transparent
+        Me.SettingsPanel.Controls.Add(Me.LabelSettings0)
+        Me.SettingsPanel.Controls.Add(Me.LabelSettingsWindows)
+        Me.SettingsPanel.Controls.Add(Me.LabelSettingsUser)
         Me.SettingsPanel.Dock = System.Windows.Forms.DockStyle.Left
         Me.SettingsPanel.Location = New System.Drawing.Point(0, 0)
         Me.SettingsPanel.Margin = New System.Windows.Forms.Padding(5)
@@ -691,124 +709,52 @@ Partial Class FormSettings
         Me.SettingsPanel.Size = New System.Drawing.Size(130, 556)
         Me.SettingsPanel.TabIndex = 1
         '
-        'PicOption1
+        'LabelSettings0
         '
-        Me.PicOption1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PicOption1.BackColor = System.Drawing.Color.Transparent
-        Me.PicOption1.BackgroundImage = CType(resources.GetObject("PicOption1.BackgroundImage"), System.Drawing.Image)
-        Me.PicOption1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PicOption1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PicOption1.Location = New System.Drawing.Point(20, 14)
-        Me.PicOption1.Margin = New System.Windows.Forms.Padding(5)
-        Me.PicOption1.Name = "PicOption1"
-        Me.PicOption1.Padding = New System.Windows.Forms.Padding(5)
-        Me.PicOption1.Size = New System.Drawing.Size(100, 50)
-        Me.PicOption1.TabIndex = 10
-        Me.PicOption1.TabStop = False
+        Me.LabelSettings0.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.LabelSettings0.BackColor = System.Drawing.Color.Transparent
+        Me.LabelSettings0.Image = Global.Argus.My.Resources.Resources.frame_empty
+        Me.LabelSettings0.Location = New System.Drawing.Point(20, 492)
+        Me.LabelSettings0.Margin = New System.Windows.Forms.Padding(5)
+        Me.LabelSettings0.Name = "LabelSettings0"
+        Me.LabelSettings0.Padding = New System.Windows.Forms.Padding(5)
+        Me.LabelSettings0.Size = New System.Drawing.Size(100, 50)
+        Me.LabelSettings0.TabIndex = 15
+        Me.LabelSettings0.Text = "Ɛ>"
+        Me.LabelSettings0.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'PicOption2
+        'LabelSettingsWindows
         '
-        Me.PicOption2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PicOption2.BackColor = System.Drawing.Color.Transparent
-        Me.PicOption2.BackgroundImage = CType(resources.GetObject("PicOption2.BackgroundImage"), System.Drawing.Image)
-        Me.PicOption2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PicOption2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PicOption2.Location = New System.Drawing.Point(20, 74)
-        Me.PicOption2.Margin = New System.Windows.Forms.Padding(5)
-        Me.PicOption2.Name = "PicOption2"
-        Me.PicOption2.Padding = New System.Windows.Forms.Padding(5)
-        Me.PicOption2.Size = New System.Drawing.Size(100, 50)
-        Me.PicOption2.TabIndex = 11
-        Me.PicOption2.TabStop = False
+        Me.LabelSettingsWindows.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.LabelSettingsWindows.BackColor = System.Drawing.Color.Transparent
+        Me.LabelSettingsWindows.Image = Global.Argus.My.Resources.Resources.frame_empty
+        Me.LabelSettingsWindows.Location = New System.Drawing.Point(20, 74)
+        Me.LabelSettingsWindows.Margin = New System.Windows.Forms.Padding(5)
+        Me.LabelSettingsWindows.Name = "LabelSettingsWindows"
+        Me.LabelSettingsWindows.Padding = New System.Windows.Forms.Padding(5)
+        Me.LabelSettingsWindows.Size = New System.Drawing.Size(100, 50)
+        Me.LabelSettingsWindows.TabIndex = 14
+        Me.LabelSettingsWindows.Text = "Windows"
+        Me.LabelSettingsWindows.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'PicOption3
+        'LabelSettingsUser
         '
-        Me.PicOption3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PicOption3.BackColor = System.Drawing.Color.Transparent
-        Me.PicOption3.BackgroundImage = CType(resources.GetObject("PicOption3.BackgroundImage"), System.Drawing.Image)
-        Me.PicOption3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PicOption3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PicOption3.Location = New System.Drawing.Point(20, 134)
-        Me.PicOption3.Margin = New System.Windows.Forms.Padding(5)
-        Me.PicOption3.Name = "PicOption3"
-        Me.PicOption3.Padding = New System.Windows.Forms.Padding(5)
-        Me.PicOption3.Size = New System.Drawing.Size(100, 50)
-        Me.PicOption3.TabIndex = 12
-        Me.PicOption3.TabStop = False
-        '
-        'Label3
-        '
-        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(26, 148)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(78, 22)
-        Me.Label3.TabIndex = 16
-        Me.Label3.Text = "Im done"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.BottomRight
-        '
-        'Label2
-        '
-        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(45, 83)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(59, 22)
-        Me.Label2.TabIndex = 15
-        Me.Label2.Text = "Snacc"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.BottomRight
-        '
-        'LabelUser
-        '
-        Me.LabelUser.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.LabelUser.AutoSize = True
-        Me.LabelUser.Location = New System.Drawing.Point(45, 25)
-        Me.LabelUser.Name = "LabelUser"
-        Me.LabelUser.Size = New System.Drawing.Size(47, 22)
-        Me.LabelUser.TabIndex = 14
-        Me.LabelUser.Text = "User"
-        Me.LabelUser.TextAlign = System.Drawing.ContentAlignment.BottomRight
-        '
-        'PicOption0
-        '
-        Me.PicOption0.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PicOption0.BackColor = System.Drawing.Color.Transparent
-        Me.PicOption0.BackgroundImage = CType(resources.GetObject("PicOption0.BackgroundImage"), System.Drawing.Image)
-        Me.PicOption0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PicOption0.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PicOption0.Location = New System.Drawing.Point(20, 497)
-        Me.PicOption0.Margin = New System.Windows.Forms.Padding(5)
-        Me.PicOption0.Name = "PicOption0"
-        Me.PicOption0.Padding = New System.Windows.Forms.Padding(5)
-        Me.PicOption0.Size = New System.Drawing.Size(100, 50)
-        Me.PicOption0.TabIndex = 13
-        Me.PicOption0.TabStop = False
-        '
-        'ComboBoxLauncherAlwaysonTop
-        '
-        Me.ComboBoxLauncherAlwaysonTop.FormattingEnabled = True
-        Me.ComboBoxLauncherAlwaysonTop.Items.AddRange(New Object() {"False", "True"})
-        Me.ComboBoxLauncherAlwaysonTop.Location = New System.Drawing.Point(224, 89)
-        Me.ComboBoxLauncherAlwaysonTop.Margin = New System.Windows.Forms.Padding(5)
-        Me.ComboBoxLauncherAlwaysonTop.Name = "ComboBoxLauncherAlwaysonTop"
-        Me.ComboBoxLauncherAlwaysonTop.Size = New System.Drawing.Size(133, 30)
-        Me.ComboBoxLauncherAlwaysonTop.TabIndex = 13
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(0, 92)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(221, 22)
-        Me.Label4.TabIndex = 12
-        Me.Label4.Text = "Launcher Always on Top -"
+        Me.LabelSettingsUser.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.LabelSettingsUser.BackColor = System.Drawing.Color.Transparent
+        Me.LabelSettingsUser.Image = Global.Argus.My.Resources.Resources.frame_empty
+        Me.LabelSettingsUser.Location = New System.Drawing.Point(20, 14)
+        Me.LabelSettingsUser.Margin = New System.Windows.Forms.Padding(5)
+        Me.LabelSettingsUser.Name = "LabelSettingsUser"
+        Me.LabelSettingsUser.Padding = New System.Windows.Forms.Padding(5)
+        Me.LabelSettingsUser.Size = New System.Drawing.Size(100, 50)
+        Me.LabelSettingsUser.TabIndex = 1
+        Me.LabelSettingsUser.Text = "User"
+        Me.LabelSettingsUser.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'FormSettings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 22.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.MidnightBlue
         Me.ClientSize = New System.Drawing.Size(994, 556)
         Me.Controls.Add(Me.SettingsPanel)
         Me.Controls.Add(Me.TabControlSettings)
@@ -849,11 +795,6 @@ Partial Class FormSettings
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SettingsPanel.ResumeLayout(False)
-        Me.SettingsPanel.PerformLayout()
-        CType(Me.PicOption1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PicOption2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PicOption3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PicOption0, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -863,7 +804,6 @@ Partial Class FormSettings
     Friend WithEvents SettingsTab2Win As TabPage
     Friend WithEvents TabControlArgus As TabControl
     Friend WithEvents TabArgusPersonalization As TabPage
-    Friend WithEvents TabArgusMisc As TabPage
     Friend WithEvents lblFaveColor As Label
     Friend WithEvents ColorDialog1 As ColorDialog
     Friend WithEvents picFavColor As PictureBox
@@ -878,7 +818,6 @@ Partial Class FormSettings
     Friend WithEvents ComboBoxLauncherPOS As ComboBox
     Friend WithEvents lblLauncherPOS As Label
     Friend WithEvents picUserImage As PictureBox
-    Friend WithEvents TabArgusBehavior As TabPage
     Friend WithEvents ComboBoxAutohideUsermenu As ComboBox
     Friend WithEvents lblAutohideUserMenu As Label
     Friend WithEvents TabArgusApplets As TabPage
@@ -909,13 +848,12 @@ Partial Class FormSettings
     Friend WithEvents ComboBoxCollectionsPOS As ComboBox
     Friend WithEvents lblCollectionsPOS As Label
     Friend WithEvents SettingsPanel As Panel
-    Friend WithEvents PicOption1 As PictureBox
-    Friend WithEvents PicOption3 As PictureBox
-    Friend WithEvents PicOption2 As PictureBox
-    Friend WithEvents PicOption0 As PictureBox
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents LabelUser As Label
+    Friend WithEvents LabelSettingsUser As Label
     Friend WithEvents ComboBoxLauncherAlwaysonTop As ComboBox
     Friend WithEvents Label4 As Label
+    Friend WithEvents TabPage3 As TabPage
+    Public WithEvents TabArgusMisc As TabPage
+    Public WithEvents TabArgusBehavior As TabPage
+    Friend WithEvents LabelSettingsWindows As Label
+    Friend WithEvents LabelSettings0 As Label
 End Class

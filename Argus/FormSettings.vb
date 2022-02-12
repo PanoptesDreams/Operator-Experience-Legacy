@@ -44,19 +44,7 @@ Public Class FormSettings
     'Themer
     Public Sub Theme()
 
-        Dim ThemeColor As Color
-
-        Dim BgColor As Color = UniThemer(Me, ThemeColor)
-
-        Me.BackColor = BgColor
-
-        SettingsTab1Argus.BackColor = BgColor
-        SettingsTab2Win.BackColor = BgColor
-
-        TabArgusBehavior.BackColor = BgColor
-        TabArgusMisc.BackColor = BgColor
-        TabArgusPersonalization.BackColor = BgColor
-
+        UniThemer(Me)
 
     End Sub
 
@@ -106,23 +94,24 @@ Public Class FormSettings
     'Apply Personalization
     Private Sub btnApplyPersonalization_Click(sender As Object, e As EventArgs) Handles ButtonApplyPersonalization.Click
 
-        'Favorite Color
-        'My.Settings.FavColor = picFavColor.BackColor
-
-        'Username
-        FormHeader.lblUser.Text = tstUsernameSet.Text
-        My.Settings.UserName = tstUsernameSet.Text
-
-        'Apply theme and position
+        'Position
         My.Settings.LauncherPos = ComboBoxLauncherPOS.Text
-        My.Settings.ThemeUniversal = ComboBoxTheme.Text
-        FormHeader.Theme()
-        Theme()
-
         My.Settings.CollectionsPos = ComboBoxCollectionsPOS.Text
-        FormCollections.Themer()
+
+        'Theme
+        My.Settings.ThemeUniversal = ComboBoxTheme.Text
 
         ASave()
+
+        'Apply theme
+        UniThemer(Me)
+        UniThemer(FormUserMenu)
+        UniThemer(FormHeader)
+        UniThemer(FormCollections)
+
+        'Apply positions
+        Positioner(FormCollections, My.Settings.CollectionsPos, My.Settings.CollectionsLastPos)
+        Positioner(FormHeader, My.Settings.LauncherPos, My.Settings.LauncherLastPos)
 
     End Sub
 
@@ -166,45 +155,54 @@ Public Class FormSettings
 
     End Sub
 
-    Private Sub PicOption1_MouseHover(sender As Object, e As EventArgs) Handles PicOption1.MouseEnter
+    Private Sub PicOption1_MouseHover(sender As Object, e As EventArgs)
 
-        ButtonGlow(PicOption1)
-
-    End Sub
-
-    Private Sub PicOption1_MouseLeave(sender As Object, e As EventArgs) Handles PicOption1.MouseLeave
-
-        ButtonUnGlow(PicOption1)
 
     End Sub
 
-    Private Sub PicOption2_MouseHover(sender As Object, e As EventArgs) Handles PicOption2.MouseEnter
+    Private Sub PicOption1_MouseLeave(sender As Object, e As EventArgs)
 
-        ButtonGlow(PicOption2)
 
     End Sub
 
-    Private Sub PicOption2_MouseLeave(sender As Object, e As EventArgs) Handles PicOption2.MouseLeave
 
-        ButtonUnGlow(PicOption2)
+
+
+    Private Sub LabelSettingsUser_MouseEnter(sender As Object, e As EventArgs) Handles LabelSettingsUser.MouseEnter
+
+        ButtonGlow(LabelSettingsUser)
+
     End Sub
 
-    Private Sub PicOption3_MouseHover(sender As Object, e As EventArgs) Handles PicOption3.MouseEnter
-        ButtonGlow(PicOption3)
+    Private Sub LabelSettingsUser_MouseLeave(sender As Object, e As EventArgs) Handles LabelSettingsUser.MouseLeave
+
+        ButtonUnGlow(LabelSettingsUser)
+
     End Sub
 
-    Private Sub PicOption3_MouseLeave(sender As Object, e As EventArgs) Handles PicOption3.MouseLeave
+    Private Sub LabelSettingsWindows_MouseEnter(sender As Object, e As EventArgs) Handles LabelSettingsWindows.MouseEnter
 
-        ButtonUnGlow(PicOption3)
+        ButtonGlow(LabelSettingsWindows)
+
     End Sub
 
-    Private Sub PicOption0_MouseHover(sender As Object, e As EventArgs) Handles PicOption0.MouseEnter
-        ButtonGlow(PicOption0)
+    Private Sub LabelSettingsWindows_MouseLeave(sender As Object, e As EventArgs) Handles LabelSettingsWindows.MouseLeave
+
+        ButtonUnGlow(LabelSettingsWindows)
+
     End Sub
 
-    Private Sub PicOption0_MouseLeave(sender As Object, e As EventArgs) Handles PicOption0.MouseLeave
+    Private Sub LabelSettingsUser_Click(sender As Object, e As EventArgs) Handles LabelSettingsUser.Click
 
-        ButtonUnGlow(PicOption0)
+        TabControlSettings.SelectedTab = SettingsTab1Argus
+
+        TabControlArgus.SelectedTab = TabArgusPersonalization
+
     End Sub
 
+    Private Sub LabelSettingsWindows_Click(sender As Object, e As EventArgs) Handles LabelSettingsWindows.Click
+
+        TabControlSettings.SelectedTab = SettingsTab2Win
+
+    End Sub
 End Class

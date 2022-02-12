@@ -5,6 +5,8 @@ Public Class FormUserMenu
     'Start/Load
     Private Sub FormUserMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        UniThemer(Me)
+
         'Set Location
         Me.Location = New Point((Screen.PrimaryScreen.Bounds.Width / 2 - (Me.Width / 2)), (Screen.PrimaryScreen.Bounds.Height / 2 - (Me.Height / 2)))
 
@@ -16,6 +18,8 @@ Public Class FormUserMenu
         picExit.Image = New Bitmap(ResizeImage(My.Resources.logout, picExit.Height))
 
     End Sub
+
+
 
 
     'Settings Button

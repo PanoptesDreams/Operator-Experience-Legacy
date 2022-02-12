@@ -189,7 +189,6 @@ Partial Class FormUserMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 22.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.Argus.My.Resources.Resources.game_poster_mask
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(282, 415)
         Me.Controls.Add(Me.Panel1)

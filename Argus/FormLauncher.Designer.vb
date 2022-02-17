@@ -35,8 +35,16 @@ Partial Class FormHeader
         Me.labelGreeter = New System.Windows.Forms.Label()
         Me.ButtonDebug2 = New System.Windows.Forms.Button()
         Me.PicCollections = New System.Windows.Forms.PictureBox()
+        Me.NotifyIconLauncher = New System.Windows.Forms.NotifyIcon(Me.components)
+        Me.ContextMenuTrayIcon = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.TrayMenuItemToggleVisibility = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TrayMenuItemExit = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.TrayMenuSettings = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         CType(Me.picUserImage, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PicCollections, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ContextMenuTrayIcon.SuspendLayout()
         Me.SuspendLayout()
         '
         'labelClock
@@ -172,6 +180,50 @@ Partial Class FormHeader
         Me.PicCollections.TabIndex = 9
         Me.PicCollections.TabStop = False
         '
+        'NotifyIconLauncher
+        '
+        Me.NotifyIconLauncher.ContextMenuStrip = Me.ContextMenuTrayIcon
+        Me.NotifyIconLauncher.Icon = CType(resources.GetObject("NotifyIconLauncher.Icon"), System.Drawing.Icon)
+        Me.NotifyIconLauncher.Text = "Argus"
+        Me.NotifyIconLauncher.Visible = True
+        '
+        'ContextMenuTrayIcon
+        '
+        Me.ContextMenuTrayIcon.DropShadowEnabled = False
+        Me.ContextMenuTrayIcon.Font = New System.Drawing.Font("Fira Sans", 11.33333!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ContextMenuTrayIcon.ImageScalingSize = New System.Drawing.Size(18, 18)
+        Me.ContextMenuTrayIcon.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TrayMenuItemToggleVisibility, Me.ToolStripSeparator2, Me.TrayMenuSettings, Me.ToolStripSeparator1, Me.TrayMenuItemExit})
+        Me.ContextMenuTrayIcon.Name = "ContextMenuTrayIcon"
+        Me.ContextMenuTrayIcon.Size = New System.Drawing.Size(197, 119)
+        '
+        'TrayMenuItemToggleVisibility
+        '
+        Me.TrayMenuItemToggleVisibility.Name = "TrayMenuItemToggleVisibility"
+        Me.TrayMenuItemToggleVisibility.Size = New System.Drawing.Size(196, 26)
+        Me.TrayMenuItemToggleVisibility.Text = "Toggle Visiblity"
+        '
+        'TrayMenuItemExit
+        '
+        Me.TrayMenuItemExit.Name = "TrayMenuItemExit"
+        Me.TrayMenuItemExit.Size = New System.Drawing.Size(196, 26)
+        Me.TrayMenuItemExit.Text = "Exit"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(193, 6)
+        '
+        'TrayMenuSettings
+        '
+        Me.TrayMenuSettings.Name = "TrayMenuSettings"
+        Me.TrayMenuSettings.Size = New System.Drawing.Size(196, 26)
+        Me.TrayMenuSettings.Text = "Settings"
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(193, 6)
+        '
         'FormHeader
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -200,6 +252,7 @@ Partial Class FormHeader
         Me.TopMost = True
         CType(Me.picUserImage, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PicCollections, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuTrayIcon.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -216,4 +269,11 @@ Partial Class FormHeader
     Friend WithEvents labelGreeter As Label
     Friend WithEvents ButtonDebug2 As Button
     Friend WithEvents PicCollections As PictureBox
+    Friend WithEvents NotifyIconLauncher As NotifyIcon
+    Friend WithEvents ContextMenuTrayIcon As ContextMenuStrip
+    Friend WithEvents TrayMenuItemExit As ToolStripMenuItem
+    Friend WithEvents TrayMenuItemToggleVisibility As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
+    Friend WithEvents TrayMenuSettings As ToolStripMenuItem
 End Class

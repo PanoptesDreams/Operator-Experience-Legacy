@@ -18,7 +18,7 @@
       <Value Profile="(Default)">Duck</Value>
     </Setting>
     <Setting Name="ArgusDir" Type="System.String" Scope="User">
-      <Value Profile="(Default)">A:\Argus\</Value>
+      <Value Profile="(Default)">\Argus</Value>
     </Setting>
     <Setting Name="UserImageDir" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -58,6 +58,9 @@
     </Setting>
     <Setting Name="LauncherAoT" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="GameLib" Type="System.String" Scope="User">
+      <Value Profile="(Default)">\Software\Gaming\Library</Value>
     </Setting>
   </Settings>
 </SettingsFile>

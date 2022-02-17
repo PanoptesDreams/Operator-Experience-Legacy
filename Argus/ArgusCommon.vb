@@ -27,11 +27,11 @@
     End Function
 
     'Summoner
-    Public Function Summon(Sender As Form)
+    Public Sub Summon(Sender As Form)
 
         If Sender.Visible = True Then
 
-            Sender.Hide()
+            Sender.Activate()
 
         Else
             Sender.Show()
@@ -40,7 +40,7 @@
         End If
 
 
-    End Function
+    End Sub
 
     'User Menu Auto-Hide
     Public Function HideUsermenu()
@@ -104,12 +104,12 @@
     End Function
 
     'Fonty
-    Public Function Fonty(Sender As Form)
+    Public Sub Fonty(Sender As Form)
 
-    End Function
+    End Sub
 
     'Positioner
-    Public Function Positioner(Sender As Form, Owner As String, LastPos As Point)
+    Public Sub Positioner(Sender As Form, Owner As String, LastPos As Point)
 
         Select Case Owner
             Case = "Top"
@@ -124,42 +124,42 @@
                 Sender.Location = LastPos
         End Select
 
-    End Function
+    End Sub
 
     'Settings Saver
-    Public Function ASave() ' Hi
+    Public Sub ASave() ' Hi
 
 
         My.Settings.Save()
 
         My.Settings.Reload()
 
-    End Function
+    End Sub
 
-    Public Function ESave()
+    Public Sub ESave()
 
 
 
-    End Function
+    End Sub
 
     'Button Glow
-    Public Function ButtonGlow(TLabel As Label)
+    Public Sub ButtonGlow(TLabel As Label)
 
         TLabel.Image = My.Resources.frame
 
-    End Function
+    End Sub
 
 
     'Button Glow
-    Public Function ButtonUnGlow(TLabel As Label)
+    Public Sub ButtonUnGlow(TLabel As Label)
 
         TLabel.Image = My.Resources.frame_empty
 
 
-    End Function
+    End Sub
 
     'persistence checker
-    Public Function PersitingApp()
+    Public Sub PersitingApp()
 
         If My.Settings.PersistCollections = True Then
             Summon(FormCollections)
@@ -172,12 +172,12 @@
         If My.Settings.PersistToolbox = True Then
 
         End If
-    End Function
+    End Sub
 
-    Public Function TheThemerer(Sender As Form)
+    Public Sub TheThemerer(Sender As Form)
 
 
 
-    End Function
+    End Sub
 
 End Module

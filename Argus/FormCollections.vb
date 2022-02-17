@@ -85,7 +85,7 @@ Public Class FormCollections
 
     Private Sub LabelCollection2_Click(sender As Object, e As EventArgs) Handles LabelCollection2.Click
 
-        Process.Start("explorer.exe", Environment.GetEnvironmentVariable("argus") + "\Software")
+        Summon(FormSoftware)
 
     End Sub
 

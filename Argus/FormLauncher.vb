@@ -269,6 +269,37 @@ Public Class FormHeader
 
     End Sub
 
+    Private Sub TrayMenuItemExit_Click(sender As Object, e As EventArgs) Handles TrayMenuItemExit.Click
+
+        Me.Close()
+
+    End Sub
+
+    Private Sub TrayMenuItemToggleVisibility_Click(sender As Object, e As EventArgs) Handles TrayMenuItemToggleVisibility.Click
+
+        If Me.Visible = True Then
+
+            Me.Hide()
+
+        Else
+
+            Summon(Me)
+
+        End If
+
+
+    End Sub
+
+    Private Sub TrayMenuSettings_Click(sender As Object, e As EventArgs) Handles TrayMenuSettings.Click
+
+        Summon(FormSettings)
+
+    End Sub
+
+
+
+
+
 
 
 

@@ -116,7 +116,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("A:\Argus\")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("\Argus")>  _
         Public Property ArgusDir() As String
             Get
                 Return CType(Me("ArgusDir"),String)
@@ -279,6 +279,18 @@ Namespace My
             End Get
             Set
                 Me("LauncherAoT") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("\Software\Gaming\Library")>  _
+        Public Property GameLib() As String
+            Get
+                Return CType(Me("GameLib"),String)
+            End Get
+            Set
+                Me("GameLib") = value
             End Set
         End Property
     End Class

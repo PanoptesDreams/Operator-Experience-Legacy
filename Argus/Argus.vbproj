@@ -150,6 +150,12 @@
     <Compile Include="FormLoadingSplash.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormLogin.Designer.vb">
+      <DependentUpon>FormLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormMusic.Designer.vb">
       <DependentUpon>FormMusic.vb</DependentUpon>
     </Compile>
@@ -160,6 +166,18 @@
       <DependentUpon>FormGame.vb</DependentUpon>
     </Compile>
     <Compile Include="FormGame.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOOBE.Designer.vb">
+      <DependentUpon>FormOOBE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormOOBE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOOBEPrivacy.Designer.vb">
+      <DependentUpon>FormOOBEPrivacy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormOOBEPrivacy.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormSettings.Designer.vb">
@@ -218,8 +236,17 @@
     <EmbeddedResource Include="FormLoadingSplash.resx">
       <DependentUpon>FormLoadingSplash.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMusic.resx">
       <DependentUpon>FormMusic.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOOBE.resx">
+      <DependentUpon>FormOOBE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOOBEPrivacy.resx">
+      <DependentUpon>FormOOBEPrivacy.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSettings.resx">
       <DependentUpon>FormSettings.vb</DependentUpon>
@@ -296,6 +323,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="argus.ico" />
+    <None Include="Resources\icons\core.png" />
     <None Include="Resources\img\frame_empty.png" />
     <None Include="Resources\img\strip_light.png" />
     <None Include="Resources\img\bg_light.png" />

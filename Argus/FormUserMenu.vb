@@ -10,27 +10,39 @@ Public Class FormUserMenu
         'Set Location
         Me.Location = New Point((Screen.PrimaryScreen.Bounds.Width / 2 - (Me.Width / 2)), (Screen.PrimaryScreen.Bounds.Height / 2 - (Me.Height / 2)))
 
-        'Set Button 4
-        lblOption4.Text = "Settings"
-        picOption4.Image = New Bitmap(ResizeImage(My.Resources.settings, picOption4.Height))
+        'Set Collections Button
+        LabelOption0.Text = "Collections"
+        PicOption0.Image = My.Resources.collections
+
+        'Set Settings Button
+        LabelOption3.Text = "Settings"
+        PicOption3.Image = New Bitmap(ResizeImage(My.Resources.settings, PicOption3.Height))
 
         'Set Exit Button
-        picExit.Image = New Bitmap(ResizeImage(My.Resources.logout, picExit.Height))
+        LabelOption4.Text = "Exit"
+        PicOption4.Image = New Bitmap(ResizeImage(My.Resources.logout, PicOption4.Height))
 
     End Sub
 
 
+    'Collections Button
+    Private Sub LabelOption0_Click(sender As Object, e As EventArgs) Handles LabelOption0.Click
+        Summon(FormCollections)
+    End Sub
 
+    Private Sub PicOption0_Click(sender As Object, e As EventArgs) Handles PicOption0.Click
+        Summon(FormCollections)
+    End Sub
 
     'Settings Button
-    Private Sub lblSettings_Click(sender As Object, e As EventArgs) Handles lblOption4.Click
+    Private Sub lblSettings_Click(sender As Object, e As EventArgs) Handles LabelOption3.Click
 
         FormSettings.Show()
         FormSettings.Activate()
 
     End Sub
 
-    Private Sub picSettings_Click(sender As Object, e As EventArgs) Handles picOption4.Click
+    Private Sub picSettings_Click(sender As Object, e As EventArgs) Handles PicOption3.Click
 
         FormSettings.Show()
         FormSettings.Activate()
@@ -39,16 +51,17 @@ Public Class FormUserMenu
 
 
     'Exit Button
-    Private Sub lblExit_Click(sender As Object, e As EventArgs) Handles lblExit.Click
+    Private Sub lblExit_Click(sender As Object, e As EventArgs) Handles LabelOption4.Click
 
         FormHeader.Close()
 
     End Sub
 
-    Private Sub picExit_Click(sender As Object, e As EventArgs) Handles picExit.Click
+    Private Sub picExit_Click(sender As Object, e As EventArgs) Handles PicOption4.Click
 
         FormHeader.Close()
 
     End Sub
+
 
 End Class

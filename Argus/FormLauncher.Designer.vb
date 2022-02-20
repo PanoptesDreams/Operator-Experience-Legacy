@@ -30,7 +30,7 @@ Partial Class FormHeader
         Me.labelLongDate = New System.Windows.Forms.Label()
         Me.labelYear = New System.Windows.Forms.Label()
         Me.ButtonDebug = New System.Windows.Forms.Button()
-        Me.picUserImage = New System.Windows.Forms.PictureBox()
+        Me.PicUserImage = New System.Windows.Forms.PictureBox()
         Me.labelUsername = New System.Windows.Forms.Label()
         Me.labelGreeter = New System.Windows.Forms.Label()
         Me.ButtonDebug2 = New System.Windows.Forms.Button()
@@ -38,11 +38,11 @@ Partial Class FormHeader
         Me.NotifyIconLauncher = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.ContextMenuTrayIcon = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.TrayMenuItemToggleVisibility = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TrayMenuItemExit = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.TrayMenuSettings = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        CType(Me.picUserImage, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TrayMenuSettings = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.TrayMenuItemExit = New System.Windows.Forms.ToolStripMenuItem()
+        CType(Me.PicUserImage, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PicCollections, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuTrayIcon.SuspendLayout()
         Me.SuspendLayout()
@@ -116,18 +116,18 @@ Partial Class FormHeader
         Me.ButtonDebug.Text = "DEBUG"
         Me.ButtonDebug.UseVisualStyleBackColor = False
         '
-        'picUserImage
+        'PicUserImage
         '
-        Me.picUserImage.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.picUserImage.BackColor = System.Drawing.Color.Transparent
-        Me.picUserImage.BackgroundImage = Global.Argus.My.Resources.Resources.user
-        Me.picUserImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.picUserImage.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.picUserImage.Location = New System.Drawing.Point(275, 0)
-        Me.picUserImage.Name = "picUserImage"
-        Me.picUserImage.Size = New System.Drawing.Size(50, 50)
-        Me.picUserImage.TabIndex = 0
-        Me.picUserImage.TabStop = False
+        Me.PicUserImage.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.PicUserImage.BackColor = System.Drawing.Color.Transparent
+        Me.PicUserImage.BackgroundImage = Global.Argus.My.Resources.Resources.user
+        Me.PicUserImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PicUserImage.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PicUserImage.Location = New System.Drawing.Point(275, 0)
+        Me.PicUserImage.Name = "PicUserImage"
+        Me.PicUserImage.Size = New System.Drawing.Size(50, 50)
+        Me.PicUserImage.TabIndex = 0
+        Me.PicUserImage.TabStop = False
         '
         'labelUsername
         '
@@ -194,7 +194,7 @@ Partial Class FormHeader
         Me.ContextMenuTrayIcon.ImageScalingSize = New System.Drawing.Size(18, 18)
         Me.ContextMenuTrayIcon.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TrayMenuItemToggleVisibility, Me.ToolStripSeparator2, Me.TrayMenuSettings, Me.ToolStripSeparator1, Me.TrayMenuItemExit})
         Me.ContextMenuTrayIcon.Name = "ContextMenuTrayIcon"
-        Me.ContextMenuTrayIcon.Size = New System.Drawing.Size(197, 119)
+        Me.ContextMenuTrayIcon.Size = New System.Drawing.Size(197, 94)
         '
         'TrayMenuItemToggleVisibility
         '
@@ -202,16 +202,10 @@ Partial Class FormHeader
         Me.TrayMenuItemToggleVisibility.Size = New System.Drawing.Size(196, 26)
         Me.TrayMenuItemToggleVisibility.Text = "Toggle Visiblity"
         '
-        'TrayMenuItemExit
+        'ToolStripSeparator2
         '
-        Me.TrayMenuItemExit.Name = "TrayMenuItemExit"
-        Me.TrayMenuItemExit.Size = New System.Drawing.Size(196, 26)
-        Me.TrayMenuItemExit.Text = "Exit"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(193, 6)
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(193, 6)
         '
         'TrayMenuSettings
         '
@@ -219,10 +213,16 @@ Partial Class FormHeader
         Me.TrayMenuSettings.Size = New System.Drawing.Size(196, 26)
         Me.TrayMenuSettings.Text = "Settings"
         '
-        'ToolStripSeparator2
+        'ToolStripSeparator1
         '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(193, 6)
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(193, 6)
+        '
+        'TrayMenuItemExit
+        '
+        Me.TrayMenuItemExit.Name = "TrayMenuItemExit"
+        Me.TrayMenuItemExit.Size = New System.Drawing.Size(196, 26)
+        Me.TrayMenuItemExit.Text = "Exit"
         '
         'FormHeader
         '
@@ -240,7 +240,7 @@ Partial Class FormHeader
         Me.Controls.Add(Me.labelLongDate)
         Me.Controls.Add(Me.labelToday)
         Me.Controls.Add(Me.labelClock)
-        Me.Controls.Add(Me.picUserImage)
+        Me.Controls.Add(Me.PicUserImage)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -250,7 +250,7 @@ Partial Class FormHeader
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Here Be Dragons"
         Me.TopMost = True
-        CType(Me.picUserImage, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PicUserImage, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PicCollections, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ContextMenuTrayIcon.ResumeLayout(False)
         Me.ResumeLayout(False)
@@ -258,7 +258,7 @@ Partial Class FormHeader
 
     End Sub
 
-    Friend WithEvents picUserImage As PictureBox
+    Friend WithEvents PicUserImage As PictureBox
     Friend WithEvents labelClock As Label
     Friend WithEvents TimerClockTick As Timer
     Friend WithEvents labelToday As Label

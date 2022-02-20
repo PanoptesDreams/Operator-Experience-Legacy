@@ -201,24 +201,37 @@ Public Class FormHeader
     End Sub
 
 
-    'User Menu
-    Private Sub PicUser_Click(sender As Object, e As EventArgs) Handles picUserImage.Click
+#Region "User Menu"
+
+    Private Sub PicUserImage_Click(sender As Object, e As EventArgs) Handles PicUserImage.Click
 
         Summon(FormUserMenu)
 
     End Sub
 
+    Private Sub PicUserImage_DoubleClick(sender As Object, e As EventArgs) Handles PicUserImage.DoubleClick
 
+        Banish(FormUserMenu)
+
+    End Sub
+
+#End Region
+
+
+#Region "Collections"
     'Collections
     Private Sub PicCollections_Click(sender As Object, e As EventArgs) Handles PicCollections.Click
 
         Summon(FormCollections)
 
     End Sub
+#End Region
 
 
     'Debug Button 1
     Private Sub DebugButton_Click(sender As Object, e As EventArgs) Handles ButtonDebug.Click
+
+        Summon(FormLogin)
 
         'Test button for testing things
 
@@ -232,6 +245,8 @@ Public Class FormHeader
 
     'Debug Button 2
     Private Sub btnDebug2_Click(sender As Object, e As EventArgs) Handles ButtonDebug2.Click
+
+        FormOOBE.Show()
 
     End Sub
 
@@ -295,6 +310,8 @@ Public Class FormHeader
         Summon(FormSettings)
 
     End Sub
+
+
 
 
 

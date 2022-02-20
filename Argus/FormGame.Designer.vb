@@ -291,10 +291,13 @@ Partial Class FormGame
         Me.Controls.Add(Me.panelTMP)
         Me.Controls.Add(Me.picGameIcon)
         Me.Controls.Add(Me.picPoster)
+        Me.DoubleBuffered = True
         Me.Font = New System.Drawing.Font("Fira Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeColor = System.Drawing.Color.Silver
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(5)
+        Me.MaximizeBox = False
         Me.Name = "FormGame"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Argus • Games"

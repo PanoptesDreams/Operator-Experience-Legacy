@@ -26,7 +26,7 @@
 
     End Function
 
-    'Summoner
+    'Summoner of Forms
     Public Sub Summon(Sender As Form)
 
         If Sender.Visible = True Then
@@ -39,6 +39,13 @@
             Sender.Activate()
         End If
 
+
+    End Sub
+
+    'Banisher of Forms
+    Public Sub Banish(Sender As Form)
+
+        Sender.Close()
 
     End Sub
 

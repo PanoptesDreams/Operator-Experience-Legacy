@@ -98,6 +98,8 @@ Public Class FormCollections
 
 
 #End Region
+
+
     Private Sub FormCollections_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
 
         My.Settings.CollectionsLastPos = Me.Location

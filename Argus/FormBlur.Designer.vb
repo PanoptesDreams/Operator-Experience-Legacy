@@ -22,6 +22,7 @@ Partial Class FormBlur
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormBlur))
         Me.pickBlurImg = New System.Windows.Forms.PictureBox()
         CType(Me.pickBlurImg, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -29,7 +30,7 @@ Partial Class FormBlur
         'pickBlurImg
         '
         Me.pickBlurImg.BackColor = System.Drawing.Color.Transparent
-        Me.pickBlurImg.BackgroundImage = Global.Argus.My.Resources.Resources.bg
+        Me.pickBlurImg.BackgroundImage = CType(resources.GetObject("pickBlurImg.BackgroundImage"), System.Drawing.Image)
         Me.pickBlurImg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pickBlurImg.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pickBlurImg.Location = New System.Drawing.Point(0, 0)
@@ -53,10 +54,9 @@ Partial Class FormBlur
         Me.Opacity = 0.8R
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "blur"
         Me.TransparencyKey = System.Drawing.Color.White
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.pickBlurImg, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

@@ -284,13 +284,109 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("\Software\Gaming\Library")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("\Software\Game\Library")>  _
         Public Property GameLib() As String
             Get
                 Return CType(Me("GameLib"),String)
             End Get
             Set
                 Me("GameLib") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Blur() As Boolean
+            Get
+                Return CType(Me("Blur"),Boolean)
+            End Get
+            Set
+                Me("Blur") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property PersistSearch() As Boolean
+            Get
+                Return CType(Me("PersistSearch"),Boolean)
+            End Get
+            Set
+                Me("PersistSearch") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property FocusSearch() As Boolean
+            Get
+                Return CType(Me("FocusSearch"),Boolean)
+            End Get
+            Set
+                Me("FocusSearch") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Search")>  _
+        Public Property StartupFocus() As String
+            Get
+                Return CType(Me("StartupFocus"),String)
+            End Get
+            Set
+                Me("StartupFocus") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property AutohideSearch() As String
+            Get
+                Return CType(Me("AutohideSearch"),String)
+            End Get
+            Set
+                Me("AutohideSearch") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property PersistWallet() As Boolean
+            Get
+                Return CType(Me("PersistWallet"),Boolean)
+            End Get
+            Set
+                Me("PersistWallet") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property PersistHome() As Boolean
+            Get
+                Return CType(Me("PersistHome"),Boolean)
+            End Get
+            Set
+                Me("PersistHome") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property Ding() As Boolean
+            Get
+                Return CType(Me("Ding"),Boolean)
+            End Get
+            Set
+                Me("Ding") = value
             End Set
         End Property
     End Class

@@ -60,7 +60,31 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="GameLib" Type="System.String" Scope="User">
-      <Value Profile="(Default)">\Software\Gaming\Library</Value>
+      <Value Profile="(Default)">\Software\Game\Library</Value>
+    </Setting>
+    <Setting Name="Blur" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="PersistSearch" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="FocusSearch" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="StartupFocus" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Search</Value>
+    </Setting>
+    <Setting Name="AutohideSearch" Type="System.String" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="PersistWallet" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="PersistHome" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="Ding" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>

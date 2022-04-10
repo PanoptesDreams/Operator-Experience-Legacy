@@ -5,12 +5,12 @@ Imports Argus.ArgusCommon
 Public Class FormGame
 
     'Variable Start
-
+    Dim ShowTemplate As Boolean = My.Settings.DebugFeatures
 
     'Directories
     Dim ArgusDir As String = Environment.GetEnvironmentVariable("argus")
     Dim GameLibDir As String = My.Settings.GameLib 'A:\Software\Gaming\Library
-    Dim GameWinDir As String = GameLibDir + "\Argus" 'A:\Software\Gaming\Library\Argus
+    Dim GameWinDir As String = GameLibDir + "\Windows" 'A:\Software\Gaming\Library\Argus
     Dim GameXboxDir As String = GameLibDir + "\Xbox" 'A:\Software\Gaming\Library\Xbox (Please fix)
     Dim GamePlaystationDir As String = GameLibDir + "\PlayStation 2" 'A:\Software\Gaming\Library\PlayStation 2 (Please fix)
     Dim GameNintendoDir As String = GameLibDir + "\Gameboy Advanced" 'A:\Software\Gaming\Library\Gameboy Advanced (Please fix)
@@ -47,6 +47,12 @@ Public Class FormGame
         ListGamesPlaystation.SelectedIndex = 0
         ListGamesNintendo.SelectedIndex = 0
 
+
+        'Debug Features
+        If My.Settings.DebugFeatures = False Then
+            ButtonDebug0.Hide()
+            ButtonDebug2.Hide()
+        End If
     End Sub
 
     'Game list builder
@@ -84,31 +90,59 @@ Public Class FormGame
 
         Next
 
+        If ShowTemplate = False Then
+
+            Select Case Platform
+
+                Case = "Windows"
+                    TargetList.Items.RemoveAt(0)
+                    TargetList.Items.RemoveAt(0)
+
+                Case = "Playstation"
+
+                Case = "Xbox"
+                    TargetList.Items.RemoveAt(0)
+
+                Case = "Nintendo"
+
+            End Select
+
+        End If
+
     End Sub
 
     'Empty
-    Public Sub GameListClearer()
+    Public Sub GameListClearer(Platform As String)
 
+        Dim TargetList As ListBox = ListGamesWin
+        Dim ItemsToScrub As Integer = 1
+
+        Select Case Platform
+
+            Case = "Windows"
+                TargetList = ListGamesWin
+
+            Case = "Playstation"
+                TargetList = ListGamesPlaystation
+
+            Case = "Xbox"
+                TargetList = ListGamesXbox
+
+            Case = "Nintendo"
+                TargetList = ListGamesNintendo
+
+        End Select
+
+        ItemsToScrub = TargetList.Items.Count
+
+        For i = 1 To ItemsToScrub
+            TargetList.Items.RemoveAt(0)
+        Next
 
     End Sub
 
     'Empty
     Public Sub GameThings()
-
-        Dim NotBrokenDir As String = "A:\Software\Gaming\Library\Argus\Yggdrasil"
-
-        Dim name As String = "\app"
-        Dim play As String = "\play"
-
-        Using sr As StreamReader = File.OpenText(NotBrokenDir + name)
-
-            Dim s As String
-
-            s = sr.ReadLine()
-            LabelGameTitle.Text = s
-
-        End Using
-
 
 
     End Sub
@@ -203,7 +237,26 @@ Public Class FormGame
         LblGameDir.Text = ArgusDir + CurrentDir
 
 
-        LabelGameTitle.Text = GameList.SelectedItem
+        If System.IO.File.Exists(ArgusDir + CurrentDir + "\app") Then
+
+
+
+            Using FileReader As StreamReader = File.OpenText(ArgusDir + CurrentDir + "\app")
+
+                Dim s As String
+
+                s = FileReader.ReadLine()
+
+                LabelGameTitle.Text = s
+
+            End Using
+
+        Else
+
+            LabelGameTitle.Text = GameList.SelectedItem
+
+        End If
+
 
     End Sub
 
@@ -226,8 +279,27 @@ Public Class FormGame
                     MsgBox("This game is not configured correctly")
                     GoTo endsub
 
-                End If
+                ElseIf System.IO.File.Exists(ArgusDir + CurrentDir + "\steam") = True Then
 
+                    Dim SteamLaunch As Integer
+
+                    SteamLaunch = MsgBox("Launch Steam Version?", vbYesNo)
+
+                    If SteamLaunch = 1 Then
+
+                        Using FileReader As StreamReader = File.OpenText(ArgusDir + CurrentDir + "\Steam")
+
+                            Dim s As String
+
+                            s = FileReader.ReadLine()
+
+                            SteamLauncher(Convert.ToInt64(s))
+
+                        End Using
+
+                    End If
+
+                End If
 
 
             Case = "Xbox"
@@ -304,7 +376,7 @@ endsub:
 
     Private Sub ButtonDebug2_Click(sender As Object, e As EventArgs) Handles ButtonDebug2.Click
 
-        GameThings()
+        GameListClearer("Windows")
 
     End Sub
 

@@ -192,6 +192,7 @@ Partial Class FormGame
         Me.TabControlGameLists.Dock = System.Windows.Forms.DockStyle.Right
         Me.TabControlGameLists.Location = New System.Drawing.Point(606, 0)
         Me.TabControlGameLists.Margin = New System.Windows.Forms.Padding(5, 0, 0, 0)
+        Me.TabControlGameLists.Multiline = True
         Me.TabControlGameLists.Name = "TabControlGameLists"
         Me.TabControlGameLists.SelectedIndex = 0
         Me.TabControlGameLists.Size = New System.Drawing.Size(400, 556)

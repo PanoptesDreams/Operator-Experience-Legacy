@@ -102,6 +102,16 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property cold() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("cold", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property collections() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("collections", resourceCulture)
@@ -186,6 +196,16 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("logout", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property MadMilkman_Ini() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("MadMilkman_Ini", resourceCulture)
+                Return CType(obj,Byte())
             End Get
         End Property
         

@@ -22,21 +22,24 @@ Partial Class FormSettings
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.TabControlSettings = New System.Windows.Forms.TabControl()
         Me.SettingsTab1Argus = New System.Windows.Forms.TabPage()
         Me.TabControlArgus = New System.Windows.Forms.TabControl()
         Me.TabArgusApplets = New System.Windows.Forms.TabPage()
-        Me.LabelApplet5 = New System.Windows.Forms.Label()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.LabelApplet4 = New System.Windows.Forms.Label()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.LabelApplet3 = New System.Windows.Forms.Label()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.LabelAppletHome = New System.Windows.Forms.Label()
+        Me.PicAppletHome = New System.Windows.Forms.PictureBox()
+        Me.LabelAppletWallet = New System.Windows.Forms.Label()
+        Me.PicAppletWallet = New System.Windows.Forms.PictureBox()
+        Me.LabelAppletSearch = New System.Windows.Forms.Label()
+        Me.PicAppletSearch = New System.Windows.Forms.PictureBox()
         Me.LabelAppeltSocial = New System.Windows.Forms.Label()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PicAppletSocial = New System.Windows.Forms.PictureBox()
         Me.LabelAppletCollections = New System.Windows.Forms.Label()
         Me.PicAppletCollections = New System.Windows.Forms.PictureBox()
         Me.TabArgusBehavior = New System.Windows.Forms.TabPage()
+        Me.ComboBoxBlur = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.ComboBoxLauncherAlwaysonTop = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.ButtonApplyBehaviors = New System.Windows.Forms.Button()
@@ -44,9 +47,9 @@ Partial Class FormSettings
         Me.lblAutohideUserMenu = New System.Windows.Forms.Label()
         Me.TabArgusMisc = New System.Windows.Forms.TabPage()
         Me.ComboBoxDebugFeatures = New System.Windows.Forms.ComboBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.LabelDebugFeatures = New System.Windows.Forms.Label()
         Me.ComboBoxWebSearchProvider = New System.Windows.Forms.ComboBox()
-        Me.lblWebsearchProvider = New System.Windows.Forms.Label()
+        Me.LabelWebsearchProvider = New System.Windows.Forms.Label()
         Me.ButtonApplyMisc = New System.Windows.Forms.Button()
         Me.TabArgusPersonalization = New System.Windows.Forms.TabPage()
         Me.ComboBoxCollectionsPOS = New System.Windows.Forms.ComboBox()
@@ -63,30 +66,29 @@ Partial Class FormSettings
         Me.picFavColor = New System.Windows.Forms.PictureBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.SettingsTab2Win = New System.Windows.Forms.TabPage()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabControlWindows = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.ButtonApplyWinBehaviors = New System.Windows.Forms.Button()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Button4 = New System.Windows.Forms.Button()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.PictureBox11 = New System.Windows.Forms.PictureBox()
         Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
         Me.SettingsPanel = New System.Windows.Forms.Panel()
         Me.LabelSettings0 = New System.Windows.Forms.Label()
         Me.LabelSettingsWindows = New System.Windows.Forms.Label()
         Me.LabelSettingsUser = New System.Windows.Forms.Label()
+        Me.ToolTipAlpha = New System.Windows.Forms.ToolTip(Me.components)
         Me.TabControlSettings.SuspendLayout()
         Me.SettingsTab1Argus.SuspendLayout()
         Me.TabControlArgus.SuspendLayout()
         Me.TabArgusApplets.SuspendLayout()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PicAppletHome, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PicAppletWallet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PicAppletSearch, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PicAppletSocial, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PicAppletCollections, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabArgusBehavior.SuspendLayout()
         Me.TabArgusMisc.SuspendLayout()
@@ -94,11 +96,10 @@ Partial Class FormSettings
         CType(Me.picUserImage, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picFavColor, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SettingsTab2Win.SuspendLayout()
-        Me.TabControl1.SuspendLayout()
+        Me.TabControlWindows.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.TabPage4.SuspendLayout()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SettingsPanel.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -144,14 +145,14 @@ Partial Class FormSettings
         'TabArgusApplets
         '
         Me.TabArgusApplets.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TabArgusApplets.Controls.Add(Me.LabelApplet5)
-        Me.TabArgusApplets.Controls.Add(Me.PictureBox5)
-        Me.TabArgusApplets.Controls.Add(Me.LabelApplet4)
-        Me.TabArgusApplets.Controls.Add(Me.PictureBox4)
-        Me.TabArgusApplets.Controls.Add(Me.LabelApplet3)
-        Me.TabArgusApplets.Controls.Add(Me.PictureBox3)
+        Me.TabArgusApplets.Controls.Add(Me.LabelAppletHome)
+        Me.TabArgusApplets.Controls.Add(Me.PicAppletHome)
+        Me.TabArgusApplets.Controls.Add(Me.LabelAppletWallet)
+        Me.TabArgusApplets.Controls.Add(Me.PicAppletWallet)
+        Me.TabArgusApplets.Controls.Add(Me.LabelAppletSearch)
+        Me.TabArgusApplets.Controls.Add(Me.PicAppletSearch)
         Me.TabArgusApplets.Controls.Add(Me.LabelAppeltSocial)
-        Me.TabArgusApplets.Controls.Add(Me.PictureBox2)
+        Me.TabArgusApplets.Controls.Add(Me.PicAppletSocial)
         Me.TabArgusApplets.Controls.Add(Me.LabelAppletCollections)
         Me.TabArgusApplets.Controls.Add(Me.PicAppletCollections)
         Me.TabArgusApplets.Location = New System.Drawing.Point(4, 31)
@@ -162,78 +163,82 @@ Partial Class FormSettings
         Me.TabArgusApplets.TabIndex = 3
         Me.TabArgusApplets.Text = "Applets"
         '
-        'LabelApplet5
+        'LabelAppletHome
         '
-        Me.LabelApplet5.AutoSize = True
-        Me.LabelApplet5.Location = New System.Drawing.Point(620, 118)
-        Me.LabelApplet5.Name = "LabelApplet5"
-        Me.LabelApplet5.Size = New System.Drawing.Size(77, 22)
-        Me.LabelApplet5.TabIndex = 9
-        Me.LabelApplet5.Text = "Applet 5"
+        Me.LabelAppletHome.AutoSize = True
+        Me.LabelAppletHome.Location = New System.Drawing.Point(648, 143)
+        Me.LabelAppletHome.Name = "LabelAppletHome"
+        Me.LabelAppletHome.Size = New System.Drawing.Size(58, 22)
+        Me.LabelAppletHome.TabIndex = 9
+        Me.LabelAppletHome.Text = "Home"
         '
-        'PictureBox5
+        'PicAppletHome
         '
-        Me.PictureBox5.Location = New System.Drawing.Point(622, 25)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(99, 88)
-        Me.PictureBox5.TabIndex = 8
-        Me.PictureBox5.TabStop = False
+        Me.PicAppletHome.Location = New System.Drawing.Point(626, 30)
+        Me.PicAppletHome.Margin = New System.Windows.Forms.Padding(25)
+        Me.PicAppletHome.Name = "PicAppletHome"
+        Me.PicAppletHome.Size = New System.Drawing.Size(99, 88)
+        Me.PicAppletHome.TabIndex = 8
+        Me.PicAppletHome.TabStop = False
         '
-        'LabelApplet4
+        'LabelAppletWallet
         '
-        Me.LabelApplet4.AutoSize = True
-        Me.LabelApplet4.Location = New System.Drawing.Point(475, 118)
-        Me.LabelApplet4.Name = "LabelApplet4"
-        Me.LabelApplet4.Size = New System.Drawing.Size(78, 22)
-        Me.LabelApplet4.TabIndex = 7
-        Me.LabelApplet4.Text = "Applet 4"
+        Me.LabelAppletWallet.AutoSize = True
+        Me.LabelAppletWallet.Location = New System.Drawing.Point(498, 143)
+        Me.LabelAppletWallet.Name = "LabelAppletWallet"
+        Me.LabelAppletWallet.Size = New System.Drawing.Size(60, 22)
+        Me.LabelAppletWallet.TabIndex = 7
+        Me.LabelAppletWallet.Text = "Wallet"
         '
-        'PictureBox4
+        'PicAppletWallet
         '
-        Me.PictureBox4.Location = New System.Drawing.Point(477, 25)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(99, 88)
-        Me.PictureBox4.TabIndex = 6
-        Me.PictureBox4.TabStop = False
+        Me.PicAppletWallet.Location = New System.Drawing.Point(477, 30)
+        Me.PicAppletWallet.Margin = New System.Windows.Forms.Padding(25)
+        Me.PicAppletWallet.Name = "PicAppletWallet"
+        Me.PicAppletWallet.Size = New System.Drawing.Size(99, 88)
+        Me.PicAppletWallet.TabIndex = 6
+        Me.PicAppletWallet.TabStop = False
         '
-        'LabelApplet3
+        'LabelAppletSearch
         '
-        Me.LabelApplet3.AutoSize = True
-        Me.LabelApplet3.Location = New System.Drawing.Point(317, 118)
-        Me.LabelApplet3.Name = "LabelApplet3"
-        Me.LabelApplet3.Size = New System.Drawing.Size(77, 22)
-        Me.LabelApplet3.TabIndex = 5
-        Me.LabelApplet3.Text = "Applet 3"
+        Me.LabelAppletSearch.AutoSize = True
+        Me.LabelAppletSearch.Location = New System.Drawing.Point(361, 143)
+        Me.LabelAppletSearch.Name = "LabelAppletSearch"
+        Me.LabelAppletSearch.Size = New System.Drawing.Size(66, 22)
+        Me.LabelAppletSearch.TabIndex = 5
+        Me.LabelAppletSearch.Text = "Search"
         '
-        'PictureBox3
+        'PicAppletSearch
         '
-        Me.PictureBox3.Location = New System.Drawing.Point(319, 25)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(99, 88)
-        Me.PictureBox3.TabIndex = 4
-        Me.PictureBox3.TabStop = False
+        Me.PicAppletSearch.Location = New System.Drawing.Point(328, 30)
+        Me.PicAppletSearch.Margin = New System.Windows.Forms.Padding(25)
+        Me.PicAppletSearch.Name = "PicAppletSearch"
+        Me.PicAppletSearch.Size = New System.Drawing.Size(99, 88)
+        Me.PicAppletSearch.TabIndex = 4
+        Me.PicAppletSearch.TabStop = False
         '
         'LabelAppeltSocial
         '
         Me.LabelAppeltSocial.AutoSize = True
-        Me.LabelAppeltSocial.Location = New System.Drawing.Point(174, 118)
+        Me.LabelAppeltSocial.Location = New System.Drawing.Point(218, 143)
         Me.LabelAppeltSocial.Name = "LabelAppeltSocial"
         Me.LabelAppeltSocial.Size = New System.Drawing.Size(60, 22)
         Me.LabelAppeltSocial.TabIndex = 3
         Me.LabelAppeltSocial.Text = "Social"
         '
-        'PictureBox2
+        'PicAppletSocial
         '
-        Me.PictureBox2.Location = New System.Drawing.Point(176, 25)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(99, 88)
-        Me.PictureBox2.TabIndex = 2
-        Me.PictureBox2.TabStop = False
+        Me.PicAppletSocial.Location = New System.Drawing.Point(179, 30)
+        Me.PicAppletSocial.Margin = New System.Windows.Forms.Padding(25)
+        Me.PicAppletSocial.Name = "PicAppletSocial"
+        Me.PicAppletSocial.Size = New System.Drawing.Size(99, 88)
+        Me.PicAppletSocial.TabIndex = 2
+        Me.PicAppletSocial.TabStop = False
         '
         'LabelAppletCollections
         '
         Me.LabelAppletCollections.AutoSize = True
-        Me.LabelAppletCollections.Location = New System.Drawing.Point(28, 118)
+        Me.LabelAppletCollections.Location = New System.Drawing.Point(28, 143)
         Me.LabelAppletCollections.Name = "LabelAppletCollections"
         Me.LabelAppletCollections.Size = New System.Drawing.Size(101, 22)
         Me.LabelAppletCollections.TabIndex = 1
@@ -241,7 +246,8 @@ Partial Class FormSettings
         '
         'PicAppletCollections
         '
-        Me.PicAppletCollections.Location = New System.Drawing.Point(30, 25)
+        Me.PicAppletCollections.Location = New System.Drawing.Point(30, 30)
+        Me.PicAppletCollections.Margin = New System.Windows.Forms.Padding(25)
         Me.PicAppletCollections.Name = "PicAppletCollections"
         Me.PicAppletCollections.Size = New System.Drawing.Size(99, 88)
         Me.PicAppletCollections.TabIndex = 0
@@ -250,6 +256,8 @@ Partial Class FormSettings
         'TabArgusBehavior
         '
         Me.TabArgusBehavior.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TabArgusBehavior.Controls.Add(Me.ComboBoxBlur)
+        Me.TabArgusBehavior.Controls.Add(Me.Label2)
         Me.TabArgusBehavior.Controls.Add(Me.ComboBoxLauncherAlwaysonTop)
         Me.TabArgusBehavior.Controls.Add(Me.Label4)
         Me.TabArgusBehavior.Controls.Add(Me.ButtonApplyBehaviors)
@@ -263,20 +271,40 @@ Partial Class FormSettings
         Me.TabArgusBehavior.TabIndex = 2
         Me.TabArgusBehavior.Text = "Behavior"
         '
+        'ComboBoxBlur
+        '
+        Me.ComboBoxBlur.FormattingEnabled = True
+        Me.ComboBoxBlur.Items.AddRange(New Object() {"False", "True"})
+        Me.ComboBoxBlur.Location = New System.Drawing.Point(536, 123)
+        Me.ComboBoxBlur.Margin = New System.Windows.Forms.Padding(5)
+        Me.ComboBoxBlur.Name = "ComboBoxBlur"
+        Me.ComboBoxBlur.Size = New System.Drawing.Size(285, 30)
+        Me.ComboBoxBlur.TabIndex = 15
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(471, 126)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(55, 22)
+        Me.Label2.TabIndex = 14
+        Me.Label2.Text = "Blur -"
+        '
         'ComboBoxLauncherAlwaysonTop
         '
         Me.ComboBoxLauncherAlwaysonTop.FormattingEnabled = True
         Me.ComboBoxLauncherAlwaysonTop.Items.AddRange(New Object() {"False", "True"})
-        Me.ComboBoxLauncherAlwaysonTop.Location = New System.Drawing.Point(224, 89)
+        Me.ComboBoxLauncherAlwaysonTop.Location = New System.Drawing.Point(536, 83)
         Me.ComboBoxLauncherAlwaysonTop.Margin = New System.Windows.Forms.Padding(5)
         Me.ComboBoxLauncherAlwaysonTop.Name = "ComboBoxLauncherAlwaysonTop"
-        Me.ComboBoxLauncherAlwaysonTop.Size = New System.Drawing.Size(133, 30)
+        Me.ComboBoxLauncherAlwaysonTop.Size = New System.Drawing.Size(285, 30)
         Me.ComboBoxLauncherAlwaysonTop.TabIndex = 13
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(0, 92)
+        Me.Label4.Location = New System.Drawing.Point(305, 86)
         Me.Label4.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(221, 22)
@@ -300,16 +328,16 @@ Partial Class FormSettings
         '
         Me.ComboBoxAutohideUsermenu.FormattingEnabled = True
         Me.ComboBoxAutohideUsermenu.Items.AddRange(New Object() {"True", "False"})
-        Me.ComboBoxAutohideUsermenu.Location = New System.Drawing.Point(224, 45)
+        Me.ComboBoxAutohideUsermenu.Location = New System.Drawing.Point(536, 43)
         Me.ComboBoxAutohideUsermenu.Margin = New System.Windows.Forms.Padding(5)
         Me.ComboBoxAutohideUsermenu.Name = "ComboBoxAutohideUsermenu"
-        Me.ComboBoxAutohideUsermenu.Size = New System.Drawing.Size(133, 30)
+        Me.ComboBoxAutohideUsermenu.Size = New System.Drawing.Size(285, 30)
         Me.ComboBoxAutohideUsermenu.TabIndex = 10
         '
         'lblAutohideUserMenu
         '
         Me.lblAutohideUserMenu.AutoSize = True
-        Me.lblAutohideUserMenu.Location = New System.Drawing.Point(28, 50)
+        Me.lblAutohideUserMenu.Location = New System.Drawing.Point(338, 46)
         Me.lblAutohideUserMenu.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lblAutohideUserMenu.Name = "lblAutohideUserMenu"
         Me.lblAutohideUserMenu.Size = New System.Drawing.Size(188, 22)
@@ -320,9 +348,9 @@ Partial Class FormSettings
         '
         Me.TabArgusMisc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TabArgusMisc.Controls.Add(Me.ComboBoxDebugFeatures)
-        Me.TabArgusMisc.Controls.Add(Me.Label1)
+        Me.TabArgusMisc.Controls.Add(Me.LabelDebugFeatures)
         Me.TabArgusMisc.Controls.Add(Me.ComboBoxWebSearchProvider)
-        Me.TabArgusMisc.Controls.Add(Me.lblWebsearchProvider)
+        Me.TabArgusMisc.Controls.Add(Me.LabelWebsearchProvider)
         Me.TabArgusMisc.Controls.Add(Me.ButtonApplyMisc)
         Me.TabArgusMisc.Location = New System.Drawing.Point(4, 31)
         Me.TabArgusMisc.Margin = New System.Windows.Forms.Padding(5)
@@ -334,45 +362,49 @@ Partial Class FormSettings
         '
         'ComboBoxDebugFeatures
         '
+        Me.ComboBoxDebugFeatures.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ComboBoxDebugFeatures.FormattingEnabled = True
         Me.ComboBoxDebugFeatures.Items.AddRange(New Object() {"True", "False"})
-        Me.ComboBoxDebugFeatures.Location = New System.Drawing.Point(224, 85)
+        Me.ComboBoxDebugFeatures.Location = New System.Drawing.Point(536, 85)
         Me.ComboBoxDebugFeatures.Margin = New System.Windows.Forms.Padding(5)
         Me.ComboBoxDebugFeatures.Name = "ComboBoxDebugFeatures"
         Me.ComboBoxDebugFeatures.Size = New System.Drawing.Size(285, 30)
         Me.ComboBoxDebugFeatures.TabIndex = 9
         '
-        'Label1
+        'LabelDebugFeatures
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(67, 88)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(147, 22)
-        Me.Label1.TabIndex = 8
-        Me.Label1.Text = "Debug Features -"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.LabelDebugFeatures.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.LabelDebugFeatures.AutoSize = True
+        Me.LabelDebugFeatures.Location = New System.Drawing.Point(379, 88)
+        Me.LabelDebugFeatures.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.LabelDebugFeatures.Name = "LabelDebugFeatures"
+        Me.LabelDebugFeatures.Size = New System.Drawing.Size(147, 22)
+        Me.LabelDebugFeatures.TabIndex = 8
+        Me.LabelDebugFeatures.Text = "Debug Features -"
+        Me.LabelDebugFeatures.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'ComboBoxWebSearchProvider
         '
+        Me.ComboBoxWebSearchProvider.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ComboBoxWebSearchProvider.FormattingEnabled = True
-        Me.ComboBoxWebSearchProvider.Items.AddRange(New Object() {"Bing", "Duck", "Frontpage", "Google", "Yahoo"})
-        Me.ComboBoxWebSearchProvider.Location = New System.Drawing.Point(224, 45)
+        Me.ComboBoxWebSearchProvider.Items.AddRange(New Object() {"Bing", "Duck", "Startpage", "Google", "Yahoo"})
+        Me.ComboBoxWebSearchProvider.Location = New System.Drawing.Point(536, 45)
         Me.ComboBoxWebSearchProvider.Margin = New System.Windows.Forms.Padding(5)
         Me.ComboBoxWebSearchProvider.Name = "ComboBoxWebSearchProvider"
         Me.ComboBoxWebSearchProvider.Size = New System.Drawing.Size(285, 30)
         Me.ComboBoxWebSearchProvider.TabIndex = 7
         '
-        'lblWebsearchProvider
+        'LabelWebsearchProvider
         '
-        Me.lblWebsearchProvider.AutoSize = True
-        Me.lblWebsearchProvider.Location = New System.Drawing.Point(21, 48)
-        Me.lblWebsearchProvider.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.lblWebsearchProvider.Name = "lblWebsearchProvider"
-        Me.lblWebsearchProvider.Size = New System.Drawing.Size(193, 22)
-        Me.lblWebsearchProvider.TabIndex = 6
-        Me.lblWebsearchProvider.Text = "Web Search Provider -"
-        Me.lblWebsearchProvider.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.LabelWebsearchProvider.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.LabelWebsearchProvider.AutoSize = True
+        Me.LabelWebsearchProvider.Location = New System.Drawing.Point(333, 48)
+        Me.LabelWebsearchProvider.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.LabelWebsearchProvider.Name = "LabelWebsearchProvider"
+        Me.LabelWebsearchProvider.Size = New System.Drawing.Size(193, 22)
+        Me.LabelWebsearchProvider.TabIndex = 6
+        Me.LabelWebsearchProvider.Text = "Web Search Provider -"
+        Me.LabelWebsearchProvider.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'ButtonApplyMisc
         '
@@ -412,9 +444,10 @@ Partial Class FormSettings
         '
         'ComboBoxCollectionsPOS
         '
+        Me.ComboBoxCollectionsPOS.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ComboBoxCollectionsPOS.FormattingEnabled = True
         Me.ComboBoxCollectionsPOS.Items.AddRange(New Object() {"Right", "Left", "User"})
-        Me.ComboBoxCollectionsPOS.Location = New System.Drawing.Point(224, 125)
+        Me.ComboBoxCollectionsPOS.Location = New System.Drawing.Point(422, 125)
         Me.ComboBoxCollectionsPOS.Margin = New System.Windows.Forms.Padding(5)
         Me.ComboBoxCollectionsPOS.Name = "ComboBoxCollectionsPOS"
         Me.ComboBoxCollectionsPOS.Size = New System.Drawing.Size(133, 30)
@@ -422,8 +455,9 @@ Partial Class FormSettings
         '
         'lblCollectionsPOS
         '
+        Me.lblCollectionsPOS.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblCollectionsPOS.AutoSize = True
-        Me.lblCollectionsPOS.Location = New System.Drawing.Point(30, 128)
+        Me.lblCollectionsPOS.Location = New System.Drawing.Point(228, 128)
         Me.lblCollectionsPOS.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lblCollectionsPOS.Name = "lblCollectionsPOS"
         Me.lblCollectionsPOS.Size = New System.Drawing.Size(184, 22)
@@ -432,9 +466,10 @@ Partial Class FormSettings
         '
         'ComboBoxLauncherPOS
         '
+        Me.ComboBoxLauncherPOS.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ComboBoxLauncherPOS.FormattingEnabled = True
         Me.ComboBoxLauncherPOS.Items.AddRange(New Object() {"Top", "Bottom", "User"})
-        Me.ComboBoxLauncherPOS.Location = New System.Drawing.Point(224, 45)
+        Me.ComboBoxLauncherPOS.Location = New System.Drawing.Point(422, 165)
         Me.ComboBoxLauncherPOS.Margin = New System.Windows.Forms.Padding(5)
         Me.ComboBoxLauncherPOS.Name = "ComboBoxLauncherPOS"
         Me.ComboBoxLauncherPOS.Size = New System.Drawing.Size(133, 30)
@@ -442,8 +477,9 @@ Partial Class FormSettings
         '
         'lblLauncherPOS
         '
+        Me.lblLauncherPOS.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblLauncherPOS.AutoSize = True
-        Me.lblLauncherPOS.Location = New System.Drawing.Point(44, 48)
+        Me.lblLauncherPOS.Location = New System.Drawing.Point(242, 168)
         Me.lblLauncherPOS.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lblLauncherPOS.Name = "lblLauncherPOS"
         Me.lblLauncherPOS.Size = New System.Drawing.Size(170, 22)
@@ -487,9 +523,10 @@ Partial Class FormSettings
         '
         'ComboBoxTheme
         '
+        Me.ComboBoxTheme.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.ComboBoxTheme.FormattingEnabled = True
         Me.ComboBoxTheme.Items.AddRange(New Object() {"Light", "Dark", "User"})
-        Me.ComboBoxTheme.Location = New System.Drawing.Point(224, 85)
+        Me.ComboBoxTheme.Location = New System.Drawing.Point(422, 45)
         Me.ComboBoxTheme.Margin = New System.Windows.Forms.Padding(5)
         Me.ComboBoxTheme.Name = "ComboBoxTheme"
         Me.ComboBoxTheme.Size = New System.Drawing.Size(133, 30)
@@ -497,8 +534,9 @@ Partial Class FormSettings
         '
         'lblTheme
         '
+        Me.lblTheme.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblTheme.AutoSize = True
-        Me.lblTheme.Location = New System.Drawing.Point(137, 88)
+        Me.lblTheme.Location = New System.Drawing.Point(335, 48)
         Me.lblTheme.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.lblTheme.Name = "lblTheme"
         Me.lblTheme.Size = New System.Drawing.Size(77, 22)
@@ -551,7 +589,7 @@ Partial Class FormSettings
         '
         'SettingsTab2Win
         '
-        Me.SettingsTab2Win.Controls.Add(Me.TabControl1)
+        Me.SettingsTab2Win.Controls.Add(Me.TabControlWindows)
         Me.SettingsTab2Win.Location = New System.Drawing.Point(4, 31)
         Me.SettingsTab2Win.Margin = New System.Windows.Forms.Padding(5)
         Me.SettingsTab2Win.Name = "SettingsTab2Win"
@@ -560,18 +598,18 @@ Partial Class FormSettings
         Me.SettingsTab2Win.TabIndex = 1
         Me.SettingsTab2Win.Text = "Windows"
         '
-        'TabControl1
+        'TabControlWindows
         '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Controls.Add(Me.TabPage4)
-        Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TabControl1.Location = New System.Drawing.Point(5, 5)
-        Me.TabControl1.Margin = New System.Windows.Forms.Padding(5)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(841, 511)
-        Me.TabControl1.TabIndex = 2
+        Me.TabControlWindows.Controls.Add(Me.TabPage1)
+        Me.TabControlWindows.Controls.Add(Me.TabPage2)
+        Me.TabControlWindows.Controls.Add(Me.TabPage4)
+        Me.TabControlWindows.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TabControlWindows.Location = New System.Drawing.Point(5, 5)
+        Me.TabControlWindows.Margin = New System.Windows.Forms.Padding(5)
+        Me.TabControlWindows.Name = "TabControlWindows"
+        Me.TabControlWindows.SelectedIndex = 0
+        Me.TabControlWindows.Size = New System.Drawing.Size(841, 511)
+        Me.TabControlWindows.TabIndex = 2
         '
         'TabPage1
         '
@@ -585,7 +623,7 @@ Partial Class FormSettings
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.Button2)
+        Me.TabPage2.Controls.Add(Me.ButtonApplyWinBehaviors)
         Me.TabPage2.Location = New System.Drawing.Point(4, 31)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
@@ -594,18 +632,18 @@ Partial Class FormSettings
         Me.TabPage2.Text = "Behavior"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'Button2
+        'ButtonApplyWinBehaviors
         '
-        Me.Button2.AutoSize = True
-        Me.Button2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.Button2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Button2.Location = New System.Drawing.Point(3, 441)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(5)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(827, 32)
-        Me.Button2.TabIndex = 11
-        Me.Button2.Text = "Apply Behaviors"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.ButtonApplyWinBehaviors.AutoSize = True
+        Me.ButtonApplyWinBehaviors.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.ButtonApplyWinBehaviors.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.ButtonApplyWinBehaviors.Location = New System.Drawing.Point(3, 441)
+        Me.ButtonApplyWinBehaviors.Margin = New System.Windows.Forms.Padding(5)
+        Me.ButtonApplyWinBehaviors.Name = "ButtonApplyWinBehaviors"
+        Me.ButtonApplyWinBehaviors.Size = New System.Drawing.Size(827, 32)
+        Me.ButtonApplyWinBehaviors.TabIndex = 11
+        Me.ButtonApplyWinBehaviors.Text = "Apply Behaviors"
+        Me.ButtonApplyWinBehaviors.UseVisualStyleBackColor = True
         '
         'TabPage4
         '
@@ -613,8 +651,6 @@ Partial Class FormSettings
         Me.TabPage4.Controls.Add(Me.TextBox1)
         Me.TabPage4.Controls.Add(Me.Label9)
         Me.TabPage4.Controls.Add(Me.Button4)
-        Me.TabPage4.Controls.Add(Me.Label11)
-        Me.TabPage4.Controls.Add(Me.PictureBox11)
         Me.TabPage4.Location = New System.Drawing.Point(4, 31)
         Me.TabPage4.Margin = New System.Windows.Forms.Padding(5)
         Me.TabPage4.Name = "TabPage4"
@@ -668,27 +704,8 @@ Partial Class FormSettings
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(823, 32)
         Me.Button4.TabIndex = 4
-        Me.Button4.Text = "Apply Personalizations"
+        Me.Button4.Text = "ApplyWinPersonalizations"
         Me.Button4.UseVisualStyleBackColor = True
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(616, 363)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(137, 22)
-        Me.Label11.TabIndex = 0
-        Me.Label11.Text = "Favorite Color -"
-        '
-        'PictureBox11
-        '
-        Me.PictureBox11.Location = New System.Drawing.Point(763, 353)
-        Me.PictureBox11.Margin = New System.Windows.Forms.Padding(5)
-        Me.PictureBox11.Name = "PictureBox11"
-        Me.PictureBox11.Size = New System.Drawing.Size(41, 43)
-        Me.PictureBox11.TabIndex = 1
-        Me.PictureBox11.TabStop = False
         '
         'ColorDialog1
         '
@@ -751,6 +768,18 @@ Partial Class FormSettings
         Me.LabelSettingsUser.Text = "User"
         Me.LabelSettingsUser.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
+        'ToolTipAlpha
+        '
+        Me.ToolTipAlpha.AutomaticDelay = 0
+        Me.ToolTipAlpha.AutoPopDelay = 12000
+        Me.ToolTipAlpha.BackColor = System.Drawing.Color.Pink
+        Me.ToolTipAlpha.InitialDelay = 100
+        Me.ToolTipAlpha.ReshowDelay = 0
+        Me.ToolTipAlpha.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
+        Me.ToolTipAlpha.ToolTipTitle = "Help"
+        Me.ToolTipAlpha.UseAnimation = False
+        Me.ToolTipAlpha.UseFading = False
+        '
         'FormSettings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 22.0!)
@@ -773,10 +802,10 @@ Partial Class FormSettings
         Me.TabControlArgus.ResumeLayout(False)
         Me.TabArgusApplets.ResumeLayout(False)
         Me.TabArgusApplets.PerformLayout()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PicAppletHome, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PicAppletWallet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PicAppletSearch, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PicAppletSocial, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PicAppletCollections, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabArgusBehavior.ResumeLayout(False)
         Me.TabArgusBehavior.PerformLayout()
@@ -787,13 +816,12 @@ Partial Class FormSettings
         CType(Me.picUserImage, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picFavColor, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SettingsTab2Win.ResumeLayout(False)
-        Me.TabControl1.ResumeLayout(False)
+        Me.TabControlWindows.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         Me.TabPage4.ResumeLayout(False)
         Me.TabPage4.PerformLayout()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SettingsPanel.ResumeLayout(False)
         Me.ResumeLayout(False)
 
@@ -814,37 +842,35 @@ Partial Class FormSettings
     Friend WithEvents tstUsernameSet As TextBox
     Friend WithEvents lblUsernameSet As Label
     Friend WithEvents ComboBoxWebSearchProvider As ComboBox
-    Friend WithEvents lblWebsearchProvider As Label
+    Friend WithEvents LabelWebsearchProvider As Label
     Friend WithEvents ComboBoxLauncherPOS As ComboBox
     Friend WithEvents lblLauncherPOS As Label
     Friend WithEvents picUserImage As PictureBox
     Friend WithEvents ComboBoxAutohideUsermenu As ComboBox
     Friend WithEvents lblAutohideUserMenu As Label
     Friend WithEvents TabArgusApplets As TabPage
-    Friend WithEvents LabelApplet5 As Label
-    Friend WithEvents PictureBox5 As PictureBox
-    Friend WithEvents LabelApplet4 As Label
-    Friend WithEvents PictureBox4 As PictureBox
-    Friend WithEvents LabelApplet3 As Label
-    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents LabelAppletHome As Label
+    Friend WithEvents PicAppletHome As PictureBox
+    Friend WithEvents LabelAppletWallet As Label
+    Friend WithEvents PicAppletWallet As PictureBox
+    Friend WithEvents LabelAppletSearch As Label
+    Friend WithEvents PicAppletSearch As PictureBox
     Friend WithEvents LabelAppeltSocial As Label
-    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PicAppletSocial As PictureBox
     Friend WithEvents LabelAppletCollections As Label
     Friend WithEvents PicAppletCollections As PictureBox
-    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents TabControlWindows As TabControl
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents TabPage2 As TabPage
-    Friend WithEvents Button2 As Button
+    Friend WithEvents ButtonApplyWinBehaviors As Button
     Friend WithEvents TabPage4 As TabPage
     Friend WithEvents PictureBox10 As PictureBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents Button4 As Button
-    Friend WithEvents PictureBox11 As PictureBox
-    Friend WithEvents Label11 As Label
     Friend WithEvents ButtonApplyBehaviors As Button
     Friend WithEvents ComboBoxDebugFeatures As ComboBox
-    Friend WithEvents Label1 As Label
+    Friend WithEvents LabelDebugFeatures As Label
     Friend WithEvents ComboBoxCollectionsPOS As ComboBox
     Friend WithEvents lblCollectionsPOS As Label
     Friend WithEvents SettingsPanel As Panel
@@ -856,4 +882,7 @@ Partial Class FormSettings
     Public WithEvents TabArgusBehavior As TabPage
     Friend WithEvents LabelSettingsWindows As Label
     Friend WithEvents LabelSettings0 As Label
+    Friend WithEvents ComboBoxBlur As ComboBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents ToolTipAlpha As ToolTip
 End Class

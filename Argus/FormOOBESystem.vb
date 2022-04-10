@@ -1,4 +1,4 @@
-﻿Public Class FormOOBE
+﻿Public Class FormOOBESystem
 
     'Variables
     Dim SystemName As String = My.Computer.Name

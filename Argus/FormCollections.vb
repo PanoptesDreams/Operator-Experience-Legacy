@@ -73,7 +73,7 @@ Public Class FormCollections
 
     Private Sub LabelCollection0_Click(sender As Object, e As EventArgs) Handles LabelCollection0.Click
 
-        Process.Start("explorer.exe", Environment.GetEnvironmentVariable("argus") + "\User\Document")
+        OpenUserDocs()
 
     End Sub
 
@@ -99,6 +99,29 @@ Public Class FormCollections
 
 #End Region
 
+#Region "Mover"
+    'Main Form
+    Private Sub FormCollections_MouseDown(sender As Object, e As MouseEventArgs) Handles MyBase.MouseDown
+
+        FormMoverGrab(Me)
+
+    End Sub
+
+    Private Sub FormCollections_MouseMove(sender As Object, e As MouseEventArgs) Handles MyBase.MouseMove
+
+        FormMover(Me)
+
+    End Sub
+
+    Private Sub FormCollections_MouseUp(sender As Object, e As MouseEventArgs) Handles MyBase.MouseUp
+
+        FormMoverRelease()
+
+    End Sub
+#End Region
+
+
+
 
     Private Sub FormCollections_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
 
@@ -106,5 +129,4 @@ Public Class FormCollections
         ASave()
 
     End Sub
-
 End Class

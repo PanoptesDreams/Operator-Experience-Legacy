@@ -1,18 +1,14 @@
-﻿Imports System.Text
-Imports Argus.ArgusCommon
-
+﻿Option Explicit On
 
 'Header a.k.a Launcher
 Public Class FormHeader
 
-    Dim drag As Boolean
-    Dim mousex As Integer
-    Dim mousey As Integer
-
+    Dim WebToggle As Int16 = 0
     Dim lastPOS As Point = My.Settings.LauncherLastPos
 
     Dim OSKParam As String = Command() 'REMOVE ME
 
+    Dim FirstRun As Boolean = True
 
     'Start/Load
     Private Sub Launcher_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -43,9 +39,23 @@ Public Class FormHeader
         'Set Form width from monitor width
         Me.Width = Math.Round(Screen.PrimaryScreen.Bounds.Width * 0.33)
 
+        'Dim ImBigger As Integer
+        '
+        'If labelGreeter.Width > labelUsername.Width Then
+        'ImBigger = labelGreeter.Width
+        'Else
+        'ImBigger = labelUsername.Width
+        'End If
+        '
+        'PanelGreeting.Width = 24 + ImBigger
+
+        Blur() 'Apply Blur
+
+        PersitingApp() 'Launch persiting apps
+
+        Opacity = 100 'Finished Load, show form
 
 
-        PersitingApp()
 
     End Sub
 
@@ -53,8 +63,17 @@ Public Class FormHeader
     'Activation
     Private Sub FormHeader_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
 
+        If FirstRun = True Then
+            FirstRun = False
+            GoTo 1
+        End If
 
+        HideUsermenu()
+        HideSearch()
+
+1:
     End Sub
+
 
     'AlwaysOnTop
     Public Sub AlwaysOnTop()
@@ -62,7 +81,6 @@ Public Class FormHeader
         Me.TopMost = My.Settings.LauncherAoT
 
     End Sub
-
 
 
     'Debug Features
@@ -86,6 +104,7 @@ Public Class FormHeader
 
     End Sub
 
+
     'Portable Mode
     Public Sub Portable()
 
@@ -101,11 +120,15 @@ Public Class FormHeader
 
 
             If MsgBox("Please restart Argus", vbYesNo) = vbYes Then
+
                 'Sets Envirnment Variable %ARGUS% to "A:"
                 Environment.SetEnvironmentVariable("argus", "A:", EnvironmentVariableTarget.User)
+
             ElseIf vbNo Then
+
                 'Assuming portable mode
                 GoTo 1
+
             End If
 
         ElseIf Environment.GetEnvironmentVariable("argus") = "A:" Then
@@ -116,9 +139,6 @@ Public Class FormHeader
 
 1:
     End Sub
-
-
-
 
 
     'Border Drawerer
@@ -219,10 +239,15 @@ Public Class FormHeader
 
 
 #Region "Collections"
-    'Collections
     Private Sub PicCollections_Click(sender As Object, e As EventArgs) Handles PicCollections.Click
 
         Summon(FormCollections)
+
+    End Sub
+
+    Private Sub PicCollections_DoubleClick(sender As Object, e As EventArgs) Handles PicCollections.DoubleClick
+
+        Banish(FormCollections)
 
     End Sub
 #End Region
@@ -231,7 +256,7 @@ Public Class FormHeader
     'Debug Button 1
     Private Sub DebugButton_Click(sender As Object, e As EventArgs) Handles ButtonDebug.Click
 
-        Summon(FormLogin)
+        Summon(FormDebugPanel)
 
         'Test button for testing things
 
@@ -246,44 +271,70 @@ Public Class FormHeader
     'Debug Button 2
     Private Sub btnDebug2_Click(sender As Object, e As EventArgs) Handles ButtonDebug2.Click
 
-        FormOOBE.Show()
+
+
+1:
 
     End Sub
+
+
+
+
+
+
+
 
 
     'Move form with click drag
+#Region "Move"  'Mouse down, Mouse Move, Mouse Release
+
+    'Main Form
     Private Sub FormHeader_MouseDown(sender As Object, e As MouseEventArgs) Handles MyBase.MouseDown
 
-        drag = True
-
-        mousex = Windows.Forms.Cursor.Position.X - sender.Left 'Sets variable mousex
-
-        mousey = Windows.Forms.Cursor.Position.Y - sender.Top 'Sets variable mousey
-
-
-    End Sub
-
-    Private Sub FormHeader_MouseUp(sender As Object, e As MouseEventArgs) Handles MyBase.MouseUp
-
-        My.Settings.LauncherLastPos = sender.Location
-        ASave()
-
-        drag = False
+        FormMoverGrab(Me)
 
     End Sub
 
     Private Sub FormHeader_MouseMove(sender As Object, e As MouseEventArgs) Handles MyBase.MouseMove
 
-        If drag Then
-
-            sender.Top = Windows.Forms.Cursor.Position.Y - mousey
-
-            sender.Left = Windows.Forms.Cursor.Position.X - mousex
-
-        End If
+        FormMover(Me)
 
     End Sub
 
+    Private Sub FormHeader_MouseUp(sender As Object, e As MouseEventArgs) Handles MyBase.MouseUp
+
+        My.Settings.LauncherLastPos = Location
+        ASave()
+
+        FormMoverRelease()
+
+    End Sub
+
+    'Greeting Panel
+    Private Sub PanelGreeting_MouseDown(sender As Object, e As MouseEventArgs) Handles PanelGreeting.MouseDown
+
+        FormMoverGrab(Me)
+
+    End Sub
+
+    Private Sub PanelGreeting_MouseMove(sender As Object, e As MouseEventArgs) Handles PanelGreeting.MouseMove
+
+        FormMover(Me)
+
+    End Sub
+
+    Private Sub PanelGreeting_MouseUp(sender As Object, e As MouseEventArgs) Handles PanelGreeting.MouseUp
+
+        My.Settings.LauncherLastPos = Location
+        ASave()
+
+        FormMoverRelease()
+
+    End Sub
+#End Region
+
+    'Tray icon
+#Region "Tray"
     Private Sub TrayMenuItemExit_Click(sender As Object, e As EventArgs) Handles TrayMenuItemExit.Click
 
         Me.Close()
@@ -294,11 +345,19 @@ Public Class FormHeader
 
         If Me.Visible = True Then
 
+            Banish(FormBlur)
+
             Me.Hide()
+
+            Banish(FormCollections)
 
         Else
 
+            Blur()
+
             Summon(Me)
+
+            PersitingApp()
 
         End If
 
@@ -311,245 +370,79 @@ Public Class FormHeader
 
     End Sub
 
+    Private Sub ButtonCloseLauncher_Click(sender As Object, e As EventArgs)
 
+        Banish(Me)
 
+    End Sub
 
+    Public Sub FormHeader_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
 
+        Dim shorty As String = e.KeyValue.ToString
 
+        ' These change depending on keyboard layout, please update to check layout and assign response
+        Select Case shorty
 
+            Case = "9" Or "17" 'Tab or Control, happens on startup sometimes
+                GoTo 1
 
+            Case = "83" 's
+                Summon(FormSearch)
 
+            Case = "67" 'c
+                Summon(FormCollections)
 
+            Case = "39" 'left arrow
+                GoTo 1
 
+            Case = "37" 'right arrow
+                GoTo 1
 
-    'End Move form click drag
+        End Select
 
+1:
 
+    End Sub
 
+    Private Sub ContextMenuTrayIcon_Opening(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles ContextMenuTrayIcon.Opening
 
+    End Sub
 
+    Private Sub CoreKeeperToolStripMenuItem_Click(sender As Object, e As EventArgs)
+        SteamLauncher(1621690)
+    End Sub
 
+    Private Sub Destiny2ToolStripMenuItem_Click(sender As Object, e As EventArgs)
+        SteamLauncher(1085660)
+    End Sub
 
-    'Deprecated Code - Argus.vb
-    '
-    '    'Variables Start
+    Private Sub CollectionsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CollectionsToolStripMenuItem.Click
+        Summon(FormCollections)
+    End Sub
 
-    '    'Setting Visibility - Always False
-    '    Dim SettingVis As Boolean = False
+    Private Sub DocumentsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DocumentsToolStripMenuItem.Click
+        OpenUserDocs()
+    End Sub
 
-    '    'Directories
-    '    Dim ArgusDir As String = "A:\Argus\"
-    '    Dim IconDir As String = "icon\"
-    '    Dim ThemeDir As String = "theme\"
+    Private Sub GamesToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles GamesToolStripMenuItem1.Click
+        Summon(FormGame)
+    End Sub
 
+    Private Sub SoftwareToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SoftwareToolStripMenuItem.Click
+        Summon(FormSoftware)
+    End Sub
 
-    '    'User Variables
-    '    Dim UserIcons(7) As String
 
-    '    'Favorite color
-    '    Dim favColor As System.Drawing.Color = My.Settings.FavColor
 
-    '    Dim Checked As Boolean = My.Settings.UserIcons
-    '    'Variables End
+    'Quick Shortcuts
 
 
-    '    'App Load
-    '    Public Sub Argus_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-    '        'Reload Settings
-    '        My.Settings.Reload()
+#End Region
 
-    '        CBUserIcons.Checked = My.Settings.UserIcons
 
-    '        PicFavColor.BackColor = My.Settings.FavColor
 
-    '        'Set Label Color
-    '        LblTitle.ForeColor = favColor
 
-    '        'Run Icon Changer
-    '        Icon_Change()
 
-    '        'Invoke Blur
-    '        FormBlur.Show()
 
-
-
-
-    '    End Sub
-
-
-
-    '    'Settings
-
-    '    'Toggle Visibility
-    '    Public Sub BtnSettings_Click(sender As Object, e As EventArgs) Handles BtnSettings.Click
-
-    '        If SettingVis = False Then
-    '            CBUserIcons.Visible = True
-    '            LblFavColor.Visible = True
-    '            PicFavColor.Visible = True
-    '            SettingVis = True
-    '            GoTo 0
-    '        ElseIf SettingVis = True Then
-    '            CBUserIcons.Visible = False
-    '            LblFavColor.Visible = False
-    '            PicFavColor.Visible = False
-    '            SettingVis = False
-    '        End If
-    '0:
-    '    End Sub
-
-    '    'Toggle custom user icons
-    '    Private Sub CBUserIcons_CheckedChanged(sender As Object, e As EventArgs) Handles CBUserIcons.CheckedChanged
-
-    '        If CBUserIcons.Checked = True Then
-
-    '            My.Settings.UserIcons = True
-
-    '            Icon_Change()
-
-    '        ElseIf CBUserIcons.Checked = False Then
-
-    '            My.Settings.UserIcons = False
-
-    '            'Restart Argus Form to refresh buttons
-    '            FormBlur.Argus_Refresh()
-
-    '        End If
-
-    '    End Sub
-
-    '    'Set Favorite Color
-    '    'Invoke Color Dialog
-    '    Public Sub ColorPick()
-    '        colorDiagFav.ShowDialog()
-
-
-
-    '        My.Settings.FavColor = colorDiagFav.Color
-
-    '        LblTitle.ForeColor = My.Settings.FavColor
-
-    '        PicFavColor.BackColor = My.Settings.FavColor
-    '    End Sub
-
-    '    Private Sub LblFavColor_Click(sender As Object, e As EventArgs) Handles LblFavColor.Click
-    '        ColorPick()
-    '    End Sub
-
-    '    Private Sub PicFavColor_Click(sender As Object, e As EventArgs) Handles PicFavColor.Click
-    '        ColorPick()
-    '    End Sub
-
-    '    'Custom Icon Changer
-    '    Public Sub Icon_Change()
-
-    '        'Set icons
-    '        UserIcons(0) = "app.png"
-    '        UserIcons(1) = "game.png"
-    '        UserIcons(2) = "music.png"
-    '        UserIcons(3) = "movie.png"
-    '        UserIcons(4) = "tv.png"
-    '        UserIcons(5) = "video.png"
-    '        UserIcons(6) = "image.png"
-    '        UserIcons(7) = "document.png"
-
-
-    '        If My.Settings.UserIcons = True Then
-
-    '            'Button list
-    '            Dim bttns As New List(Of Object) From {
-    '                BtnApp,
-    '                BtnGame,
-    '                BtnMusic,
-    '                BtnMovie,
-    '                BtnTV,
-    '                BtnVid,
-    '                BtnImg,
-    '                BtnDoc
-    '            }
-
-    '            'Set Custom Icons
-    '            For i = 0 To 7
-
-    '                If My.Computer.FileSystem.FileExists(ArgusDir + IconDir + UserIcons(i)) Then
-    '                    bttns(i).BackgroundImage = System.Drawing.Image.FromFile(ArgusDir + IconDir + UserIcons(i))
-    '                End If
-
-    '            Next
-
-    '        End If
-    '    End Sub
-
-
-
-    '    'Button Hover, label changer
-    '    Public Sub BtnApp_MouseHover(sender As Object, e As EventArgs) Handles BtnApp.MouseHover
-    '        LblTitle.Text = "Apps"
-    '    End Sub
-
-    '    Public Sub BtnGame_MouseHover(sender As Object, e As EventArgs) Handles BtnGame.MouseHover
-    '        LblTitle.Text = "Games"
-    '    End Sub
-
-    '    Public Sub BtnMusic_MouseHover(sender As Object, e As EventArgs) Handles BtnMusic.MouseHover
-    '        LblTitle.Text = "Music"
-    '    End Sub
-
-    '    Public Sub BtnMovie_MouseHover(sender As Object, e As EventArgs) Handles BtnMovie.MouseHover
-    '        LblTitle.Text = "Movies"
-    '    End Sub
-
-    '    Public Sub BtnTV_MouseHover(sender As Object, e As EventArgs) Handles BtnTV.MouseHover
-    '        LblTitle.Text = "T.V / Shows"
-    '    End Sub
-
-    '    Public Sub BtnVid_MouseHover(sender As Object, e As EventArgs) Handles BtnVid.MouseHover
-    '        LblTitle.Text = "Videos"
-    '    End Sub
-
-    '    Public Sub BtnImg_MouseHover(sender As Object, e As EventArgs) Handles BtnImg.MouseHover
-    '        LblTitle.Text = "Images"
-    '    End Sub
-
-    '    Public Sub BtnDoc_MouseHover(sender As Object, e As EventArgs) Handles BtnDoc.MouseHover
-    '        LblTitle.Text = "Documents"
-    '    End Sub
-
-    '    Private Sub BtnSettings_MouseHover(sender As Object, e As EventArgs) Handles BtnSettings.MouseHover
-    '        LblTitle.Text = "Settings"
-    '    End Sub
-
-    '    'Primary Buttons, Click
-    '    Public Sub BtnApp_Click(sender As Object, e As EventArgs) Handles BtnApp.Click
-
-
-    '    End Sub
-
-    '    Public Sub BtnGame_Click(sender As Object, e As EventArgs) Handles BtnGame.Click
-    '        FormGame.Show()
-    '    End Sub
-
-    '    Public Sub BtnMusic_Click(sender As Object, e As EventArgs) Handles BtnMusic.Click
-    '        FormMusic.Show()
-    '    End Sub
-
-
-
-
-    '    'Form Closing
-    '    Private Sub FormArgus_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-
-    '        'Save, just to be sure
-    '        My.Settings.Save()
-
-    '    End Sub
-
-    '    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-    '        FormSettings.Show()
-    '    End Sub
-
-    '    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-
-    '    End Sub
 End Class

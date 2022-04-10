@@ -3,6 +3,9 @@
 Public Class FormSettings
     Dim BGs As Windows.Forms.TabPage() = {TabArgusBehavior, TabArgusPersonalization, TabArgusMisc}
     Dim PersistCollections As Boolean = My.Settings.PersistCollections
+    Dim PersistSearch As Boolean = My.Settings.PersistSearch
+    Dim PersistHome As Boolean = My.Settings.PersistHome
+    Dim PersistWallet As Boolean = My.Settings.PersistWallet
 
     'Start/Load
     Private Sub FormSettings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -16,27 +19,39 @@ Public Class FormSettings
             PicAppletCollections.BackColor = Color.DarkRed
         End If
 
+        If PersistSearch = True Then
+            PicAppletSearch.BackColor = Color.Green
+        ElseIf PersistSearch = False Then
+            PicAppletSearch.BackColor = Color.DarkRed
+        End If
+
+        If PersistHome = True Then
+            PicAppletHome.BackColor = Color.Green
+        ElseIf PersistHome = False Then
+            PicAppletHome.BackColor = Color.DarkRed
+        End If
+
+        If PersistWallet = True Then
+            PicAppletWallet.BackColor = Color.Green
+        ElseIf PersistWallet = False Then
+            PicAppletWallet.BackColor = Color.DarkRed
+        End If
+
         'Behavior
         ComboBoxAutohideUsermenu.Text = My.Settings.AutohideUsermenu
         ComboBoxLauncherAlwaysonTop.Text = My.Settings.LauncherAoT
+        ComboBoxBlur.Text = My.Settings.Blur
 
         'Personalization
         picFavColor.BackColor = My.Settings.FavColor
-
         ComboBoxTheme.Text = My.Settings.ThemeUniversal
-
         tstUsernameSet.Text = My.Settings.UserName
-
         ComboBoxLauncherPOS.Text = My.Settings.LauncherPos
-
         ComboBoxCollectionsPOS.Text = My.Settings.CollectionsPos
-
 
         'Misc
         ComboBoxWebSearchProvider.Text = My.Settings.WebSearchProvider
-
         ComboBoxDebugFeatures.Text = My.Settings.DebugFeatures
-
 
     End Sub
 
@@ -45,6 +60,7 @@ Public Class FormSettings
     Public Sub Theme()
 
         UniThemer(Me)
+        UniThemer(ToolTipAlpha)
 
     End Sub
 
@@ -53,24 +69,25 @@ Public Class FormSettings
     Private Sub FormSettings_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
 
         HideUsermenu()
+        HideSearch()
 
     End Sub
 
 
 #Region "Buttons"
-
     'Apply Behaviors
     Private Sub ButtonApplyBehaviors_Click(sender As Object, e As EventArgs) Handles ButtonApplyBehaviors.Click
 
         'Autohide usermenu when an argus applet is invoked
         My.Settings.AutohideUsermenu = ComboBoxAutohideUsermenu.Text
-
         My.Settings.LauncherAoT = ComboBoxLauncherAlwaysonTop.Text
+        My.Settings.Blur = ComboBoxBlur.Text
 
         ASave()
 
         FormHeader.AlwaysOnTop()
 
+        Blur()
 
     End Sub
 
@@ -108,6 +125,8 @@ Public Class FormSettings
         UniThemer(FormUserMenu)
         UniThemer(FormHeader)
         UniThemer(FormCollections)
+        UniThemer(FormSearch)
+        UniThemer(ToolTipAlpha)
 
         'Apply positions
         Positioner(FormCollections, My.Settings.CollectionsPos, My.Settings.CollectionsLastPos)
@@ -140,6 +159,8 @@ Public Class FormSettings
 
     End Sub
 
+    'Applets
+    'Collections
     Private Sub PicAppletCollections_Click(sender As Object, e As EventArgs) Handles PicAppletCollections.Click
 
         If PersistCollections = True Then
@@ -155,18 +176,48 @@ Public Class FormSettings
 
     End Sub
 
-    Private Sub PicOption1_MouseHover(sender As Object, e As EventArgs)
+    'Search
+    Private Sub PicAppletSearch_Click(sender As Object, e As EventArgs) Handles PicAppletSearch.Click
 
+        If PersistSearch = True Then
+            My.Settings.PersistSearch = False
+            PersistSearch = False
+            PicAppletSearch.BackColor = Color.DarkRed
+        ElseIf PersistSearch = False Then
+            My.Settings.PersistSearch = True
+            PersistSearch = True
+            PicAppletSearch.BackColor = Color.Green
+        End If
 
     End Sub
 
-    Private Sub PicOption1_MouseLeave(sender As Object, e As EventArgs)
+    Private Sub PicAppletWallet_Click(sender As Object, e As EventArgs) Handles PicAppletWallet.Click
 
+        If PersistWallet = True Then
+            My.Settings.PersistWallet = False
+            PersistWallet = False
+            PicAppletWallet.BackColor = Color.DarkRed
+        ElseIf PersistWallet = False Then
+            My.Settings.PersistWallet = True
+            PersistWallet = True
+            PicAppletWallet.BackColor = Color.Green
+        End If
 
     End Sub
 
+    Private Sub PicAppletHome_Click(sender As Object, e As EventArgs) Handles PicAppletHome.Click
 
+        If PersistHome = True Then
+            My.Settings.PersistHome = False
+            PersistHome = False
+            PicAppletHome.BackColor = Color.DarkRed
+        ElseIf PersistHome = False Then
+            My.Settings.PersistHome = True
+            PersistHome = True
+            PicAppletHome.BackColor = Color.Green
+        End If
 
+    End Sub
 
     Private Sub LabelSettingsUser_MouseEnter(sender As Object, e As EventArgs) Handles LabelSettingsUser.MouseEnter
 
@@ -205,4 +256,10 @@ Public Class FormSettings
         TabControlSettings.SelectedTab = SettingsTab2Win
 
     End Sub
+
+    Private Sub lblAutohideUserMenu_MouseHover(sender As Object, e As EventArgs) Handles lblAutohideUserMenu.MouseHover
+        ToolTipAlpha.Show("True - Hides user menu when another applet is clicked" + vbCrLf + "False - Doesn't . . .", lblAutohideUserMenu)
+    End Sub
+
+
 End Class

@@ -6,5 +6,19 @@
     ' StartupNextInstance: Raised when launching a single-instance application and the application is already active. 
     ' NetworkAvailabilityChanged: Raised when the network connection is connected or disconnected.
     Partial Friend Class MyApplication
+
+
+        Public Sub A_AppAlreadyOpen() Handles Me.StartupNextInstance
+
+            Summon(FormHeader)
+
+            Blur() 'Apply Blur
+
+            PersitingApp() 'Launch persiting apps
+
+
+        End Sub
+
     End Class
+
 End Namespace

@@ -129,4 +129,13 @@ Public Class FormCollections
         ASave()
 
     End Sub
+
+    Private Sub LabelCollectionCalendar_Click(sender As Object, e As EventArgs) Handles LabelCollectionCalendar.Click
+
+        Ding()
+
+
+    End Sub
+
+
 End Class

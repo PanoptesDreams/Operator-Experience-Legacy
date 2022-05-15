@@ -52,10 +52,6 @@ Partial Class FormSettings
         Me.LabelWebsearchProvider = New System.Windows.Forms.Label()
         Me.ButtonApplyMisc = New System.Windows.Forms.Button()
         Me.TabArgusPersonalization = New System.Windows.Forms.TabPage()
-        Me.ComboBoxCollectionsPOS = New System.Windows.Forms.ComboBox()
-        Me.lblCollectionsPOS = New System.Windows.Forms.Label()
-        Me.ComboBoxLauncherPOS = New System.Windows.Forms.ComboBox()
-        Me.lblLauncherPOS = New System.Windows.Forms.Label()
         Me.tstUsernameSet = New System.Windows.Forms.TextBox()
         Me.lblUsernameSet = New System.Windows.Forms.Label()
         Me.ButtonApplyPersonalization = New System.Windows.Forms.Button()
@@ -81,6 +77,12 @@ Partial Class FormSettings
         Me.LabelSettingsWindows = New System.Windows.Forms.Label()
         Me.LabelSettingsUser = New System.Windows.Forms.Label()
         Me.ToolTipAlpha = New System.Windows.Forms.ToolTip(Me.components)
+        Me.ComboBoxCollectionsPOS = New System.Windows.Forms.ComboBox()
+        Me.lblCollectionsPOS = New System.Windows.Forms.Label()
+        Me.ComboBoxLauncherPOS = New System.Windows.Forms.ComboBox()
+        Me.lblLauncherPOS = New System.Windows.Forms.Label()
+        Me.ComboBoxDockedLauncher = New System.Windows.Forms.ComboBox()
+        Me.LabelDockedLauncher = New System.Windows.Forms.Label()
         Me.TabControlSettings.SuspendLayout()
         Me.SettingsTab1Argus.SuspendLayout()
         Me.TabControlArgus.SuspendLayout()
@@ -256,6 +258,12 @@ Partial Class FormSettings
         'TabArgusBehavior
         '
         Me.TabArgusBehavior.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TabArgusBehavior.Controls.Add(Me.ComboBoxDockedLauncher)
+        Me.TabArgusBehavior.Controls.Add(Me.LabelDockedLauncher)
+        Me.TabArgusBehavior.Controls.Add(Me.ComboBoxCollectionsPOS)
+        Me.TabArgusBehavior.Controls.Add(Me.lblCollectionsPOS)
+        Me.TabArgusBehavior.Controls.Add(Me.ComboBoxLauncherPOS)
+        Me.TabArgusBehavior.Controls.Add(Me.lblLauncherPOS)
         Me.TabArgusBehavior.Controls.Add(Me.ComboBoxBlur)
         Me.TabArgusBehavior.Controls.Add(Me.Label2)
         Me.TabArgusBehavior.Controls.Add(Me.ComboBoxLauncherAlwaysonTop)
@@ -422,10 +430,6 @@ Partial Class FormSettings
         '
         Me.TabArgusPersonalization.BackColor = System.Drawing.Color.Transparent
         Me.TabArgusPersonalization.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TabArgusPersonalization.Controls.Add(Me.ComboBoxCollectionsPOS)
-        Me.TabArgusPersonalization.Controls.Add(Me.lblCollectionsPOS)
-        Me.TabArgusPersonalization.Controls.Add(Me.ComboBoxLauncherPOS)
-        Me.TabArgusPersonalization.Controls.Add(Me.lblLauncherPOS)
         Me.TabArgusPersonalization.Controls.Add(Me.tstUsernameSet)
         Me.TabArgusPersonalization.Controls.Add(Me.lblUsernameSet)
         Me.TabArgusPersonalization.Controls.Add(Me.ButtonApplyPersonalization)
@@ -441,50 +445,6 @@ Partial Class FormSettings
         Me.TabArgusPersonalization.Size = New System.Drawing.Size(833, 476)
         Me.TabArgusPersonalization.TabIndex = 0
         Me.TabArgusPersonalization.Text = "Personalization"
-        '
-        'ComboBoxCollectionsPOS
-        '
-        Me.ComboBoxCollectionsPOS.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ComboBoxCollectionsPOS.FormattingEnabled = True
-        Me.ComboBoxCollectionsPOS.Items.AddRange(New Object() {"Right", "Left", "User"})
-        Me.ComboBoxCollectionsPOS.Location = New System.Drawing.Point(422, 125)
-        Me.ComboBoxCollectionsPOS.Margin = New System.Windows.Forms.Padding(5)
-        Me.ComboBoxCollectionsPOS.Name = "ComboBoxCollectionsPOS"
-        Me.ComboBoxCollectionsPOS.Size = New System.Drawing.Size(133, 30)
-        Me.ComboBoxCollectionsPOS.TabIndex = 11
-        '
-        'lblCollectionsPOS
-        '
-        Me.lblCollectionsPOS.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblCollectionsPOS.AutoSize = True
-        Me.lblCollectionsPOS.Location = New System.Drawing.Point(228, 128)
-        Me.lblCollectionsPOS.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.lblCollectionsPOS.Name = "lblCollectionsPOS"
-        Me.lblCollectionsPOS.Size = New System.Drawing.Size(184, 22)
-        Me.lblCollectionsPOS.TabIndex = 10
-        Me.lblCollectionsPOS.Text = "Collections Position -"
-        '
-        'ComboBoxLauncherPOS
-        '
-        Me.ComboBoxLauncherPOS.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ComboBoxLauncherPOS.FormattingEnabled = True
-        Me.ComboBoxLauncherPOS.Items.AddRange(New Object() {"Top", "Bottom", "User"})
-        Me.ComboBoxLauncherPOS.Location = New System.Drawing.Point(422, 165)
-        Me.ComboBoxLauncherPOS.Margin = New System.Windows.Forms.Padding(5)
-        Me.ComboBoxLauncherPOS.Name = "ComboBoxLauncherPOS"
-        Me.ComboBoxLauncherPOS.Size = New System.Drawing.Size(133, 30)
-        Me.ComboBoxLauncherPOS.TabIndex = 8
-        '
-        'lblLauncherPOS
-        '
-        Me.lblLauncherPOS.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lblLauncherPOS.AutoSize = True
-        Me.lblLauncherPOS.Location = New System.Drawing.Point(242, 168)
-        Me.lblLauncherPOS.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.lblLauncherPOS.Name = "lblLauncherPOS"
-        Me.lblLauncherPOS.Size = New System.Drawing.Size(170, 22)
-        Me.lblLauncherPOS.TabIndex = 7
-        Me.lblLauncherPOS.Text = "Launcher Position -"
         '
         'tstUsernameSet
         '
@@ -780,6 +740,72 @@ Partial Class FormSettings
         Me.ToolTipAlpha.UseAnimation = False
         Me.ToolTipAlpha.UseFading = False
         '
+        'ComboBoxCollectionsPOS
+        '
+        Me.ComboBoxCollectionsPOS.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ComboBoxCollectionsPOS.FormattingEnabled = True
+        Me.ComboBoxCollectionsPOS.Items.AddRange(New Object() {"Right", "Left", "User"})
+        Me.ComboBoxCollectionsPOS.Location = New System.Drawing.Point(536, 163)
+        Me.ComboBoxCollectionsPOS.Margin = New System.Windows.Forms.Padding(5)
+        Me.ComboBoxCollectionsPOS.Name = "ComboBoxCollectionsPOS"
+        Me.ComboBoxCollectionsPOS.Size = New System.Drawing.Size(285, 30)
+        Me.ComboBoxCollectionsPOS.TabIndex = 19
+        '
+        'lblCollectionsPOS
+        '
+        Me.lblCollectionsPOS.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblCollectionsPOS.AutoSize = True
+        Me.lblCollectionsPOS.Location = New System.Drawing.Point(342, 166)
+        Me.lblCollectionsPOS.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.lblCollectionsPOS.Name = "lblCollectionsPOS"
+        Me.lblCollectionsPOS.Size = New System.Drawing.Size(184, 22)
+        Me.lblCollectionsPOS.TabIndex = 18
+        Me.lblCollectionsPOS.Text = "Collections Position -"
+        '
+        'ComboBoxLauncherPOS
+        '
+        Me.ComboBoxLauncherPOS.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ComboBoxLauncherPOS.FormattingEnabled = True
+        Me.ComboBoxLauncherPOS.Items.AddRange(New Object() {"Top", "Bottom", "User", "Topdocked"})
+        Me.ComboBoxLauncherPOS.Location = New System.Drawing.Point(536, 203)
+        Me.ComboBoxLauncherPOS.Margin = New System.Windows.Forms.Padding(5)
+        Me.ComboBoxLauncherPOS.Name = "ComboBoxLauncherPOS"
+        Me.ComboBoxLauncherPOS.Size = New System.Drawing.Size(285, 30)
+        Me.ComboBoxLauncherPOS.TabIndex = 17
+        '
+        'lblLauncherPOS
+        '
+        Me.lblLauncherPOS.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lblLauncherPOS.AutoSize = True
+        Me.lblLauncherPOS.Location = New System.Drawing.Point(356, 206)
+        Me.lblLauncherPOS.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.lblLauncherPOS.Name = "lblLauncherPOS"
+        Me.lblLauncherPOS.Size = New System.Drawing.Size(170, 22)
+        Me.lblLauncherPOS.TabIndex = 16
+        Me.lblLauncherPOS.Text = "Launcher Position -"
+        '
+        'ComboBoxDockedLauncher
+        '
+        Me.ComboBoxDockedLauncher.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ComboBoxDockedLauncher.FormattingEnabled = True
+        Me.ComboBoxDockedLauncher.Items.AddRange(New Object() {"Top", "Bottom", "User"})
+        Me.ComboBoxDockedLauncher.Location = New System.Drawing.Point(536, 243)
+        Me.ComboBoxDockedLauncher.Margin = New System.Windows.Forms.Padding(5)
+        Me.ComboBoxDockedLauncher.Name = "ComboBoxDockedLauncher"
+        Me.ComboBoxDockedLauncher.Size = New System.Drawing.Size(285, 30)
+        Me.ComboBoxDockedLauncher.TabIndex = 21
+        '
+        'LabelDockedLauncher
+        '
+        Me.LabelDockedLauncher.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.LabelDockedLauncher.AutoSize = True
+        Me.LabelDockedLauncher.Location = New System.Drawing.Point(356, 246)
+        Me.LabelDockedLauncher.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.LabelDockedLauncher.Name = "LabelDockedLauncher"
+        Me.LabelDockedLauncher.Size = New System.Drawing.Size(166, 22)
+        Me.LabelDockedLauncher.TabIndex = 20
+        Me.LabelDockedLauncher.Text = "Docked Launcher -"
+        '
         'FormSettings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 22.0!)
@@ -843,8 +869,6 @@ Partial Class FormSettings
     Friend WithEvents lblUsernameSet As Label
     Friend WithEvents ComboBoxWebSearchProvider As ComboBox
     Friend WithEvents LabelWebsearchProvider As Label
-    Friend WithEvents ComboBoxLauncherPOS As ComboBox
-    Friend WithEvents lblLauncherPOS As Label
     Friend WithEvents picUserImage As PictureBox
     Friend WithEvents ComboBoxAutohideUsermenu As ComboBox
     Friend WithEvents lblAutohideUserMenu As Label
@@ -871,8 +895,6 @@ Partial Class FormSettings
     Friend WithEvents ButtonApplyBehaviors As Button
     Friend WithEvents ComboBoxDebugFeatures As ComboBox
     Friend WithEvents LabelDebugFeatures As Label
-    Friend WithEvents ComboBoxCollectionsPOS As ComboBox
-    Friend WithEvents lblCollectionsPOS As Label
     Friend WithEvents SettingsPanel As Panel
     Friend WithEvents LabelSettingsUser As Label
     Friend WithEvents ComboBoxLauncherAlwaysonTop As ComboBox
@@ -885,4 +907,10 @@ Partial Class FormSettings
     Friend WithEvents ComboBoxBlur As ComboBox
     Friend WithEvents Label2 As Label
     Friend WithEvents ToolTipAlpha As ToolTip
+    Friend WithEvents ComboBoxCollectionsPOS As ComboBox
+    Friend WithEvents lblCollectionsPOS As Label
+    Friend WithEvents ComboBoxLauncherPOS As ComboBox
+    Friend WithEvents lblLauncherPOS As Label
+    Friend WithEvents ComboBoxDockedLauncher As ComboBox
+    Friend WithEvents LabelDockedLauncher As Label
 End Class

@@ -132,6 +132,12 @@
     <Compile Include="argus_launcher.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="FormEditor.Designer.vb">
+      <DependentUpon>FormEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditor.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormHomepage.Designer.vb">
       <DependentUpon>FormHomepage.vb</DependentUpon>
     </Compile>
@@ -263,6 +269,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDebugPanel.resx">
       <DependentUpon>FormDebugPanel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditor.resx">
+      <DependentUpon>FormEditor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormHomepage.resx">
       <DependentUpon>FormHomepage.vb</DependentUpon>

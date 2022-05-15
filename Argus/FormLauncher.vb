@@ -6,56 +6,35 @@ Public Class FormHeader
     Dim WebToggle As Int16 = 0
     Dim lastPOS As Point = My.Settings.LauncherLastPos
 
-    Dim OSKParam As String = Command() 'REMOVE ME
-
     Dim FirstRun As Boolean = True
+
 
     'Start/Load
     Private Sub Launcher_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        'Are we in debug mode?
-        DebugFeatures()
+        DebugFeatures() ' Are we in debug mode?
 
-        'Checks environment variable
-        Portable()
+        Portable() ' Check if we are in portable mode
 
-        'Set theme
-        UniThemer(Me)
+        UniThemer(Me) ' Set theme
 
-        'Set position
-        Positioner(Me, My.Settings.LauncherPos, My.Settings.LauncherLastPos)
+        Positioner(Me, My.Settings.LauncherPos, My.Settings.LauncherLastPos) ' Position Form
 
-        'Set greeting
-        labelGreeter.Text = Greeter()
+        labelGreeter.Text = Greeter() ' Greet the user
 
-        'Set Username
-        labelUsername.Text = My.Settings.UserName
+        labelUsername.Text = My.Settings.UserName ' Retrieve name
 
-        'Call set: day of week, time, date/month, year
-        SetTime()
+        SetTime() ' Sets all timedate labels to their respective nows
 
-
-
-        'Set Form width from monitor width
-        Me.Width = Math.Round(Screen.PrimaryScreen.Bounds.Width * 0.33)
-
-        'Dim ImBigger As Integer
-        '
-        'If labelGreeter.Width > labelUsername.Width Then
-        'ImBigger = labelGreeter.Width
-        'Else
-        'ImBigger = labelUsername.Width
-        'End If
-        '
-        'PanelGreeting.Width = 24 + ImBigger
+        Me.Width = Math.Round(Screen.PrimaryScreen.Bounds.Width * 0.33) ' Set Form width from monitor width
 
         Blur() 'Apply Blur
 
-        PersitingApp() 'Launch persiting apps
+        PersitingApp() ' Launch persiting apps
 
-        Opacity = 100 'Finished Load, show form
+        Opacity = 100 ' Finished Loading and Setting, show form
 
-
+        ArgFocus()
 
     End Sub
 
@@ -431,6 +410,7 @@ Public Class FormHeader
     Private Sub SoftwareToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SoftwareToolStripMenuItem.Click
         Summon(FormSoftware)
     End Sub
+
 
 
 

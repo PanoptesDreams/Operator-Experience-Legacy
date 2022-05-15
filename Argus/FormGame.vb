@@ -9,7 +9,7 @@ Public Class FormGame
 
     'Directories
     Dim ArgusDir As String = Environment.GetEnvironmentVariable("argus")
-    Dim GameLibDir As String = My.Settings.GameLib 'A:\Software\Gaming\Library
+    Dim GameLibDir As String = ArgusDir + My.Settings.GameLib 'A:\Software\Gaming\Library
     Dim GameWinDir As String = GameLibDir + "\Windows" 'A:\Software\Gaming\Library\Argus
     Dim GameXboxDir As String = GameLibDir + "\Xbox" 'A:\Software\Gaming\Library\Xbox (Please fix)
     Dim GamePlaystationDir As String = GameLibDir + "\PlayStation 2" 'A:\Software\Gaming\Library\PlayStation 2 (Please fix)
@@ -234,14 +234,14 @@ Public Class FormGame
 
 
         CurrentDir = CurrentDir + "\" + GameList.SelectedItem
-        LblGameDir.Text = ArgusDir + CurrentDir
+        LblGameDir.Text = CurrentDir
 
 
-        If System.IO.File.Exists(ArgusDir + CurrentDir + "\app") Then
+        If System.IO.File.Exists(CurrentDir + "\app") Then
 
 
 
-            Using FileReader As StreamReader = File.OpenText(ArgusDir + CurrentDir + "\app")
+            Using FileReader As StreamReader = File.OpenText(CurrentDir + "\app")
 
                 Dim s As String
 
@@ -377,6 +377,14 @@ endsub:
     Private Sub ButtonDebug2_Click(sender As Object, e As EventArgs) Handles ButtonDebug2.Click
 
         GameListClearer("Windows")
+
+    End Sub
+
+    Private Sub ButtonEditOperatorNotes_Click(sender As Object, e As EventArgs) Handles ButtonEditOperatorNotes.Click
+
+        Summon(FormEditor)
+
+        FormEditor.TextEditBox.Text = LabelOperatorNotes.Text
 
     End Sub
 

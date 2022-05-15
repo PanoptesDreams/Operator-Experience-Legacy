@@ -26,6 +26,7 @@ Partial Class FormCollections
         Me.LabelCollection1 = New System.Windows.Forms.Label()
         Me.LabelCollection2 = New System.Windows.Forms.Label()
         Me.LabelCollection3 = New System.Windows.Forms.Label()
+        Me.LabelCollectionCalendar = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'LabelCollection0
@@ -47,7 +48,7 @@ Partial Class FormCollections
         Me.LabelCollection1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelCollection1.BackColor = System.Drawing.Color.Transparent
         Me.LabelCollection1.Image = Global.Argus.My.Resources.Resources.frame_empty
-        Me.LabelCollection1.Location = New System.Drawing.Point(34, 134)
+        Me.LabelCollection1.Location = New System.Drawing.Point(34, 234)
         Me.LabelCollection1.Margin = New System.Windows.Forms.Padding(25)
         Me.LabelCollection1.Name = "LabelCollection1"
         Me.LabelCollection1.Padding = New System.Windows.Forms.Padding(15, 5, 5, 5)
@@ -61,7 +62,7 @@ Partial Class FormCollections
         Me.LabelCollection2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelCollection2.BackColor = System.Drawing.Color.Transparent
         Me.LabelCollection2.Image = Global.Argus.My.Resources.Resources.frame_empty
-        Me.LabelCollection2.Location = New System.Drawing.Point(34, 234)
+        Me.LabelCollection2.Location = New System.Drawing.Point(34, 334)
         Me.LabelCollection2.Margin = New System.Windows.Forms.Padding(25)
         Me.LabelCollection2.Name = "LabelCollection2"
         Me.LabelCollection2.Padding = New System.Windows.Forms.Padding(15, 5, 5, 5)
@@ -75,7 +76,7 @@ Partial Class FormCollections
         Me.LabelCollection3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelCollection3.BackColor = System.Drawing.Color.Transparent
         Me.LabelCollection3.Image = Global.Argus.My.Resources.Resources.frame_empty
-        Me.LabelCollection3.Location = New System.Drawing.Point(34, 334)
+        Me.LabelCollection3.Location = New System.Drawing.Point(34, 434)
         Me.LabelCollection3.Margin = New System.Windows.Forms.Padding(25)
         Me.LabelCollection3.Name = "LabelCollection3"
         Me.LabelCollection3.Padding = New System.Windows.Forms.Padding(15, 5, 5, 5)
@@ -84,12 +85,29 @@ Partial Class FormCollections
         Me.LabelCollection3.Text = "User"
         Me.LabelCollection3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
+        'LabelCollectionCalendar
+        '
+        Me.LabelCollectionCalendar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.LabelCollectionCalendar.BackColor = System.Drawing.Color.Transparent
+        Me.LabelCollectionCalendar.Image = Global.Argus.My.Resources.Resources.frame_empty
+        Me.LabelCollectionCalendar.Location = New System.Drawing.Point(34, 134)
+        Me.LabelCollectionCalendar.Margin = New System.Windows.Forms.Padding(25)
+        Me.LabelCollectionCalendar.Name = "LabelCollectionCalendar"
+        Me.LabelCollectionCalendar.Padding = New System.Windows.Forms.Padding(15, 5, 5, 5)
+        Me.LabelCollectionCalendar.Size = New System.Drawing.Size(117, 50)
+        Me.LabelCollectionCalendar.TabIndex = 5
+        Me.LabelCollectionCalendar.Text = "Calendars"
+        Me.LabelCollectionCalendar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
         'FormCollections
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 22.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(185, 426)
+        Me.ClientSize = New System.Drawing.Size(185, 541)
+        Me.Controls.Add(Me.LabelCollectionCalendar)
         Me.Controls.Add(Me.LabelCollection3)
         Me.Controls.Add(Me.LabelCollection2)
         Me.Controls.Add(Me.LabelCollection1)
@@ -111,4 +129,5 @@ Partial Class FormCollections
     Friend WithEvents LabelCollection1 As Label
     Friend WithEvents LabelCollection2 As Label
     Friend WithEvents LabelCollection3 As Label
+    Friend WithEvents LabelCollectionCalendar As Label
 End Class

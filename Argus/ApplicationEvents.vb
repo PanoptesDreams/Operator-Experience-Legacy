@@ -16,7 +16,6 @@
 
             PersitingApp() 'Launch persiting apps
 
-
         End Sub
 
     End Class

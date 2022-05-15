@@ -29,4 +29,10 @@
     Private Sub ButtonStartCoreKeeper_Click(sender As Object, e As EventArgs) Handles ButtonStartCoreKeeper.Click
         Process.Start("steam://run/1621690")
     End Sub
+
+    Private Sub ButtonAdd_Click(sender As Object, e As EventArgs) Handles ButtonAdd.Click
+
+        ' TextBoxGameIDinput.Text + 
+
+    End Sub
 End Class

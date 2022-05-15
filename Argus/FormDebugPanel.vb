@@ -2,6 +2,25 @@
 
 Public Class FormDebugPanel
 
+    Dim Args As String() = Arguments()
+
+    Private Sub FormDebugPanel_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        UniThemer(Me) ' Skin form
+
+        ' Add arguments to Argument Listbox
+        Try
+            For i = 0 To Args.Length - 1
+
+                ListBoxArguments.Items.Add(Args(i))
+
+            Next
+        Catch
+
+        End Try
+
+    End Sub
+
     Private Sub Label7_Click(sender As Object, e As EventArgs) Handles LabelRewritable.Click
 
         RichTextBox1.Select()
@@ -21,13 +40,11 @@ Public Class FormDebugPanel
     End Sub
 
 
-    Private Sub ButtonOpenSearch_Click(sender As Object, e As EventArgs) Handles ButtonOpenSearch.Click
 
-        Summon(FormSearch)
-
-    End Sub
 
     Public Sub ButtonOpenStartMenu_Click(sender As Object, e As EventArgs) Handles ButtonOpenStartMenu.Click
+
+        WinStart()
 
         'keybd_event(VK_STARTKEY, 0, 0, 0)
         'keybd_event(VK_STARTKEY, 0, KEYEVENTF_KEYUP, 0)
@@ -51,10 +68,16 @@ Public Class FormDebugPanel
         Dim FirstName() As String
         ReDim FirstName(100)
 
+        ListBoxArguments.Items.Clear()
+
         For i = 1 To 100
             For Each line As String In File.ReadLines("A:\Argus\firstname.txt") 'Loop over lines in file.
 
                 FirstName(i) = line
+
+
+
+                ListBoxArguments.Items.Add(FirstName(i))
 
             Next
         Next
@@ -71,20 +94,19 @@ Public Class FormDebugPanel
 
 
 
-    Private Sub ButtonReadArgs_Click(sender As Object, e As EventArgs) Handles ButtonReadArgs.Click
+    Private Sub ButtonReadArgs_Click(sender As Object, e As EventArgs)
 
-        Dim Args As String() = Arguments()
 
-        Try
-            For i = 0 To Args.Length - 1
-
-                ListBoxArguments.Items.Add(Args(i))
-
-            Next
-        Catch
-
-        End Try
 
 
     End Sub
+
+    Private Sub ButtonWriteKey_Click(sender As Object, e As EventArgs) Handles ButtonWriteKey.Click
+
+        My.Computer.Registry.ClassesRoot.CreateSubKey("argus")
+
+
+    End Sub
+
+
 End Class

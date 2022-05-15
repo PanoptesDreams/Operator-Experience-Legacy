@@ -38,6 +38,7 @@ Partial Class FormHeader
         Me.NotifyIconLauncher = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.ContextMenuTrayIcon = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.TrayMenuItemToggleVisibility = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.CollectionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DocumentsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -49,7 +50,6 @@ Partial Class FormHeader
         Me.TrayMenuSettings = New System.Windows.Forms.ToolStripMenuItem()
         Me.TrayMenuItemExit = New System.Windows.Forms.ToolStripMenuItem()
         Me.PanelGreeting = New System.Windows.Forms.Panel()
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.PicUserImage, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PicCollections, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuTrayIcon.SuspendLayout()
@@ -205,72 +205,81 @@ Partial Class FormHeader
         Me.ContextMenuTrayIcon.ImageScalingSize = New System.Drawing.Size(18, 18)
         Me.ContextMenuTrayIcon.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TrayMenuItemToggleVisibility, Me.ToolStripMenuItem1, Me.ToolStripSeparator2, Me.CollectionsToolStripMenuItem, Me.ToolStripSeparator1, Me.TrayMenuSettings, Me.TrayMenuItemExit})
         Me.ContextMenuTrayIcon.Name = "ContextMenuTrayIcon"
-        Me.ContextMenuTrayIcon.Size = New System.Drawing.Size(238, 171)
+        Me.ContextMenuTrayIcon.Size = New System.Drawing.Size(240, 171)
         '
         'TrayMenuItemToggleVisibility
         '
         Me.TrayMenuItemToggleVisibility.Name = "TrayMenuItemToggleVisibility"
-        Me.TrayMenuItemToggleVisibility.Size = New System.Drawing.Size(237, 26)
+        Me.TrayMenuItemToggleVisibility.Size = New System.Drawing.Size(239, 26)
         Me.TrayMenuItemToggleVisibility.Text = "Toggle Visiblity"
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(239, 26)
+        Me.ToolStripMenuItem1.Text = "Operator Homepage"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(234, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(236, 6)
         '
         'CollectionsToolStripMenuItem
         '
         Me.CollectionsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DocumentsToolStripMenuItem, Me.GamesToolStripMenuItem1, Me.SoftwareToolStripMenuItem})
         Me.CollectionsToolStripMenuItem.Name = "CollectionsToolStripMenuItem"
-        Me.CollectionsToolStripMenuItem.Size = New System.Drawing.Size(237, 26)
+        Me.CollectionsToolStripMenuItem.Size = New System.Drawing.Size(239, 26)
         Me.CollectionsToolStripMenuItem.Text = "Collections"
         '
         'DocumentsToolStripMenuItem
         '
+        Me.DocumentsToolStripMenuItem.Image = Global.Argus.My.Resources.Resources.document
         Me.DocumentsToolStripMenuItem.Name = "DocumentsToolStripMenuItem"
-        Me.DocumentsToolStripMenuItem.Size = New System.Drawing.Size(170, 26)
+        Me.DocumentsToolStripMenuItem.Size = New System.Drawing.Size(198, 26)
         Me.DocumentsToolStripMenuItem.Text = "Documents"
         '
         'GamesToolStripMenuItem1
         '
         Me.GamesToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CoreKeeperToolStripMenuItem, Me.Destiny2ToolStripMenuItem})
+        Me.GamesToolStripMenuItem1.Image = Global.Argus.My.Resources.Resources.game
         Me.GamesToolStripMenuItem1.Name = "GamesToolStripMenuItem1"
-        Me.GamesToolStripMenuItem1.Size = New System.Drawing.Size(170, 26)
+        Me.GamesToolStripMenuItem1.Size = New System.Drawing.Size(198, 26)
         Me.GamesToolStripMenuItem1.Text = "Games"
         '
         'CoreKeeperToolStripMenuItem
         '
         Me.CoreKeeperToolStripMenuItem.Name = "CoreKeeperToolStripMenuItem"
-        Me.CoreKeeperToolStripMenuItem.Size = New System.Drawing.Size(177, 26)
+        Me.CoreKeeperToolStripMenuItem.Size = New System.Drawing.Size(198, 26)
         Me.CoreKeeperToolStripMenuItem.Text = "Core Keeper"
         '
         'Destiny2ToolStripMenuItem
         '
         Me.Destiny2ToolStripMenuItem.Name = "Destiny2ToolStripMenuItem"
-        Me.Destiny2ToolStripMenuItem.Size = New System.Drawing.Size(177, 26)
+        Me.Destiny2ToolStripMenuItem.Size = New System.Drawing.Size(198, 26)
         Me.Destiny2ToolStripMenuItem.Text = "Destiny 2"
         '
         'SoftwareToolStripMenuItem
         '
         Me.SoftwareToolStripMenuItem.Name = "SoftwareToolStripMenuItem"
-        Me.SoftwareToolStripMenuItem.Size = New System.Drawing.Size(170, 26)
+        Me.SoftwareToolStripMenuItem.Size = New System.Drawing.Size(198, 26)
         Me.SoftwareToolStripMenuItem.Text = "Software"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(234, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(236, 6)
         '
         'TrayMenuSettings
         '
+        Me.TrayMenuSettings.Image = Global.Argus.My.Resources.Resources.settings
         Me.TrayMenuSettings.Name = "TrayMenuSettings"
-        Me.TrayMenuSettings.Size = New System.Drawing.Size(237, 26)
+        Me.TrayMenuSettings.Size = New System.Drawing.Size(239, 26)
         Me.TrayMenuSettings.Text = "Settings"
         '
         'TrayMenuItemExit
         '
         Me.TrayMenuItemExit.Name = "TrayMenuItemExit"
-        Me.TrayMenuItemExit.Size = New System.Drawing.Size(237, 26)
+        Me.TrayMenuItemExit.Size = New System.Drawing.Size(239, 26)
         Me.TrayMenuItemExit.Text = "Exit"
         '
         'PanelGreeting
@@ -285,12 +294,6 @@ Partial Class FormHeader
         Me.PanelGreeting.Name = "PanelGreeting"
         Me.PanelGreeting.Size = New System.Drawing.Size(105, 50)
         Me.PanelGreeting.TabIndex = 12
-        '
-        'ToolStripMenuItem1
-        '
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(237, 26)
-        Me.ToolStripMenuItem1.Text = "Operator Homepage"
         '
         'FormHeader
         '

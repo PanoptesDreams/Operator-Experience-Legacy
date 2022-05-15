@@ -177,6 +177,8 @@ Module ArgusCommon
     Public Sub Positioner(Sender As Form, Owner As String, LastPos As Point)
 
         Select Case Owner
+            Case = "Topdock"
+                Sender.Location = New Point(0, 0)
             Case = "Top"
                 Sender.Location = New Point((Screen.PrimaryScreen.Bounds.Width / 2 - (Sender.Width / 2)), 20)
             Case = "Bottom"
@@ -216,7 +218,7 @@ Module ArgusCommon
     End Sub
 
 
-    'Button Glow
+    'Button unGlow
     Public Sub ButtonUnGlow(TLabel As Label)
 
         TLabel.Image = My.Resources.frame_empty
@@ -366,7 +368,42 @@ Module ArgusCommon
 
     Public Sub Ding()
 
-        Process.Start("applet\Ding.exe")
+        Process.Start("A:\argus\applet\Ding.exe")
+
+    End Sub
+
+    Public Sub ArgFocus()
+
+        Dim Args As String() = Arguments()
+        Dim ArgsB As String = "argus://"
+
+        Try
+
+            If Args(1) IsNot "" Then
+
+                Select Case Args(1)
+
+                    Case = ArgsB + "help/"
+                        Summon(FormDebugPanel)
+                    Case = ArgsB + "game/"
+                        Summon(FormGame)
+
+                End Select
+
+            End If
+
+        Catch ex As Exception
+
+        End Try
+
+
+
+    End Sub
+
+    Public Sub WinStart()
+
+
+
 
     End Sub
 

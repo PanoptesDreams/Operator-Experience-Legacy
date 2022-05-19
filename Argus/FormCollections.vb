@@ -1,15 +1,15 @@
-﻿Imports Argus.ArgusCommon
+﻿Public Class FormCollections
 
-Public Class FormCollections
-    'Varialbes
-    Dim lastPOS As Point = My.Settings.CollectionsLastPos
+    ' Variables
+    Dim lastPOS As Point = My.Settings.CollectionsLastPos ' Last form position
 
-    'Start
+
+    ' Start
     Private Sub FormCollections_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        UniThemer(Me)
+        UniThemer(Me) ' Theme form
 
-        Positioner(Me, My.Settings.CollectionsPos, My.Settings.CollectionsLastPos)
+        Positioner(Me, My.Settings.CollectionsPos, My.Settings.CollectionsLastPos) ' Position form
 
     End Sub
 
@@ -73,7 +73,10 @@ Public Class FormCollections
 
     Private Sub LabelCollection0_Click(sender As Object, e As EventArgs) Handles LabelCollection0.Click
 
-        OpenUserDocs()
+        ' OpenUserDocs() Open Operator documents folder
+
+        Summon(FormDocuments)
+
 
     End Sub
 

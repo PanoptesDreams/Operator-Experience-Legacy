@@ -4,6 +4,8 @@ Simply known as 'Argus' or ▲ for short, the Operator Experience is the launchp
 
 This is achieved by placing known applications and data into an appropriate directory within the hierarchy, making them more accessible through logical storage.
 
+An example of the hierarchy can be found in the [Argus](https://github.com/PanoptesDreams/argus) repository.
+
 
 ## Requirements
 
@@ -18,7 +20,7 @@ A dedicated Drive or Volume, everything will go here (unless specified otherwise
 
 
 ## Nomenclature
-*Noun* choosing of names for things, especially in a science
+*Noun* - choosing of names for things, especially in a science.
 
 Nomenclature has evolved over time with societal growth and so it shall in the tech industry as well.
 

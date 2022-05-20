@@ -4,7 +4,7 @@ Simply known as 'Argus' or ▲ for short, the Operator Experience is the launchp
 
 This is achieved by placing known applications and data into an appropriate directory within the hierarchy, making them more accessible through logical storage.
 
-An example of the hierarchy can be found in the [Argus](https://github.com/PanoptesDreams/argus) repository.
+An example of the hierarchy can be found in the [Argus](https://github.com/PanoptesDreams/argus) software repository.
 
 
 ## Requirements

@@ -133,12 +133,9 @@
 
     End Sub
 
-    Private Sub LabelCollectionCalendar_Click(sender As Object, e As EventArgs) Handles LabelCollectionCalendar.Click
+    Private Sub LabelCollection4_Click(sender As Object, e As EventArgs) Handles LabelCollection4.Click
 
-        Ding()
-
+        Summon(FormMusic)
 
     End Sub
-
-
 End Class

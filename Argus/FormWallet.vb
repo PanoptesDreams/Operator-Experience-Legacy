@@ -1,4 +1,4 @@
-﻿Imports Excel = Microsoft.Office.Interop.Excel
+﻿' Imports Excel = Microsoft.Office.Interop
 
 Public Class FormWallet
 
@@ -14,10 +14,10 @@ Public Class FormWallet
 
     Private Sub ButtonAdd_Click(sender As Object, e As EventArgs) Handles ButtonAdd.Click
 
-        Dim appXL As Excel.Application
-        Dim wbXl As Excel.Workbook
-        Dim shXL As Excel.Worksheet
-        Dim raXL As Excel.Range
+        Dim appXL
+        Dim wbXl
+        Dim shXL
+        Dim raXL
 
         ' Start Excel and get Application object.
         appXL = Process.GetProcessById(GetForegroundWindow)
@@ -36,7 +36,7 @@ Public Class FormWallet
         ' Format A1:D1 as bold, vertical alignment = center.
         With shXL.Range("A1", "D1")
             .Font.Bold = True
-            .VerticalAlignment = Excel.XlVAlign.xlVAlignCenter
+            ' .VerticalAlignment = Excel.XlVAlign.xlVAlignCenter
         End With
 
         ' Create an array to set multiple values at once.

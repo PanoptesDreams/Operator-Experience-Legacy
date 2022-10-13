@@ -41,8 +41,8 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>false</DebugSymbols>
-    <DebugType>none</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
     <DefineDebug>false</DefineDebug>
     <DefineTrace>false</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
@@ -126,122 +126,128 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
-    <Compile Include="ArgusCommon.vb" />
+    <Compile Include="Common\ArgusCommon.vb" />
     <Compile Include="argus_launcher.Designer.vb">
       <DependentUpon>argus_launcher.vb</DependentUpon>
     </Compile>
     <Compile Include="argus_launcher.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="FormDocuments.Designer.vb">
+    <Compile Include="Common\Form\FormReplicationChamber.Designer.vb">
+      <DependentUpon>FormReplicationChamber.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Form\FormReplicationChamber.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\Form\FormDocuments.Designer.vb">
       <DependentUpon>FormDocuments.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormDocuments.vb">
+    <Compile Include="Common\Form\FormDocuments.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormEditor.Designer.vb">
+    <Compile Include="Common\Form\FormEditor.Designer.vb">
       <DependentUpon>FormEditor.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormEditor.vb">
+    <Compile Include="Common\Form\FormEditor.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormHomepage.Designer.vb">
+    <Compile Include="Common\Form\FormHomepage.Designer.vb">
       <DependentUpon>FormHomepage.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormHomepage.vb">
+    <Compile Include="Common\Form\FormHomepage.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSearch.Designer.vb">
+    <Compile Include="Common\Form\FormSearch.Designer.vb">
       <DependentUpon>FormSearch.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSearch.vb">
+    <Compile Include="Common\Form\FormSearch.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCollections.Designer.vb">
+    <Compile Include="Common\Form\FormCollections.Designer.vb">
       <DependentUpon>FormCollections.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormCollections.vb">
+    <Compile Include="Common\Form\FormCollections.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDebugPanel.Designer.vb">
+    <Compile Include="Common\Form\FormDebugPanel.Designer.vb">
       <DependentUpon>FormDebugPanel.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormDebugPanel.vb">
+    <Compile Include="Common\Form\FormDebugPanel.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLauncher.Designer.vb">
+    <Compile Include="Common\Form\FormLauncher.Designer.vb">
       <DependentUpon>FormLauncher.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormLauncher.vb">
+    <Compile Include="Common\Form\FormLauncher.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBlur.Designer.vb">
+    <Compile Include="Common\Form\FormBlur.Designer.vb">
       <DependentUpon>FormBlur.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormBlur.vb">
+    <Compile Include="Common\Form\FormBlur.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLoadingSplash.Designer.vb">
+    <Compile Include="Common\Form\FormLoadingSplash.Designer.vb">
       <DependentUpon>FormLoadingSplash.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormLoadingSplash.vb">
+    <Compile Include="Common\Form\FormLoadingSplash.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLogin.Designer.vb">
+    <Compile Include="Common\Form\FormLogin.Designer.vb">
       <DependentUpon>FormLogin.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormLogin.vb">
+    <Compile Include="Common\Form\FormLogin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMusic.Designer.vb">
+    <Compile Include="Common\Form\FormMusic.Designer.vb">
       <DependentUpon>FormMusic.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormMusic.vb">
+    <Compile Include="Common\Form\FormMusic.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormGame.Designer.vb">
+    <Compile Include="Common\Form\FormGame.Designer.vb">
       <DependentUpon>FormGame.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormGame.vb">
+    <Compile Include="Common\Form\FormGame.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormOOBESystem.Designer.vb">
+    <Compile Include="Common\Form\FormOOBESystem.Designer.vb">
       <DependentUpon>FormOOBESystem.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormOOBESystem.vb">
+    <Compile Include="Common\Form\FormOOBESystem.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormOOBEPrivacy.Designer.vb">
+    <Compile Include="Common\Form\FormOOBEPrivacy.Designer.vb">
       <DependentUpon>FormOOBEPrivacy.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormOOBEPrivacy.vb">
+    <Compile Include="Common\Form\FormOOBEPrivacy.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSettings.Designer.vb">
+    <Compile Include="Common\Form\FormSettings.Designer.vb">
       <DependentUpon>FormSettings.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSettings.vb">
+    <Compile Include="Common\Form\FormSettings.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSoftware.Designer.vb">
+    <Compile Include="Common\Form\FormSoftware.Designer.vb">
       <DependentUpon>FormSoftware.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSoftware.vb">
+    <Compile Include="Common\Form\FormSoftware.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSteamLinkGenerater.Designer.vb">
+    <Compile Include="Common\Form\FormSteamLinkGenerater.Designer.vb">
       <DependentUpon>FormSteamLinkGenerater.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSteamLinkGenerater.vb">
+    <Compile Include="Common\Form\FormSteamLinkGenerater.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormWallet.Designer.vb">
+    <Compile Include="Common\Form\FormWallet.Designer.vb">
       <DependentUpon>FormWallet.vb</DependentUpon>
     </Compile>
-    <None Include="FormWallet.vb">
+    <None Include="Common\Form\FormWallet.vb">
       <SubType>Form</SubType>
     </None>
-    <Compile Include="GameStore.vb" />
+    <Compile Include="Common\GameStore.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -257,75 +263,78 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="FormSocial.Designer.vb">
+    <Compile Include="Common\Form\FormSocial.Designer.vb">
       <DependentUpon>FormSocial.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormSocial.vb">
+    <Compile Include="Common\Form\FormSocial.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormUserMenu.Designer.vb">
+    <Compile Include="Common\Form\FormUserMenu.Designer.vb">
       <DependentUpon>FormUserMenu.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormUserMenu.vb">
+    <Compile Include="Common\Form\FormUserMenu.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FormCollections.resx">
+    <EmbeddedResource Include="Common\Form\FormReplicationChamber.resx">
+      <DependentUpon>FormReplicationChamber.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Form\FormCollections.resx">
       <DependentUpon>FormCollections.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDebugPanel.resx">
+    <EmbeddedResource Include="Common\Form\FormDebugPanel.resx">
       <DependentUpon>FormDebugPanel.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDocuments.resx">
+    <EmbeddedResource Include="Common\Form\FormDocuments.resx">
       <DependentUpon>FormDocuments.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormEditor.resx">
+    <EmbeddedResource Include="Common\Form\FormEditor.resx">
       <DependentUpon>FormEditor.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormHomepage.resx">
+    <EmbeddedResource Include="Common\Form\FormHomepage.resx">
       <DependentUpon>FormHomepage.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLauncher.resx">
+    <EmbeddedResource Include="Common\Form\FormLauncher.resx">
       <DependentUpon>FormLauncher.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBlur.resx">
+    <EmbeddedResource Include="Common\Form\FormBlur.resx">
       <DependentUpon>FormBlur.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormGame.resx">
+    <EmbeddedResource Include="Common\Form\FormGame.resx">
       <DependentUpon>FormGame.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLoadingSplash.resx">
+    <EmbeddedResource Include="Common\Form\FormLoadingSplash.resx">
       <DependentUpon>FormLoadingSplash.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLogin.resx">
+    <EmbeddedResource Include="Common\Form\FormLogin.resx">
       <DependentUpon>FormLogin.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMusic.resx">
+    <EmbeddedResource Include="Common\Form\FormMusic.resx">
       <DependentUpon>FormMusic.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormOOBESystem.resx">
+    <EmbeddedResource Include="Common\Form\FormOOBESystem.resx">
       <DependentUpon>FormOOBESystem.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormOOBEPrivacy.resx">
+    <EmbeddedResource Include="Common\Form\FormOOBEPrivacy.resx">
       <DependentUpon>FormOOBEPrivacy.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSearch.resx">
+    <EmbeddedResource Include="Common\Form\FormSearch.resx">
       <DependentUpon>FormSearch.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSettings.resx">
+    <EmbeddedResource Include="Common\Form\FormSettings.resx">
       <DependentUpon>FormSettings.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSoftware.resx">
+    <EmbeddedResource Include="Common\Form\FormSoftware.resx">
       <DependentUpon>FormSoftware.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSteamLinkGenerater.resx">
+    <EmbeddedResource Include="Common\Form\FormSteamLinkGenerater.resx">
       <DependentUpon>FormSteamLinkGenerater.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormUserMenu.resx">
+    <EmbeddedResource Include="Common\Form\FormUserMenu.resx">
       <DependentUpon>FormUserMenu.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormWallet.resx">
+    <EmbeddedResource Include="Common\Form\FormWallet.resx">
       <DependentUpon>FormWallet.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -334,7 +343,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSocial.resx">
+    <EmbeddedResource Include="Common\Form\FormSocial.resx">
       <DependentUpon>FormSocial.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
@@ -383,7 +392,6 @@
     <None Include="Resources\img\testBG.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Common\" />
     <Folder Include="Resources\bg\" />
   </ItemGroup>
   <ItemGroup>

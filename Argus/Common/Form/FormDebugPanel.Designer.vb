@@ -35,9 +35,10 @@ Partial Class FormDebugPanel
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.ButtonMakeINI = New System.Windows.Forms.Button()
         Me.ButtonRND = New System.Windows.Forms.Button()
-        Me.ButtonSteamLinkGen = New System.Windows.Forms.Button()
         Me.ListBoxArguments = New System.Windows.Forms.ListBox()
         Me.ButtonWriteKey = New System.Windows.Forms.Button()
+        Me.ComboBoxForms = New System.Windows.Forms.ComboBox()
+        Me.ButtonOpenForm = New System.Windows.Forms.Button()
         Me.PanelHider.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -48,7 +49,7 @@ Partial Class FormDebugPanel
         Me.Label1.Margin = New System.Windows.Forms.Padding(5)
         Me.Label1.Name = "Label1"
         Me.Label1.Padding = New System.Windows.Forms.Padding(5)
-        Me.Label1.Size = New System.Drawing.Size(66, 28)
+        Me.Label1.Size = New System.Drawing.Size(66, 27)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Label1"
         '
@@ -59,7 +60,7 @@ Partial Class FormDebugPanel
         Me.Label2.Margin = New System.Windows.Forms.Padding(5)
         Me.Label2.Name = "Label2"
         Me.Label2.Padding = New System.Windows.Forms.Padding(5)
-        Me.Label2.Size = New System.Drawing.Size(66, 28)
+        Me.Label2.Size = New System.Drawing.Size(66, 27)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Label2"
         '
@@ -70,7 +71,7 @@ Partial Class FormDebugPanel
         Me.Label3.Margin = New System.Windows.Forms.Padding(5)
         Me.Label3.Name = "Label3"
         Me.Label3.Padding = New System.Windows.Forms.Padding(5)
-        Me.Label3.Size = New System.Drawing.Size(66, 28)
+        Me.Label3.Size = New System.Drawing.Size(66, 27)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Label3"
         '
@@ -81,7 +82,7 @@ Partial Class FormDebugPanel
         Me.Label4.Margin = New System.Windows.Forms.Padding(5)
         Me.Label4.Name = "Label4"
         Me.Label4.Padding = New System.Windows.Forms.Padding(5)
-        Me.Label4.Size = New System.Drawing.Size(66, 28)
+        Me.Label4.Size = New System.Drawing.Size(66, 27)
         Me.Label4.TabIndex = 5
         Me.Label4.Text = "Label4"
         '
@@ -92,7 +93,7 @@ Partial Class FormDebugPanel
         Me.Label5.Margin = New System.Windows.Forms.Padding(5)
         Me.Label5.Name = "Label5"
         Me.Label5.Padding = New System.Windows.Forms.Padding(5)
-        Me.Label5.Size = New System.Drawing.Size(66, 28)
+        Me.Label5.Size = New System.Drawing.Size(66, 27)
         Me.Label5.TabIndex = 4
         Me.Label5.Text = "Label5"
         '
@@ -103,7 +104,7 @@ Partial Class FormDebugPanel
         Me.LabelDebugName.Margin = New System.Windows.Forms.Padding(5)
         Me.LabelDebugName.Name = "LabelDebugName"
         Me.LabelDebugName.Padding = New System.Windows.Forms.Padding(5)
-        Me.LabelDebugName.Size = New System.Drawing.Size(90, 28)
+        Me.LabelDebugName.Size = New System.Drawing.Size(90, 27)
         Me.LabelDebugName.TabIndex = 3
         Me.LabelDebugName.Text = "DebugNAME"
         '
@@ -122,7 +123,7 @@ Partial Class FormDebugPanel
         Me.LabelRewritable.Location = New System.Drawing.Point(31, 15)
         Me.LabelRewritable.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LabelRewritable.Name = "LabelRewritable"
-        Me.LabelRewritable.Size = New System.Drawing.Size(208, 18)
+        Me.LabelRewritable.Size = New System.Drawing.Size(208, 17)
         Me.LabelRewritable.TabIndex = 0
         Me.LabelRewritable.Text = "Rewritable Label Click Me"
         '
@@ -168,32 +169,21 @@ Partial Class FormDebugPanel
         Me.ButtonRND.Text = "RND"
         Me.ButtonRND.UseVisualStyleBackColor = True
         '
-        'ButtonSteamLinkGen
-        '
-        Me.ButtonSteamLinkGen.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ButtonSteamLinkGen.Location = New System.Drawing.Point(652, 324)
-        Me.ButtonSteamLinkGen.Margin = New System.Windows.Forms.Padding(5)
-        Me.ButtonSteamLinkGen.Name = "ButtonSteamLinkGen"
-        Me.ButtonSteamLinkGen.Size = New System.Drawing.Size(215, 32)
-        Me.ButtonSteamLinkGen.TabIndex = 13
-        Me.ButtonSteamLinkGen.Text = "Open SteamLinkGen"
-        Me.ButtonSteamLinkGen.UseVisualStyleBackColor = True
-        '
         'ListBoxArguments
         '
         Me.ListBoxArguments.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.ListBoxArguments.FormattingEnabled = True
-        Me.ListBoxArguments.ItemHeight = 18
+        Me.ListBoxArguments.ItemHeight = 15
         Me.ListBoxArguments.Location = New System.Drawing.Point(10, 10)
         Me.ListBoxArguments.Margin = New System.Windows.Forms.Padding(5)
         Me.ListBoxArguments.Name = "ListBoxArguments"
-        Me.ListBoxArguments.Size = New System.Drawing.Size(363, 202)
+        Me.ListBoxArguments.Size = New System.Drawing.Size(363, 199)
         Me.ListBoxArguments.TabIndex = 15
         '
         'ButtonWriteKey
         '
         Me.ButtonWriteKey.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ButtonWriteKey.Location = New System.Drawing.Point(707, 237)
+        Me.ButtonWriteKey.Location = New System.Drawing.Point(707, 427)
         Me.ButtonWriteKey.Margin = New System.Windows.Forms.Padding(5)
         Me.ButtonWriteKey.Name = "ButtonWriteKey"
         Me.ButtonWriteKey.Size = New System.Drawing.Size(160, 32)
@@ -201,14 +191,34 @@ Partial Class FormDebugPanel
         Me.ButtonWriteKey.Text = "Write Key"
         Me.ButtonWriteKey.UseVisualStyleBackColor = True
         '
+        'ComboBoxForms
+        '
+        Me.ComboBoxForms.FormattingEnabled = True
+        Me.ComboBoxForms.Location = New System.Drawing.Point(10, 539)
+        Me.ComboBoxForms.Name = "ComboBoxForms"
+        Me.ComboBoxForms.Size = New System.Drawing.Size(363, 23)
+        Me.ComboBoxForms.TabIndex = 18
+        '
+        'ButtonOpenForm
+        '
+        Me.ButtonOpenForm.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ButtonOpenForm.Location = New System.Drawing.Point(10, 499)
+        Me.ButtonOpenForm.Margin = New System.Windows.Forms.Padding(5)
+        Me.ButtonOpenForm.Name = "ButtonOpenForm"
+        Me.ButtonOpenForm.Size = New System.Drawing.Size(160, 32)
+        Me.ButtonOpenForm.TabIndex = 19
+        Me.ButtonOpenForm.Text = "Open"
+        Me.ButtonOpenForm.UseVisualStyleBackColor = True
+        '
         'FormDebugPanel
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 18.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(877, 380)
+        Me.ClientSize = New System.Drawing.Size(877, 570)
+        Me.Controls.Add(Me.ButtonOpenForm)
+        Me.Controls.Add(Me.ComboBoxForms)
         Me.Controls.Add(Me.ButtonWriteKey)
         Me.Controls.Add(Me.ListBoxArguments)
-        Me.Controls.Add(Me.ButtonSteamLinkGen)
         Me.Controls.Add(Me.ButtonRND)
         Me.Controls.Add(Me.ButtonMakeINI)
         Me.Controls.Add(Me.PanelHider)
@@ -245,7 +255,8 @@ Partial Class FormDebugPanel
     Friend WithEvents RichTextBox1 As RichTextBox
     Friend WithEvents ButtonMakeINI As Button
     Friend WithEvents ButtonRND As Button
-    Friend WithEvents ButtonSteamLinkGen As Button
     Friend WithEvents ListBoxArguments As ListBox
     Friend WithEvents ButtonWriteKey As Button
+    Friend WithEvents ComboBoxForms As ComboBox
+    Friend WithEvents ButtonOpenForm As Button
 End Class

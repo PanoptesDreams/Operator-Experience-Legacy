@@ -38,11 +38,11 @@ Public Class FormUserMenu
 
         'Set Settings Button
         LabelOption3.Text = "Settings"
-        PicOption3.Image = New Bitmap(ResizeImage(My.Resources.settings, PicOption3.Height))
+        PicOption3.Image = New Bitmap(ResizeImage(My.Resources.settings, PicOption3.Width, PicOption3.Height))
 
         'Set Exit Button
         LabelOption4.Text = "Exit"
-        PicOption4.Image = New Bitmap(ResizeImage(My.Resources.logout, PicOption4.Height))
+        PicOption4.Image = New Bitmap(ResizeImage(My.Resources.logout, PicOption3.Width, PicOption4.Height))
     End Sub
 
     'Collections - Option Button (0)

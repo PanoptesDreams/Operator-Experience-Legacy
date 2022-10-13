@@ -15,7 +15,6 @@
 
 Module ArgusCommon
 
-
     'Blur
     Public Sub Blur()
 
@@ -53,7 +52,7 @@ Module ArgusCommon
     End Function
 
     'Summoner of Forms
-    Public Sub Summon(Sender As Form)
+    Public Sub Summon(Sender As Object)
 
         If Sender.Visible = True Then
 
@@ -75,11 +74,11 @@ Module ArgusCommon
 
     End Sub
 
-    'User Menu Auto-Hide
-    Public Function HideUsermenu()
+    'Operator Menu Auto-Hide
+    Public Function HideOpMenu()
 
         'Check if user has autohide set to 'True' and disposes of it when an argus applet is invoked
-        If My.Settings.AutohideUsermenu = True Then
+        If My.Settings.AutohideOpMenu = True Then
 
             FormUserMenu.Dispose()
 
@@ -110,9 +109,9 @@ Module ArgusCommon
     End Function
 
     'Image Resizer
-    Public Function ResizeImage(ByVal InputImage As Image, ByVal IcoSize As Integer) As Image
+    Public Function ResizeImage(ByVal InputImage As Image, ByVal IcoWidth As Integer, ByVal IcoHeight As Integer) As Image
 
-        Return New Bitmap(InputImage, New Size(IcoSize, IcoSize))
+        Return New Bitmap(InputImage, New Size(IcoWidth, IcoHeight))
 
     End Function
 

@@ -189,12 +189,12 @@ Namespace My
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
-        Public Property AutohideUsermenu() As Boolean
+        Public Property AutohideOpMenu() As Boolean
             Get
-                Return CType(Me("AutohideUsermenu"),Boolean)
+                Return CType(Me("AutohideOpMenu"),Boolean)
             End Get
             Set
-                Me("AutohideUsermenu") = value
+                Me("AutohideOpMenu") = value
             End Set
         End Property
         

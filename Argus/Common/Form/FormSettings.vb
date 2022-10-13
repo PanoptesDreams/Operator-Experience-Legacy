@@ -38,7 +38,7 @@ Public Class FormSettings
         End If
 
         'Behavior
-        ComboBoxAutohideUsermenu.Text = My.Settings.AutohideUsermenu
+        ComboBoxAutohideUsermenu.Text = My.Settings.AutohideOpMenu
         ComboBoxLauncherAlwaysonTop.Text = My.Settings.LauncherAoT
         ComboBoxBlur.Text = My.Settings.Blur
 
@@ -68,7 +68,7 @@ Public Class FormSettings
     'Activation
     Private Sub FormSettings_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
 
-        HideUsermenu()
+        HideOpMenu()
         HideSearch()
 
     End Sub
@@ -79,7 +79,7 @@ Public Class FormSettings
     Private Sub ButtonApplyBehaviors_Click(sender As Object, e As EventArgs) Handles ButtonApplyBehaviors.Click
 
         'Autohide usermenu when an argus applet is invoked
-        My.Settings.AutohideUsermenu = ComboBoxAutohideUsermenu.Text
+        My.Settings.AutohideOpMenu = ComboBoxAutohideUsermenu.Text
         My.Settings.LauncherAoT = ComboBoxLauncherAlwaysonTop.Text
         My.Settings.Blur = ComboBoxBlur.Text
 

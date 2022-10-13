@@ -4,6 +4,13 @@ Public Class FormDebugPanel
 
     Dim Args As String() = Arguments()
 
+    Dim Froms As Form() = {FormBlur, FormCollections, FormDocuments, FormEditor, FormGame, FormHeader, FormHomepage, FormLoadingSplash, FormLogin, FormMusic, FormOOBEPrivacy, FormOOBESystem, FormReplicationChamber, FormSearch, FormSettings, FormSocial, FormSoftware, FormSteamLinkGenerater, FormUserMenu, FormWallet}
+
+    Private Declare Sub keybd_event Lib "user32.dll" (ByVal bVk As Byte, ByVal bScan As Byte, ByVal dwFlags As Long, ByVal dwExtraInfo As Long)
+
+    Const VK_STARTKEY = &H5B
+    Const KEYEVENTF_KEYUP = &H2
+
     Private Sub FormDebugPanel_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         UniThemer(Me) ' Skin form
@@ -18,6 +25,20 @@ Public Class FormDebugPanel
         Catch
 
         End Try
+
+        FormsList()
+
+        ComboBoxForms.SelectedIndex = 0
+
+    End Sub
+
+    Sub FormsList()
+
+        For i = 0 To Froms.Length - 1
+
+            ComboBoxForms.Items.Add(Froms(i).Name)
+
+        Next
 
     End Sub
 
@@ -51,11 +72,7 @@ Public Class FormDebugPanel
 
     End Sub
 
-    Private Declare Sub keybd_event Lib "user32.dll" (ByVal bVk As Byte, ByVal bScan As Byte, ByVal dwFlags As Long, ByVal dwExtraInfo As Long)
 
-    Const VK_STARTKEY = &H5B
-
-    Const KEYEVENTF_KEYUP = &H2
 
     Private Sub ButtonMakeINI_Click(sender As Object, e As EventArgs) Handles ButtonMakeINI.Click
 
@@ -88,10 +105,6 @@ Public Class FormDebugPanel
 
     End Sub
 
-    Private Sub ButtonSteamLinkGen_Click(sender As Object, e As EventArgs) Handles ButtonSteamLinkGen.Click
-        Summon(FormSteamLinkGenerater)
-    End Sub
-
 
 
     Private Sub ButtonReadArgs_Click(sender As Object, e As EventArgs)
@@ -105,6 +118,12 @@ Public Class FormDebugPanel
 
         My.Computer.Registry.ClassesRoot.CreateSubKey("argus")
 
+
+    End Sub
+
+    Private Sub ButtonOpenForm_Click(sender As Object, e As EventArgs) Handles ButtonOpenForm.Click
+
+        Summon(Froms(ComboBoxForms.SelectedIndex))
 
     End Sub
 

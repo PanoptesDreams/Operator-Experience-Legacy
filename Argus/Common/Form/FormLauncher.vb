@@ -47,7 +47,7 @@ Public Class FormHeader
             GoTo 1
         End If
 
-        HideUsermenu()
+        HideOpMenu()
         HideSearch()
 
 1:

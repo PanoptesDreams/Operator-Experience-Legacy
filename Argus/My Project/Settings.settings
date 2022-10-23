@@ -89,5 +89,41 @@
     <Setting Name="Focus" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="Collection1" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Collection2" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Collection3" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Collection4" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Collection5" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Collection6" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Collection7" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Collection8" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Collection9" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Homepage" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://home.panoptes.live</Value>
+    </Setting>
+    <Setting Name="ArgusMood" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Happy</Value>
+    </Setting>
+    <Setting Name="BrowserDir" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Users\argus\AppData\Local\Vivaldi\Application\vivaldi.exe</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

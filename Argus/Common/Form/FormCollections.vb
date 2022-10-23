@@ -3,6 +3,17 @@
     ' Variables
     Dim lastPOS As Point = My.Settings.CollectionsLastPos ' Last form position
 
+    Dim Collection1 As String = My.Settings.Collection1
+    Dim Collection2 As String = My.Settings.Collection2
+    Dim Collection3 As String = My.Settings.Collection3
+    Dim Collection4 As String = My.Settings.Collection4
+    Dim Collection5 As String = My.Settings.Collection5
+    Dim Collection6 As String = My.Settings.Collection6
+    Dim Collection7 As String = My.Settings.Collection7
+    Dim Collection8 As String = My.Settings.Collection8
+    Dim Collection9 As String = My.Settings.Collection9
+
+
 
     ' Start
     Private Sub FormCollections_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -10,6 +21,12 @@
         UniThemer(Me) ' Theme form
 
         Positioner(Me, My.Settings.CollectionsPos, My.Settings.CollectionsLastPos) ' Position form
+
+    End Sub
+
+    Protected Overrides Sub OnPaint(e As PaintEventArgs)
+
+        BorderDrawerer(Me, e)
 
     End Sub
 
@@ -73,12 +90,17 @@
 
     Private Sub LabelCollection0_Click(sender As Object, e As EventArgs) Handles LabelCollection0.Click
 
-        ' OpenUserDocs() Open Operator documents folder
-
-        Summon(FormDocuments)
-
+        Summon(FormDocuments) ' OpenUserDocs() Open Operator documents folder
 
     End Sub
+
+
+    Private Sub LabelCollection0_DoubleClick(sender As Object, e As EventArgs) Handles LabelCollection0.DoubleClick
+
+        '
+
+    End Sub
+
 
     Private Sub LabelCollection1_Click(sender As Object, e As EventArgs) Handles LabelCollection1.Click
 
@@ -138,4 +160,5 @@
         Summon(FormMusic)
 
     End Sub
+
 End Class

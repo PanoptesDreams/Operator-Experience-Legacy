@@ -39,6 +39,8 @@ Partial Class FormDebugPanel
         Me.ButtonWriteKey = New System.Windows.Forms.Button()
         Me.ComboBoxForms = New System.Windows.Forms.ComboBox()
         Me.ButtonOpenForm = New System.Windows.Forms.Button()
+        Me.ComboBoxArgusMood = New System.Windows.Forms.ComboBox()
+        Me.ButtonDiskSpace = New System.Windows.Forms.Button()
         Me.PanelHider.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -210,11 +212,33 @@ Partial Class FormDebugPanel
         Me.ButtonOpenForm.Text = "Open"
         Me.ButtonOpenForm.UseVisualStyleBackColor = True
         '
+        'ComboBoxArgusMood
+        '
+        Me.ComboBoxArgusMood.FormattingEnabled = True
+        Me.ComboBoxArgusMood.Items.AddRange(New Object() {"Happy", "Neutral", "Bad"})
+        Me.ComboBoxArgusMood.Location = New System.Drawing.Point(10, 217)
+        Me.ComboBoxArgusMood.Name = "ComboBoxArgusMood"
+        Me.ComboBoxArgusMood.Size = New System.Drawing.Size(363, 23)
+        Me.ComboBoxArgusMood.TabIndex = 20
+        '
+        'ButtonDiskSpace
+        '
+        Me.ButtonDiskSpace.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ButtonDiskSpace.Location = New System.Drawing.Point(707, 358)
+        Me.ButtonDiskSpace.Margin = New System.Windows.Forms.Padding(5)
+        Me.ButtonDiskSpace.Name = "ButtonDiskSpace"
+        Me.ButtonDiskSpace.Size = New System.Drawing.Size(160, 32)
+        Me.ButtonDiskSpace.TabIndex = 21
+        Me.ButtonDiskSpace.Text = "DiskSpace"
+        Me.ButtonDiskSpace.UseVisualStyleBackColor = True
+        '
         'FormDebugPanel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(877, 570)
+        Me.Controls.Add(Me.ButtonDiskSpace)
+        Me.Controls.Add(Me.ComboBoxArgusMood)
         Me.Controls.Add(Me.ButtonOpenForm)
         Me.Controls.Add(Me.ComboBoxForms)
         Me.Controls.Add(Me.ButtonWriteKey)
@@ -259,4 +283,6 @@ Partial Class FormDebugPanel
     Friend WithEvents ButtonWriteKey As Button
     Friend WithEvents ComboBoxForms As ComboBox
     Friend WithEvents ButtonOpenForm As Button
+    Friend WithEvents ComboBoxArgusMood As ComboBox
+    Friend WithEvents ButtonDiskSpace As Button
 End Class

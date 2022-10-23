@@ -27,7 +27,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>false</MapFileExtensions>
-    <SupportUrl>https://elit3.xyz</SupportUrl>
+    <SupportUrl>mailto:help%40panoptes.live</SupportUrl>
     <TargetCulture>en</TargetCulture>
     <ProductName>Argus</ProductName>
     <PublisherName>Argus Collective</PublisherName>
@@ -80,7 +80,7 @@
     <ManifestKeyFile>Argus_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>false</GenerateManifests>
+    <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
@@ -248,6 +248,7 @@
       <SubType>Form</SubType>
     </None>
     <Compile Include="Common\GameStore.vb" />
+    <Compile Include="Common\HealthAsses.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -269,10 +270,10 @@
     <Compile Include="Common\Form\FormSocial.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Common\Form\FormUserMenu.Designer.vb">
-      <DependentUpon>FormUserMenu.vb</DependentUpon>
+    <Compile Include="Common\Form\FormOpMenu.Designer.vb">
+      <DependentUpon>FormOpMenu.vb</DependentUpon>
     </Compile>
-    <Compile Include="Common\Form\FormUserMenu.vb">
+    <Compile Include="Common\Form\FormOpMenu.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -331,8 +332,8 @@
     <EmbeddedResource Include="Common\Form\FormSteamLinkGenerater.resx">
       <DependentUpon>FormSteamLinkGenerater.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Common\Form\FormUserMenu.resx">
-      <DependentUpon>FormUserMenu.vb</DependentUpon>
+    <EmbeddedResource Include="Common\Form\FormOpMenu.resx">
+      <DependentUpon>FormOpMenu.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Common\Form\FormWallet.resx">
       <DependentUpon>FormWallet.vb</DependentUpon>

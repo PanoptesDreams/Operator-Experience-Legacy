@@ -22,40 +22,31 @@ Partial Class FormHomepage
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
-        Me.ButtonLaunch = New System.Windows.Forms.Button()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.SuspendLayout()
         '
-        'ButtonLaunch
+        'WebBrowser1
         '
-        Me.ButtonLaunch.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ButtonLaunch.Location = New System.Drawing.Point(0, 0)
-        Me.ButtonLaunch.Name = "ButtonLaunch"
-        Me.ButtonLaunch.Size = New System.Drawing.Size(1262, 676)
-        Me.ButtonLaunch.TabIndex = 0
-        Me.ButtonLaunch.Text = "Enter the Metaverse"
-        Me.ButtonLaunch.UseVisualStyleBackColor = True
+        Me.WebBrowser1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.WebBrowser1.Location = New System.Drawing.Point(0, 0)
+        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser1.Name = "WebBrowser1"
+        Me.WebBrowser1.Size = New System.Drawing.Size(1262, 676)
+        Me.WebBrowser1.TabIndex = 1
         '
-        'Timer1
+        'FormHomepage
         '
-        Me.Timer1.Interval = 1000
-        '
-        'FormHome
-        '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 22.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1262, 676)
-        Me.Controls.Add(Me.ButtonLaunch)
-        Me.Font = New System.Drawing.Font("Fira Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Controls.Add(Me.WebBrowser1)
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(5)
-        Me.Name = "FormHome"
+        Me.Name = "FormHomepage"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FormHome"
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents ButtonLaunch As Button
-    Friend WithEvents Timer1 As Timer
+    Friend WithEvents WebBrowser1 As WebBrowser
 End Class

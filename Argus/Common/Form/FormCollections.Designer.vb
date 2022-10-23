@@ -34,7 +34,7 @@ Partial Class FormCollections
         Me.LabelCollection0.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelCollection0.BackColor = System.Drawing.Color.Transparent
         Me.LabelCollection0.Image = Global.Argus.My.Resources.Resources.frame_empty
-        Me.LabelCollection0.Location = New System.Drawing.Point(34, 34)
+        Me.LabelCollection0.Location = New System.Drawing.Point(35, 34)
         Me.LabelCollection0.Margin = New System.Windows.Forms.Padding(25)
         Me.LabelCollection0.Name = "LabelCollection0"
         Me.LabelCollection0.Padding = New System.Windows.Forms.Padding(15, 5, 5, 5)
@@ -48,7 +48,7 @@ Partial Class FormCollections
         Me.LabelCollection1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelCollection1.BackColor = System.Drawing.Color.Transparent
         Me.LabelCollection1.Image = Global.Argus.My.Resources.Resources.frame_empty
-        Me.LabelCollection1.Location = New System.Drawing.Point(34, 134)
+        Me.LabelCollection1.Location = New System.Drawing.Point(35, 134)
         Me.LabelCollection1.Margin = New System.Windows.Forms.Padding(25)
         Me.LabelCollection1.Name = "LabelCollection1"
         Me.LabelCollection1.Padding = New System.Windows.Forms.Padding(15, 5, 5, 5)
@@ -62,7 +62,7 @@ Partial Class FormCollections
         Me.LabelCollection2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelCollection2.BackColor = System.Drawing.Color.Transparent
         Me.LabelCollection2.Image = Global.Argus.My.Resources.Resources.frame_empty
-        Me.LabelCollection2.Location = New System.Drawing.Point(34, 234)
+        Me.LabelCollection2.Location = New System.Drawing.Point(35, 234)
         Me.LabelCollection2.Margin = New System.Windows.Forms.Padding(25)
         Me.LabelCollection2.Name = "LabelCollection2"
         Me.LabelCollection2.Padding = New System.Windows.Forms.Padding(15, 5, 5, 5)
@@ -76,7 +76,7 @@ Partial Class FormCollections
         Me.LabelCollection3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelCollection3.BackColor = System.Drawing.Color.Transparent
         Me.LabelCollection3.Image = Global.Argus.My.Resources.Resources.frame_empty
-        Me.LabelCollection3.Location = New System.Drawing.Point(34, 334)
+        Me.LabelCollection3.Location = New System.Drawing.Point(35, 334)
         Me.LabelCollection3.Margin = New System.Windows.Forms.Padding(25)
         Me.LabelCollection3.Name = "LabelCollection3"
         Me.LabelCollection3.Padding = New System.Windows.Forms.Padding(15, 5, 5, 5)
@@ -90,7 +90,7 @@ Partial Class FormCollections
         Me.LabelCollection4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LabelCollection4.BackColor = System.Drawing.Color.Transparent
         Me.LabelCollection4.Image = Global.Argus.My.Resources.Resources.frame_empty
-        Me.LabelCollection4.Location = New System.Drawing.Point(34, 434)
+        Me.LabelCollection4.Location = New System.Drawing.Point(35, 434)
         Me.LabelCollection4.Margin = New System.Windows.Forms.Padding(25)
         Me.LabelCollection4.Name = "LabelCollection4"
         Me.LabelCollection4.Padding = New System.Windows.Forms.Padding(15, 5, 5, 5)
@@ -106,14 +106,14 @@ Partial Class FormCollections
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(185, 541)
+        Me.ClientSize = New System.Drawing.Size(186, 541)
         Me.Controls.Add(Me.LabelCollection4)
         Me.Controls.Add(Me.LabelCollection3)
         Me.Controls.Add(Me.LabelCollection2)
         Me.Controls.Add(Me.LabelCollection1)
         Me.Controls.Add(Me.LabelCollection0)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(5)
         Me.MaximizeBox = False
         Me.MinimizeBox = False

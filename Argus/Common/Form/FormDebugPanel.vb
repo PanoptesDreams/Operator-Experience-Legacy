@@ -4,7 +4,7 @@ Public Class FormDebugPanel
 
     Dim Args As String() = Arguments()
 
-    Dim Froms As Form() = {FormBlur, FormCollections, FormDocuments, FormEditor, FormGame, FormHeader, FormHomepage, FormLoadingSplash, FormLogin, FormMusic, FormOOBEPrivacy, FormOOBESystem, FormReplicationChamber, FormSearch, FormSettings, FormSocial, FormSoftware, FormSteamLinkGenerater, FormUserMenu, FormWallet}
+    Dim Froms As Form() = {FormBlur, FormCollections, FormDocuments, FormEditor, FormGame, FormHeader, FormHomepage, FormLoadingSplash, FormLogin, FormMusic, FormOOBEPrivacy, FormOOBESystem, FormReplicationChamber, FormSearch, FormSettings, FormSocial, FormSoftware, FormSteamLinkGenerater, FormOpMenu, FormWallet}
 
     Private Declare Sub keybd_event Lib "user32.dll" (ByVal bVk As Byte, ByVal bScan As Byte, ByVal dwFlags As Long, ByVal dwExtraInfo As Long)
 
@@ -29,6 +29,8 @@ Public Class FormDebugPanel
         FormsList()
 
         ComboBoxForms.SelectedIndex = 0
+
+
 
     End Sub
 
@@ -127,5 +129,20 @@ Public Class FormDebugPanel
 
     End Sub
 
+    Private Sub ComboBoxArgusMood_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxArgusMood.SelectedIndexChanged
 
+        My.Settings.ArgusMood = ComboBoxArgusMood.Text
+
+        ASave()
+
+        FormHeader.labelGreeter.Text = Greeting() ' Greet the user
+
+
+    End Sub
+
+    Private Sub ButtonDiskSpace_Click(sender As Object, e As EventArgs) Handles ButtonDiskSpace.Click
+
+        DiskFullness()
+
+    End Sub
 End Class

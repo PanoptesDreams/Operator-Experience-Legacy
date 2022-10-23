@@ -27,6 +27,7 @@ Partial Class FormDocuments
         Me.LabelCollection2 = New System.Windows.Forms.Label()
         Me.LabelCollection1 = New System.Windows.Forms.Label()
         Me.LabelCollection0 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'LabelCollectionCalendar
@@ -99,12 +100,27 @@ Partial Class FormDocuments
         Me.LabelCollection0.Text = "PDF"
         Me.LabelCollection0.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
+        'Label1
+        '
+        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Image = Global.Argus.My.Resources.Resources.frame_empty
+        Me.Label1.Location = New System.Drawing.Point(43, 525)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(25)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Padding = New System.Windows.Forms.Padding(15, 5, 5, 5)
+        Me.Label1.Size = New System.Drawing.Size(117, 50)
+        Me.Label1.TabIndex = 11
+        Me.Label1.Text = "Back"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
         'FormDocuments
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 22.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(203, 585)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.LabelCollectionCalendar)
         Me.Controls.Add(Me.LabelCollection3)
         Me.Controls.Add(Me.LabelCollection2)
@@ -113,7 +129,7 @@ Partial Class FormDocuments
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Location = New System.Drawing.Point(10, 10)
-        Me.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.Margin = New System.Windows.Forms.Padding(5)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FormDocuments"
@@ -131,4 +147,5 @@ Partial Class FormDocuments
     Friend WithEvents LabelCollection2 As Label
     Friend WithEvents LabelCollection1 As Label
     Friend WithEvents LabelCollection0 As Label
+    Friend WithEvents Label1 As Label
 End Class

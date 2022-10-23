@@ -15,13 +15,15 @@
 
     Private Sub pickBlurImg_Click(sender As Object, e As EventArgs) Handles pickBlurImg.Click
 
-        FormHeader.Hide()
+        FormHeader.Hide() ' Must be hidden - closing will end argus
 
         Banish(FormCollections)
 
-        Banish(FormUserMenu)
+        Banish(FormOpMenu)
 
-        Banish(Me)
+        Banish(FormWallet)
+
+        Banish(Me) ' Must be last
 
     End Sub
 

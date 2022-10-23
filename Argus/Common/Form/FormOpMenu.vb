@@ -1,6 +1,6 @@
 ﻿Imports Argus.ArgusCommon
 
-Public Class FormUserMenu
+Public Class FormOpMenu
 
     'Form Mover Variables
     Dim drag As Boolean
@@ -57,13 +57,13 @@ Public Class FormUserMenu
     'Operator Homepage - Option Button (1)
     Private Sub PicOption1_Click(sender As Object, e As EventArgs) Handles PicOption1.Click
 
-        SummonArgusHome()
+        Summon(FormHomepage)
 
     End Sub
 
     Private Sub LabelOption1_Click(sender As Object, e As EventArgs) Handles LabelOption1.Click
 
-        SummonArgusHome()
+        Summon(FormHomepage)
 
     End Sub
 

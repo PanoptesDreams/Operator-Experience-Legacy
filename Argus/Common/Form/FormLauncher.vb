@@ -20,7 +20,7 @@ Public Class FormHeader
 
         Positioner(Me, My.Settings.LauncherPos, My.Settings.LauncherLastPos) ' Position Form
 
-        labelGreeter.Text = Greeter() ' Greet the user
+        labelGreeter.Text = Greeting() ' Greet the user
 
         labelUsername.Text = My.Settings.UserName ' Retrieve name
 
@@ -43,14 +43,11 @@ Public Class FormHeader
     Private Sub FormHeader_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
 
         If FirstRun = True Then
+
             FirstRun = False
-            GoTo 1
+
         End If
 
-        HideOpMenu()
-        HideSearch()
-
-1:
     End Sub
 
 
@@ -122,37 +119,8 @@ Public Class FormHeader
 
     'Border Drawerer
     Protected Overrides Sub OnPaint(e As PaintEventArgs)
-        ' Call the base class
-        MyBase.OnPaint(e)
 
-        Dim UserTheme As String = My.Settings.ThemeUniversal
-        Dim ThemePen As New Pen(Brushes.Silver)
-
-
-        Select Case UserTheme
-
-            Case = "Light"
-                ThemePen = Pens.Silver
-
-            Case = "Dark"
-                ThemePen = Pens.Black
-
-            Case = "User"
-                ThemePen = Pens.White
-
-        End Select
-
-
-        'Top
-        e.Graphics.DrawLine(ThemePen, 0, 0, Me.Width - 1, 0)
-        'Left
-        e.Graphics.DrawLine(ThemePen, 0, 1, 0, 48)
-        'Right
-        e.Graphics.DrawLine(ThemePen, Me.Width - 1, 1, Me.Width - 1, 48)
-        'Bottom
-        e.Graphics.DrawLine(ThemePen, 0, 49, Me.Width - 1, 49)
-
-
+        BorderDrawerer(Me, e)
 
     End Sub
 
@@ -204,13 +172,13 @@ Public Class FormHeader
 
     Private Sub PicUserImage_Click(sender As Object, e As EventArgs) Handles PicUserImage.Click
 
-        Summon(FormUserMenu)
+        Summon(FormOpMenu)
 
     End Sub
 
     Private Sub PicUserImage_DoubleClick(sender As Object, e As EventArgs) Handles PicUserImage.DoubleClick
 
-        Banish(FormUserMenu)
+        Banish(FormOpMenu)
 
     End Sub
 

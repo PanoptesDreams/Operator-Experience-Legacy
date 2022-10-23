@@ -1,7 +1,7 @@
-﻿Imports Argus.ArgusCommon
+﻿Public Class FormSettings
 
-Public Class FormSettings
-    Dim BGs As Windows.Forms.TabPage() = {TabArgusBehavior, TabArgusPersonalization, TabArgusMisc}
+
+
     Dim PersistCollections As Boolean = My.Settings.PersistCollections
     Dim PersistSearch As Boolean = My.Settings.PersistSearch
     Dim PersistHome As Boolean = My.Settings.PersistHome
@@ -11,6 +11,7 @@ Public Class FormSettings
     Private Sub FormSettings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Theme()
+
 
         'Applet
         If PersistCollections = True Then
@@ -55,12 +56,30 @@ Public Class FormSettings
 
     End Sub
 
+    Public Function SettingsTabPages()
 
-    'Themer
+        ' Why is this here and not with the rest of the variables up top? Well ask Microssoft that. You go and put it up there and see what happens.
+        Dim SettingsTabs As TabPage() = {SettingsTab1Argus, TabArgusApplets, TabArgusBehavior, TabArgusMisc, TabArgusOperator, SettingsTab2Win}
+
+
+        Return SettingsTabs
+
+    End Function
+
+    ' Themer
     Public Sub Theme()
 
         UniThemer(Me)
         UniThemer(ToolTipAlpha)
+
+        Dim SettingsTabs As TabPage() = SettingsTabPages()
+
+        For Each item In SettingsTabs
+
+            UniThemer(item)
+
+        Next
+
 
     End Sub
 
@@ -68,13 +87,11 @@ Public Class FormSettings
     'Activation
     Private Sub FormSettings_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
 
-        HideOpMenu()
-        HideSearch()
 
     End Sub
 
 
-#Region "Buttons"
+#Region "Apply Buttons"
     'Apply Behaviors
     Private Sub ButtonApplyBehaviors_Click(sender As Object, e As EventArgs) Handles ButtonApplyBehaviors.Click
 
@@ -121,12 +138,31 @@ Public Class FormSettings
         ASave()
 
         'Apply theme
-        UniThemer(Me)
-        UniThemer(FormUserMenu)
-        UniThemer(FormHeader)
-        UniThemer(FormCollections)
-        UniThemer(FormSearch)
-        UniThemer(ToolTipAlpha)
+
+        Dim AvForms As Form() = AvailableForms()
+        Dim SelForm As Form
+
+        For i = 0 To AvForms.Length - 1
+
+            SelForm = AvForms(i)
+
+            If AvForms(i).Name = "Settings" Then
+
+                SelForm = Me
+
+
+
+            End If
+
+            If AvForms(i).Visible = True Then
+
+                UniThemer(AvForms(i))
+
+            End If
+
+jump:
+
+        Next
 
         'Apply positions
         Positioner(FormCollections, My.Settings.CollectionsPos, My.Settings.CollectionsLastPos)
@@ -247,7 +283,7 @@ Public Class FormSettings
 
         TabControlSettings.SelectedTab = SettingsTab1Argus
 
-        TabControlArgus.SelectedTab = TabArgusPersonalization
+        TabControlArgus.SelectedTab = TabArgusOperator
 
     End Sub
 

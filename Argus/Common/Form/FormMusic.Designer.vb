@@ -26,6 +26,7 @@ Partial Class FormMusic
         Me.MediaPlayer1 = New AxWMPLib.AxWindowsMediaPlayer()
         Me.ListBoxMusic = New System.Windows.Forms.ListBox()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.ButtonRefresh = New System.Windows.Forms.Button()
         CType(Me.MediaPlayer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -60,12 +61,21 @@ Partial Class FormMusic
         Me.Button1.Text = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'ButtonRefresh
+        '
+        Me.ButtonRefresh.Location = New System.Drawing.Point(459, 82)
+        Me.ButtonRefresh.Name = "ButtonRefresh"
+        Me.ButtonRefresh.Size = New System.Drawing.Size(66, 47)
+        Me.ButtonRefresh.TabIndex = 3
+        Me.ButtonRefresh.Text = "ButtonRefresh.Text"
+        Me.ButtonRefresh.UseVisualStyleBackColor = True
+        '
         'FormMusic
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.MidnightBlue
         Me.ClientSize = New System.Drawing.Size(537, 286)
+        Me.Controls.Add(Me.ButtonRefresh)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.ListBoxMusic)
         Me.Controls.Add(Me.MediaPlayer1)
@@ -81,4 +91,5 @@ Partial Class FormMusic
     Friend WithEvents MediaPlayer1 As AxWMPLib.AxWindowsMediaPlayer
     Friend WithEvents ListBoxMusic As ListBox
     Friend WithEvents Button1 As Button
+    Friend WithEvents ButtonRefresh As Button
 End Class

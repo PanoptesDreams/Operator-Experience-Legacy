@@ -1,21 +1,99 @@
-﻿Imports MadMilkman.Ini
+﻿Imports MadMilkman.Ini ' https://github.com/MarioZ/MadMilkman.Ini
 
-' Code in chronological order
+' Legacy code in Chronological order
+' Modern code in Alphabetical order
 
 ' List of Available Functions
 '
-' Blur() - Invokes a blur for drawing focus
+' AvailableForms() - Returns Array of forms
+' Greeter() - Returns a time of day appropriate greeting
+' ResizeImage(InputImage, ImageWidth, ImageHeight)
 ' 
 '
 ' List of Available Subroutines
 '
 ' Banish(Form) - Closes specified form
-' Greeter() - Returns a time of day appropriate greeting
+' Blur() - Invokes a blur for drawing focus
 ' Summon(Form) - Shows and activates a specified form
 
 Module ArgusCommon
 
-    'Blur
+    ' Available Forms - Returns Array of Forms
+    Public Function AvailableForms()
+
+        Dim AvailForms As Form() = {FormBlur, FormCollections, FormDocuments, FormEditor, FormGame, FormHeader, FormHomepage, FormLoadingSplash, FormLogin, FormMusic, FormOOBEPrivacy, FormOOBESystem, FormReplicationChamber, FormSearch, FormSettings, FormSocial, FormSoftware, FormSteamLinkGenerater, FormOpMenu, FormWallet}
+
+        Return AvailForms
+
+    End Function
+
+    ' Greeting - Greet the operator based on the time of day
+    Public Function Greeting()
+
+        Dim Greet As String = ""
+        Dim Mood As String = My.Settings.ArgusMood
+
+        Select Case Mood
+            Case "Happy"
+                Greet = "Good "
+            Case "Neutral"
+                Greet = ""
+            Case "Bad"
+                Greet = "Hi, "
+                Return Greet
+        End Select
+
+        'Sets time of day greeting, formated to 24 hour
+        Select Case Now.ToString("HH")
+
+            'Morning case, from 00 (midnight) to 11am
+            Case "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11"
+                Greet += "Morning, "
+
+            'Afternoon case, from 12pm (mid day) to 5pm
+            Case "12", "13", "14", "15", "16", "17"
+                Greet += "Afternoon, "
+
+            'Evening case, from 6pm to 11pm
+            Case "18", "19", "20", "21", "22", "23"
+                Greet += "Evening, "
+        End Select
+
+        Return Greet
+
+    End Function
+
+    ' Season
+    Public Function Season()
+
+        ' Determine Hemisphere - countries along the middle latitudes have 4 standard seasons, countries on the lower latitudes have ~6 non-standard seasons
+        ' Determine time of year - time of year + hemisphere = season
+
+        Return Nothing
+
+    End Function
+
+
+    ' Image Resizer
+    Public Function ResizeImage(ByVal InputImage As Image, ByVal ImageWidth As Integer, ByVal ImageHeight As Integer) As Image
+
+        Return New Bitmap(InputImage, New Size(ImageWidth, ImageHeight))
+
+    End Function
+
+    ' 
+    ' Subroutines
+    ' 
+
+    ' Banisher of Forms
+    Public Sub Banish(Sender As Form)
+
+        Sender.Close()
+
+    End Sub
+
+
+    ' Blur
     Public Sub Blur()
 
         If My.Settings.Blur = True Then
@@ -26,97 +104,73 @@ Module ArgusCommon
 
     End Sub
 
-    'Greeter
-    Public Function Greeter()
+    ' Drawer of Borders
+    Public Sub BorderDrawerer(Sender As Form, e As PaintEventArgs)
 
-        Dim Greeting As String = ""
+        Dim ThemePen As New Pen(Brushes.Silver) 'Set a default pen
 
-        'Sets time of day greeting, formated to 24 hour
-        Select Case Now.ToString("HH")
+        ' Choose Pen
+        Select Case My.Settings.ThemeUniversal
 
-            'Morning case, from 00 (midnight) to 11am
-            Case "00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11"
-                Greeting = "Good Morning, "
+            Case = "Light"
+                ThemePen = Pens.Silver
 
-            'Afternoon case, from 12pm (mid day) to 5pm
-            Case "12", "13", "14", "15", "16", "17"
-                Greeting = "Good Afternoon, "
+            Case = "Dark"
+                ThemePen = Pens.Black
 
-            'Evening case, from 6pm to 11pm
-            Case "18", "19", "20", "21", "22", "23"
-                Greeting = "Good Evening, "
+            Case = "User"
+                ThemePen = Pens.White
+
         End Select
 
-        Return Greeting
+        ' Draw Borders - Height is reduced by 1 to keep render inside of form
+        e.Graphics.DrawLine(ThemePen, 0, 0, Sender.Width - 1, 0) ' Top
+        e.Graphics.DrawLine(ThemePen, 0, 1, 0, Sender.Height - 1) ' Left
+        e.Graphics.DrawLine(ThemePen, Sender.Width - 1, 1, Sender.Width - 1, Sender.Height - 1) ' Right
+        e.Graphics.DrawLine(ThemePen, 0, Sender.Height - 1, Sender.Width - 1, Sender.Height - 1) ' Bottom
 
-    End Function
+    End Sub
 
-    'Summoner of Forms
+    ' Summoner of Forms
     Public Sub Summon(Sender As Object)
 
-        If Sender.Visible = True Then
+        If Sender.Visible = True Then ' If the form is already visible
 
-            Sender.Activate()
+            Sender.Activate() ' Simply trigger activate on form
 
-        Else
-            Sender.Show()
+        Else ' Otherwise ...
 
-            Sender.Activate()
+            Sender.Show() ' Properly open form ...
+
+            Sender.Activate() ' And trigger activation.
+
         End If
+
+        If Sender IsNot FormOpMenu Then
+
+            If My.Settings.AutohideOpMenu = True Then ' If OpMenu autohide is 'True' Banish OpMenu
+
+                Banish(FormOpMenu)
+
+            End If
+
+        End If
+
+        If Sender IsNot FormSearch Then
+
+            If My.Settings.AutohideSearch = True Then ' If Search autohide is 'True' Banish Search
+
+                Banish(FormSearch)
+
+            End If
+
+        End If
+
 
 
     End Sub
 
-    'Banisher of Forms
-    Public Sub Banish(Sender As Form)
-
-        Sender.Close()
-
-    End Sub
-
-    'Operator Menu Auto-Hide
-    Public Function HideOpMenu()
-
-        'Check if user has autohide set to 'True' and disposes of it when an argus applet is invoked
-        If My.Settings.AutohideOpMenu = True Then
-
-            FormUserMenu.Dispose()
-
-            Return 1
-
-        End If
-
-        Return 0
-
-    End Function
-
-    'Search Box Auto-Hide
-    Public Function HideSearch()
-
-
-
-        'Check if user has autohide set to 'True' and disposes of it when an argus applet is invoked
-        If My.Settings.AutohideSearch = True Then
-
-            FormSearch.Dispose()
-
-            Return 1
-
-        End If
-
-        Return 0
-
-    End Function
-
-    'Image Resizer
-    Public Function ResizeImage(ByVal InputImage As Image, ByVal IcoWidth As Integer, ByVal IcoHeight As Integer) As Image
-
-        Return New Bitmap(InputImage, New Size(IcoWidth, IcoHeight))
-
-    End Function
-
-
-    'Themer
+    ' Universal Themer
     Public Sub UniThemer(Sender As Object)
 
         Dim UniversalTheme As String = My.Settings.ThemeUniversal
@@ -132,7 +186,7 @@ Module ArgusCommon
 
             Case = "Dark"
                 ThemerColor = Color.FromArgb(63, 63, 63)
-                FontyPen = Color.FromArgb(245, 245, 245)
+                FontyPen = Color.FromArgb(225, 36, 0)
 
             Case = "User"
                 ThemerColor = Color.FromArgb(255, 195, 203)
@@ -173,9 +227,9 @@ Module ArgusCommon
     End Sub
 
     'Positioner
-    Public Sub Positioner(Sender As Form, Owner As String, LastPos As Point)
+    Public Sub Positioner(Sender As Form, Place As String, LastPos As Point)
 
-        Select Case Owner
+        Select Case Place
             Case = "Topdock"
                 Sender.Location = New Point(0, 0)
             Case = "Top"
@@ -366,8 +420,13 @@ Module ArgusCommon
     End Function
 
     Public Sub Ding()
+        Try
+            Process.Start(".\applet\Ding.exe")
 
-        Process.Start("A:\argus\applet\Ding.exe")
+        Catch ex As Exception
+
+            MsgBox("Ding Missing")
+        End Try
 
     End Sub
 

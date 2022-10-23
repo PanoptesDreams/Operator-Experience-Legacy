@@ -401,6 +401,150 @@ Namespace My
                 Me("Focus") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Collection1() As String
+            Get
+                Return CType(Me("Collection1"),String)
+            End Get
+            Set
+                Me("Collection1") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Collection2() As String
+            Get
+                Return CType(Me("Collection2"),String)
+            End Get
+            Set
+                Me("Collection2") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Collection3() As String
+            Get
+                Return CType(Me("Collection3"),String)
+            End Get
+            Set
+                Me("Collection3") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Collection4() As String
+            Get
+                Return CType(Me("Collection4"),String)
+            End Get
+            Set
+                Me("Collection4") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Collection5() As String
+            Get
+                Return CType(Me("Collection5"),String)
+            End Get
+            Set
+                Me("Collection5") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Collection6() As String
+            Get
+                Return CType(Me("Collection6"),String)
+            End Get
+            Set
+                Me("Collection6") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Collection7() As String
+            Get
+                Return CType(Me("Collection7"),String)
+            End Get
+            Set
+                Me("Collection7") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Collection8() As String
+            Get
+                Return CType(Me("Collection8"),String)
+            End Get
+            Set
+                Me("Collection8") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Collection9() As String
+            Get
+                Return CType(Me("Collection9"),String)
+            End Get
+            Set
+                Me("Collection9") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("https://home.panoptes.live")>  _
+        Public Property Homepage() As String
+            Get
+                Return CType(Me("Homepage"),String)
+            End Get
+            Set
+                Me("Homepage") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Happy")>  _
+        Public Property ArgusMood() As String
+            Get
+                Return CType(Me("ArgusMood"),String)
+            End Get
+            Set
+                Me("ArgusMood") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("C:\Users\argus\AppData\Local\Vivaldi\Application\vivaldi.exe")>  _
+        Public Property BrowserDir() As String
+            Get
+                Return CType(Me("BrowserDir"),String)
+            End Get
+            Set
+                Me("BrowserDir") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

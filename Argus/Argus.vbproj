@@ -11,7 +11,7 @@
     <AssemblyName>Argus</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <TargetFrameworkProfile />
@@ -74,7 +74,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>84A807B2FDB3378088E9156ECE5F7BE11F45A2D7</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>2E6D99EF13F6FDD4ECB8138F24386850D0B83B19</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>Argus_TemporaryKey.pfx</ManifestKeyFile>
@@ -244,6 +244,7 @@
     <Compile Include="Common\Form\FormWallet.Designer.vb">
       <DependentUpon>FormWallet.vb</DependentUpon>
     </Compile>
+    <None Include="Argus_TemporaryKey.pfx" />
     <None Include="Common\Form\FormWallet.vb">
       <SubType>Form</SubType>
     </None>
@@ -349,7 +350,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Argus_TemporaryKey.pfx" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>

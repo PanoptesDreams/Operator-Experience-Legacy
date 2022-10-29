@@ -1,4 +1,4 @@
-# Operator eXperience
+﻿# Operator eXperience
 
 Simply known as 'Argus' or ▲ for short, the Operator Experience is the launchpad to get you where you need to be as fast as possible.
 
@@ -10,11 +10,11 @@ An example of the hierarchy can be found in the [Argus Software](https://github.
 
 Windows 7
 
-DotNet 4.8 Runtime
+DotNet 4.7.2 Runtime
 
 Windows Media Player
 
-K-lite Codec lite
+K-lite Codec Pack
 
 ## Nomenclature
 
@@ -36,3 +36,18 @@ These are subject to change based on what the community adopts or how other term
 | User                    | Has negative connotation                     | Operator                  | Controlling Entity, Operator implies a controlling entity without any species bias |
 
 Example: 'User Experience' becomes 'Operator Experience'
+
+
+## Developer Requirements
+
+Windows 7
+
+DotNet 4.7.2 Development Pack
+
+Visual Studio 2017
+
+Windows Media Player
+
+K-lite Codec Pack
+
+Microsoft Office 2010 (Including devloper kit)

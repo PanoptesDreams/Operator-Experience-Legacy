@@ -9,6 +9,9 @@ Public Class FormHeader
     Dim FirstRun As Boolean = True
 
 
+    Dim ExitFromCount As Integer = 1 ' Counts forms hidden
+
+
     'Start/Load
     Private Sub Launcher_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -290,21 +293,34 @@ Public Class FormHeader
 
     Private Sub TrayMenuItemToggleVisibility_Click(sender As Object, e As EventArgs) Handles TrayMenuItemToggleVisibility.Click
 
-        If Me.Visible = True Then
+        Dim From As Form() = AvailableForms() ' Add known forms to list
+        Dim ExitFrom As Form() ' Store forms that have been hidden
 
-            Banish(FormBlur)
 
-            Me.Hide()
 
-            Banish(FormCollections)
+        If Visible = True Then
+
+            For i = 0 To From.Length - 1
+
+                If From(i).Visible = True Then
+
+                    ExitFrom(ExitFromCount) = From(i) ' Add shown form to form list
+
+                    ExitFromCount = ExitFromCount + 1 ' Increment form counter
+
+                    From(i).Hide() ' Hide, not banish
+
+                End If
+
+            Next
 
         Else
 
-            Blur()
+            For i = 0 To ExitFrom.Length - 1
 
-            Summon(Me)
+                ExitFrom(i).Show()
 
-            PersitingApp()
+            Next
 
         End If
 

@@ -125,5 +125,8 @@
     <Setting Name="BrowserDir" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\Users\argus\AppData\Local\Vivaldi\Application\vivaldi.exe</Value>
     </Setting>
+    <Setting Name="PersistMusic" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -2,7 +2,7 @@
 
 Public Class FormMusic
 
-    Dim MusicDir As String = "C:\Users\argus\Music"
+    Dim MusicDir As String = Environment.GetEnvironmentVariable("userprofile") & "\Music"
     Dim SongSelected As String
 
     Private Sub frmMusic_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -67,6 +67,8 @@ Public Class FormMusic
         For Each item In Directory.EnumerateFiles(MusicDir)
 
             If item = MusicDir & "\desktop.ini" Then
+                GoTo jump
+            ElseIf item = MusicDir & "\yt-dlp.exe" Then
                 GoTo jump
             End If
 

@@ -290,6 +290,10 @@ Module ArgusCommon
             Summon(FormHomepage)
         End If
 
+        If My.Settings.PersistMusic = True Then
+            Summon(FormMusic)
+        End If
+
         If My.Settings.PersistSearch = True Then
             Summon(FormSearch)
         End If

@@ -59,7 +59,7 @@
     Public Function SettingsTabPages()
 
         ' Why is this here and not with the rest of the variables up top? Well ask Microssoft that. You go and put it up there and see what happens.
-        Dim SettingsTabs As TabPage() = {SettingsTab1Argus, TabArgusApplets, TabArgusBehavior, TabArgusMisc, TabArgusOperator, SettingsTab2Win}
+        Dim SettingsTabs As TabPage() = {SettingsTab1Argus, TabSetArgusApplets, TabSetArgusBehavior, TabSetArgusMisc, TabSetArgusOperator, SettingsTab2Win}
 
 
         Return SettingsTabs
@@ -283,7 +283,7 @@ jump:
 
         TabControlSettings.SelectedTab = SettingsTab1Argus
 
-        TabControlArgus.SelectedTab = TabArgusOperator
+        TabControlArgus.SelectedTab = TabSetArgusOperator
 
     End Sub
 

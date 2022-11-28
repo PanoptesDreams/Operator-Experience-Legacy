@@ -75,7 +75,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>2E6D99EF13F6FDD4ECB8138F24386850D0B83B19</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>25554994D0347C0C99EC0E3A6CF212A4B5B79FB6</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>Argus_TemporaryKey.pfx</ManifestKeyFile>

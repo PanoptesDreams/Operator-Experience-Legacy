@@ -53,7 +53,7 @@ Partial Class FormOOBESystem
         Me.LabelSystemName.Margin = New System.Windows.Forms.Padding(5)
         Me.LabelSystemName.Name = "LabelSystemName"
         Me.LabelSystemName.Padding = New System.Windows.Forms.Padding(5)
-        Me.LabelSystemName.Size = New System.Drawing.Size(130, 32)
+        Me.LabelSystemName.Size = New System.Drawing.Size(118, 30)
         Me.LabelSystemName.TabIndex = 3
         Me.LabelSystemName.Text = "System Name"
         '
@@ -62,7 +62,7 @@ Partial Class FormOOBESystem
         Me.TextBoxSystemName.Location = New System.Drawing.Point(200, 125)
         Me.TextBoxSystemName.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBoxSystemName.Name = "TextBoxSystemName"
-        Me.TextBoxSystemName.Size = New System.Drawing.Size(226, 29)
+        Me.TextBoxSystemName.Size = New System.Drawing.Size(284, 26)
         Me.TextBoxSystemName.TabIndex = 1
         '
         'LabelArgusTitle
@@ -70,12 +70,12 @@ Partial Class FormOOBESystem
         Me.LabelArgusTitle.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.LabelArgusTitle.AutoSize = True
         Me.LabelArgusTitle.BackColor = System.Drawing.Color.Transparent
-        Me.LabelArgusTitle.Font = New System.Drawing.Font("Fira Sans", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelArgusTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LabelArgusTitle.Location = New System.Drawing.Point(125, 20)
         Me.LabelArgusTitle.Margin = New System.Windows.Forms.Padding(5)
         Me.LabelArgusTitle.Name = "LabelArgusTitle"
         Me.LabelArgusTitle.Padding = New System.Windows.Forms.Padding(5)
-        Me.LabelArgusTitle.Size = New System.Drawing.Size(326, 74)
+        Me.LabelArgusTitle.Size = New System.Drawing.Size(299, 65)
         Me.LabelArgusTitle.TabIndex = 0
         Me.LabelArgusTitle.Text = "Argus Setup"
         '
@@ -84,20 +84,20 @@ Partial Class FormOOBESystem
         Me.TextBoxUserName.Location = New System.Drawing.Point(200, 167)
         Me.TextBoxUserName.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBoxUserName.Name = "TextBoxUserName"
-        Me.TextBoxUserName.Size = New System.Drawing.Size(226, 29)
+        Me.TextBoxUserName.Size = New System.Drawing.Size(284, 26)
         Me.TextBoxUserName.TabIndex = 2
         '
         'LabelUsername
         '
         Me.LabelUsername.AutoSize = True
         Me.LabelUsername.BackColor = System.Drawing.Color.Transparent
-        Me.LabelUsername.Location = New System.Drawing.Point(81, 164)
+        Me.LabelUsername.Location = New System.Drawing.Point(50, 162)
         Me.LabelUsername.Margin = New System.Windows.Forms.Padding(5)
         Me.LabelUsername.Name = "LabelUsername"
         Me.LabelUsername.Padding = New System.Windows.Forms.Padding(5)
-        Me.LabelUsername.Size = New System.Drawing.Size(109, 32)
+        Me.LabelUsername.Size = New System.Drawing.Size(128, 30)
         Me.LabelUsername.TabIndex = 4
-        Me.LabelUsername.Text = "User Name"
+        Me.LabelUsername.Text = "Operator Name"
         '
         'ButtonDefaultsReset
         '
@@ -128,7 +128,7 @@ Partial Class FormOOBESystem
         Me.TextBoxWorkgroup.Location = New System.Drawing.Point(200, 446)
         Me.TextBoxWorkgroup.Margin = New System.Windows.Forms.Padding(5)
         Me.TextBoxWorkgroup.Name = "TextBoxWorkgroup"
-        Me.TextBoxWorkgroup.Size = New System.Drawing.Size(226, 29)
+        Me.TextBoxWorkgroup.Size = New System.Drawing.Size(284, 26)
         Me.TextBoxWorkgroup.TabIndex = 8
         '
         'LabelWorkgroup
@@ -139,14 +139,14 @@ Partial Class FormOOBESystem
         Me.LabelWorkgroup.Margin = New System.Windows.Forms.Padding(5)
         Me.LabelWorkgroup.Name = "LabelWorkgroup"
         Me.LabelWorkgroup.Padding = New System.Windows.Forms.Padding(5)
-        Me.LabelWorkgroup.Size = New System.Drawing.Size(109, 32)
+        Me.LabelWorkgroup.Size = New System.Drawing.Size(97, 30)
         Me.LabelWorkgroup.TabIndex = 9
         Me.LabelWorkgroup.Text = "Workgroup"
         '
-        'FormOOBE
+        'FormOOBESystem
         '
         Me.AcceptButton = Me.ButtonApply
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 22.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.ButtonDefaultsReset
         Me.ClientSize = New System.Drawing.Size(582, 556)
@@ -161,12 +161,12 @@ Partial Class FormOOBESystem
         Me.Controls.Add(Me.LabelSystemName)
         Me.Controls.Add(Me.TextBox1)
         Me.DoubleBuffered = True
-        Me.Font = New System.Drawing.Font("Fira Sans", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(5)
         Me.MaximizeBox = False
-        Me.Name = "FormOOBE"
+        Me.Name = "FormOOBESystem"
         Me.Padding = New System.Windows.Forms.Padding(5)
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Argus Setup"

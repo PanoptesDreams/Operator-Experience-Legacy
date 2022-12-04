@@ -39,18 +39,7 @@ Public Class FormWallet
             ' .VerticalAlignment = Excel.XlVAlign.xlVAlignCenter
         End With
 
-        ' Create an array to set multiple values at once.
-        Dim students(5, 2) As String
-        students(0, 0) = "Zara"
-        students(0, 1) = "Ali"
-        students(1, 0) = "Nuha"
-        students(1, 1) = "Ali"
-        students(2, 0) = "Arilia"
-        students(2, 1) = "RamKumar"
-        students(3, 0) = "Rita"
-        students(3, 1) = "Jones"
-        students(4, 0) = "Umme"
-        students(4, 1) = "Ayman"
+
 
         ' Fill A2:B6 with an array of values (First and Last Names).
         shXL.Range("A2", "B6").Value = students

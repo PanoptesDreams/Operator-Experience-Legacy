@@ -7,13 +7,22 @@ Public Class FormHeader
     Dim lastPOS As Point = My.Settings.LauncherLastPos
 
     Dim FirstRun As Boolean = True
+    Dim HideMode As Boolean = False
 
+    Dim OperatorPicture As Image = Image.FromFile(My.Settings.DirOperatorImage) ' Set image from file
 
-    Dim ExitFromCount As Integer = 1 ' Counts forms hidden
 
 
     'Start/Load
     Private Sub Launcher_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Try
+            ERead()
+        Catch ex As Exception
+
+        End Try
+
+
 
         DebugFeatures() ' Are we in debug mode?
 
@@ -25,7 +34,10 @@ Public Class FormHeader
 
         labelGreeter.Text = Greeting() ' Greet the user
 
-        labelUsername.Text = My.Settings.UserName ' Retrieve name
+        labelOperatorName.Text = My.Settings.OperatorName ' Retrieve name
+
+        PictureBoxOperator.Image = ResizeImage(OperatorPicture, PictureBoxOperator.Width, PictureBoxOperator.Height) ' Resize imported image and apply
+
 
         SetTime() ' Sets all timedate labels to their respective nows
 
@@ -173,13 +185,13 @@ Public Class FormHeader
 
 #Region "User Menu"
 
-    Private Sub PicUserImage_Click(sender As Object, e As EventArgs) Handles PicUserImage.Click
+    Private Sub PicUserImage_Click(sender As Object, e As EventArgs) Handles PictureBoxOperator.Click
 
         Summon(FormOpMenu)
 
     End Sub
 
-    Private Sub PicUserImage_DoubleClick(sender As Object, e As EventArgs) Handles PicUserImage.DoubleClick
+    Private Sub PicUserImage_DoubleClick(sender As Object, e As EventArgs) Handles PictureBoxOperator.DoubleClick
 
         Banish(FormOpMenu)
 
@@ -291,38 +303,8 @@ Public Class FormHeader
 
     End Sub
 
-    Private Sub TrayMenuItemToggleVisibility_Click(sender As Object, e As EventArgs) Handles TrayMenuItemToggleVisibility.Click
+    Public Sub TrayMenuItemToggleVisibility_Click(sender As Object, e As EventArgs) Handles TrayMenuItemToggleVisibility.Click
 
-        Dim From As Form() = AvailableForms() ' Add known forms to list
-        Dim ExitFrom As Form() ' Store forms that have been hidden
-
-
-
-        If Visible = True Then
-
-            For i = 0 To From.Length - 1
-
-                If From(i).Visible = True Then
-
-                    ExitFrom(ExitFromCount) = From(i) ' Add shown form to form list
-
-                    ExitFromCount = ExitFromCount + 1 ' Increment form counter
-
-                    From(i).Hide() ' Hide, not banish
-
-                End If
-
-            Next
-
-        Else
-
-            For i = 0 To ExitFrom.Length - 1
-
-                ExitFrom(i).Show()
-
-            Next
-
-        End If
 
 
     End Sub
@@ -393,6 +375,12 @@ Public Class FormHeader
 
     Private Sub SoftwareToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SoftwareToolStripMenuItem.Click
         Summon(FormSoftware)
+    End Sub
+
+    Private Sub FormHeader_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+
+        ESave()
+
     End Sub
 
 

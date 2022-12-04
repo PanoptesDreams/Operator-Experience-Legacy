@@ -30,8 +30,8 @@ Partial Class FormHeader
         Me.labelLongDate = New System.Windows.Forms.Label()
         Me.labelYear = New System.Windows.Forms.Label()
         Me.ButtonDebug = New System.Windows.Forms.Button()
-        Me.PicUserImage = New System.Windows.Forms.PictureBox()
-        Me.labelUsername = New System.Windows.Forms.Label()
+        Me.PictureBoxOperator = New System.Windows.Forms.PictureBox()
+        Me.labelOperatorName = New System.Windows.Forms.Label()
         Me.labelGreeter = New System.Windows.Forms.Label()
         Me.ButtonDebug2 = New System.Windows.Forms.Button()
         Me.PicCollections = New System.Windows.Forms.PictureBox()
@@ -50,7 +50,7 @@ Partial Class FormHeader
         Me.TrayMenuSettings = New System.Windows.Forms.ToolStripMenuItem()
         Me.TrayMenuItemExit = New System.Windows.Forms.ToolStripMenuItem()
         Me.PanelGreeting = New System.Windows.Forms.Panel()
-        CType(Me.PicUserImage, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBoxOperator, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PicCollections, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuTrayIcon.SuspendLayout()
         Me.PanelGreeting.SuspendLayout()
@@ -64,7 +64,7 @@ Partial Class FormHeader
         Me.labelClock.Font = New System.Drawing.Font("Consolas", 9.818182!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelClock.Location = New System.Drawing.Point(327, 9)
         Me.labelClock.Name = "labelClock"
-        Me.labelClock.Size = New System.Drawing.Size(72, 18)
+        Me.labelClock.Size = New System.Drawing.Size(72, 17)
         Me.labelClock.TabIndex = 5
         Me.labelClock.Text = "00:00 XX"
         Me.labelClock.UseMnemonic = False
@@ -108,7 +108,7 @@ Partial Class FormHeader
         Me.labelYear.Font = New System.Drawing.Font("Consolas", 9.818182!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.labelYear.Location = New System.Drawing.Point(327, 26)
         Me.labelYear.Name = "labelYear"
-        Me.labelYear.Size = New System.Drawing.Size(40, 18)
+        Me.labelYear.Size = New System.Drawing.Size(40, 17)
         Me.labelYear.TabIndex = 6
         Me.labelYear.Text = "XXXX"
         Me.labelYear.UseMnemonic = False
@@ -125,32 +125,32 @@ Partial Class FormHeader
         Me.ButtonDebug.Text = "DEBUG"
         Me.ButtonDebug.UseVisualStyleBackColor = False
         '
-        'PicUserImage
+        'PictureBoxOperator
         '
-        Me.PicUserImage.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.PicUserImage.BackColor = System.Drawing.Color.Transparent
-        Me.PicUserImage.BackgroundImage = Global.Argus.My.Resources.Resources.user
-        Me.PicUserImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PicUserImage.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PicUserImage.Location = New System.Drawing.Point(275, 0)
-        Me.PicUserImage.Name = "PicUserImage"
-        Me.PicUserImage.Size = New System.Drawing.Size(50, 50)
-        Me.PicUserImage.TabIndex = 0
-        Me.PicUserImage.TabStop = False
+        Me.PictureBoxOperator.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.PictureBoxOperator.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBoxOperator.BackgroundImage = Global.Argus.My.Resources.Resources.user
+        Me.PictureBoxOperator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBoxOperator.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.PictureBoxOperator.Location = New System.Drawing.Point(275, 0)
+        Me.PictureBoxOperator.Name = "PictureBoxOperator"
+        Me.PictureBoxOperator.Size = New System.Drawing.Size(50, 50)
+        Me.PictureBoxOperator.TabIndex = 0
+        Me.PictureBoxOperator.TabStop = False
         '
-        'labelUsername
+        'labelOperatorName
         '
-        Me.labelUsername.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.labelUsername.AutoSize = True
-        Me.labelUsername.BackColor = System.Drawing.Color.Transparent
-        Me.labelUsername.Font = New System.Drawing.Font("Consolas", 9.818182!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.labelUsername.Location = New System.Drawing.Point(12, 27)
-        Me.labelUsername.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
-        Me.labelUsername.Name = "labelUsername"
-        Me.labelUsername.Size = New System.Drawing.Size(80, 18)
-        Me.labelUsername.TabIndex = 2
-        Me.labelUsername.Text = "USERNAME!"
-        Me.labelUsername.UseMnemonic = False
+        Me.labelOperatorName.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.labelOperatorName.AutoSize = True
+        Me.labelOperatorName.BackColor = System.Drawing.Color.Transparent
+        Me.labelOperatorName.Font = New System.Drawing.Font("Consolas", 9.818182!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.labelOperatorName.Location = New System.Drawing.Point(12, 27)
+        Me.labelOperatorName.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.labelOperatorName.Name = "labelOperatorName"
+        Me.labelOperatorName.Size = New System.Drawing.Size(112, 17)
+        Me.labelOperatorName.TabIndex = 2
+        Me.labelOperatorName.Text = "OPERATORNAME!"
+        Me.labelOperatorName.UseMnemonic = False
         '
         'labelGreeter
         '
@@ -161,7 +161,7 @@ Partial Class FormHeader
         Me.labelGreeter.Location = New System.Drawing.Point(12, 10)
         Me.labelGreeter.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
         Me.labelGreeter.Name = "labelGreeter"
-        Me.labelGreeter.Size = New System.Drawing.Size(88, 18)
+        Me.labelGreeter.Size = New System.Drawing.Size(88, 17)
         Me.labelGreeter.TabIndex = 1
         Me.labelGreeter.Text = "Greetings,"
         Me.labelGreeter.UseMnemonic = False
@@ -201,41 +201,41 @@ Partial Class FormHeader
         'ContextMenuTrayIcon
         '
         Me.ContextMenuTrayIcon.DropShadowEnabled = False
-        Me.ContextMenuTrayIcon.Font = New System.Drawing.Font("Fira Sans", 11.33333!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ContextMenuTrayIcon.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.33333!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ContextMenuTrayIcon.ImageScalingSize = New System.Drawing.Size(18, 18)
         Me.ContextMenuTrayIcon.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TrayMenuItemToggleVisibility, Me.ToolStripMenuItem1, Me.ToolStripSeparator2, Me.CollectionsToolStripMenuItem, Me.ToolStripSeparator1, Me.TrayMenuSettings, Me.TrayMenuItemExit})
         Me.ContextMenuTrayIcon.Name = "ContextMenuTrayIcon"
-        Me.ContextMenuTrayIcon.Size = New System.Drawing.Size(240, 171)
+        Me.ContextMenuTrayIcon.Size = New System.Drawing.Size(227, 136)
         '
         'TrayMenuItemToggleVisibility
         '
         Me.TrayMenuItemToggleVisibility.Name = "TrayMenuItemToggleVisibility"
-        Me.TrayMenuItemToggleVisibility.Size = New System.Drawing.Size(239, 26)
+        Me.TrayMenuItemToggleVisibility.Size = New System.Drawing.Size(226, 24)
         Me.TrayMenuItemToggleVisibility.Text = "Toggle Visiblity"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(239, 26)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(226, 24)
         Me.ToolStripMenuItem1.Text = "Operator Homepage"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(236, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(223, 6)
         '
         'CollectionsToolStripMenuItem
         '
         Me.CollectionsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DocumentsToolStripMenuItem, Me.GamesToolStripMenuItem1, Me.SoftwareToolStripMenuItem})
         Me.CollectionsToolStripMenuItem.Name = "CollectionsToolStripMenuItem"
-        Me.CollectionsToolStripMenuItem.Size = New System.Drawing.Size(239, 26)
+        Me.CollectionsToolStripMenuItem.Size = New System.Drawing.Size(226, 24)
         Me.CollectionsToolStripMenuItem.Text = "Collections"
         '
         'DocumentsToolStripMenuItem
         '
         Me.DocumentsToolStripMenuItem.Image = Global.Argus.My.Resources.Resources.document
         Me.DocumentsToolStripMenuItem.Name = "DocumentsToolStripMenuItem"
-        Me.DocumentsToolStripMenuItem.Size = New System.Drawing.Size(198, 26)
+        Me.DocumentsToolStripMenuItem.Size = New System.Drawing.Size(162, 24)
         Me.DocumentsToolStripMenuItem.Text = "Documents"
         '
         'GamesToolStripMenuItem1
@@ -243,43 +243,43 @@ Partial Class FormHeader
         Me.GamesToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CoreKeeperToolStripMenuItem, Me.Destiny2ToolStripMenuItem})
         Me.GamesToolStripMenuItem1.Image = Global.Argus.My.Resources.Resources.game
         Me.GamesToolStripMenuItem1.Name = "GamesToolStripMenuItem1"
-        Me.GamesToolStripMenuItem1.Size = New System.Drawing.Size(198, 26)
+        Me.GamesToolStripMenuItem1.Size = New System.Drawing.Size(162, 24)
         Me.GamesToolStripMenuItem1.Text = "Games"
         '
         'CoreKeeperToolStripMenuItem
         '
         Me.CoreKeeperToolStripMenuItem.Name = "CoreKeeperToolStripMenuItem"
-        Me.CoreKeeperToolStripMenuItem.Size = New System.Drawing.Size(198, 26)
+        Me.CoreKeeperToolStripMenuItem.Size = New System.Drawing.Size(167, 24)
         Me.CoreKeeperToolStripMenuItem.Text = "Core Keeper"
         '
         'Destiny2ToolStripMenuItem
         '
         Me.Destiny2ToolStripMenuItem.Name = "Destiny2ToolStripMenuItem"
-        Me.Destiny2ToolStripMenuItem.Size = New System.Drawing.Size(198, 26)
+        Me.Destiny2ToolStripMenuItem.Size = New System.Drawing.Size(167, 24)
         Me.Destiny2ToolStripMenuItem.Text = "Destiny 2"
         '
         'SoftwareToolStripMenuItem
         '
         Me.SoftwareToolStripMenuItem.Name = "SoftwareToolStripMenuItem"
-        Me.SoftwareToolStripMenuItem.Size = New System.Drawing.Size(198, 26)
+        Me.SoftwareToolStripMenuItem.Size = New System.Drawing.Size(162, 24)
         Me.SoftwareToolStripMenuItem.Text = "Software"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(236, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(223, 6)
         '
         'TrayMenuSettings
         '
         Me.TrayMenuSettings.Image = Global.Argus.My.Resources.Resources.settings
         Me.TrayMenuSettings.Name = "TrayMenuSettings"
-        Me.TrayMenuSettings.Size = New System.Drawing.Size(239, 26)
+        Me.TrayMenuSettings.Size = New System.Drawing.Size(226, 24)
         Me.TrayMenuSettings.Text = "Settings"
         '
         'TrayMenuItemExit
         '
         Me.TrayMenuItemExit.Name = "TrayMenuItemExit"
-        Me.TrayMenuItemExit.Size = New System.Drawing.Size(239, 26)
+        Me.TrayMenuItemExit.Size = New System.Drawing.Size(226, 24)
         Me.TrayMenuItemExit.Text = "Exit"
         '
         'PanelGreeting
@@ -288,11 +288,11 @@ Partial Class FormHeader
         Me.PanelGreeting.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.PanelGreeting.BackColor = System.Drawing.Color.Transparent
         Me.PanelGreeting.Controls.Add(Me.labelGreeter)
-        Me.PanelGreeting.Controls.Add(Me.labelUsername)
+        Me.PanelGreeting.Controls.Add(Me.labelOperatorName)
         Me.PanelGreeting.Dock = System.Windows.Forms.DockStyle.Left
         Me.PanelGreeting.Location = New System.Drawing.Point(0, 0)
         Me.PanelGreeting.Name = "PanelGreeting"
-        Me.PanelGreeting.Size = New System.Drawing.Size(105, 50)
+        Me.PanelGreeting.Size = New System.Drawing.Size(129, 50)
         Me.PanelGreeting.TabIndex = 12
         '
         'FormHeader
@@ -309,7 +309,7 @@ Partial Class FormHeader
         Me.Controls.Add(Me.labelLongDate)
         Me.Controls.Add(Me.labelToday)
         Me.Controls.Add(Me.labelClock)
-        Me.Controls.Add(Me.PicUserImage)
+        Me.Controls.Add(Me.PictureBoxOperator)
         Me.Controls.Add(Me.PanelGreeting)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -321,7 +321,7 @@ Partial Class FormHeader
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Here Be Dragons"
         Me.TopMost = True
-        CType(Me.PicUserImage, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBoxOperator, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PicCollections, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ContextMenuTrayIcon.ResumeLayout(False)
         Me.PanelGreeting.ResumeLayout(False)
@@ -331,14 +331,14 @@ Partial Class FormHeader
 
     End Sub
 
-    Friend WithEvents PicUserImage As PictureBox
+    Friend WithEvents PictureBoxOperator As PictureBox
     Friend WithEvents labelClock As Label
     Friend WithEvents TimerClockTick As Timer
     Friend WithEvents labelToday As Label
     Friend WithEvents labelLongDate As Label
     Friend WithEvents labelYear As Label
     Friend WithEvents ButtonDebug As Button
-    Friend WithEvents labelUsername As Label
+    Friend WithEvents labelOperatorName As Label
     Friend WithEvents labelGreeter As Label
     Friend WithEvents ButtonDebug2 As Button
     Friend WithEvents PicCollections As PictureBox

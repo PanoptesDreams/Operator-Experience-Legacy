@@ -1,6 +1,5 @@
 ﻿Imports System.Xml
 Imports System.IO
-Imports Argus.ArgusCommon
 
 Public Class FormGame
 
@@ -10,10 +9,21 @@ Public Class FormGame
     'Directories
     Dim ArgusDir As String = Environment.GetEnvironmentVariable("argus")
     Dim GameLibDir As String = ArgusDir + My.Settings.GameLib 'A:\Software\Gaming\Library
-    Dim GameWinDir As String = GameLibDir + "\Windows" 'A:\Software\Gaming\Library\Argus
-    Dim GameXboxDir As String = GameLibDir + "\Xbox" 'A:\Software\Gaming\Library\Xbox (Please fix)
-    Dim GamePlaystationDir As String = GameLibDir + "\PlayStation 2" 'A:\Software\Gaming\Library\PlayStation 2 (Please fix)
-    Dim GameNintendoDir As String = GameLibDir + "\Gameboy Advanced" 'A:\Software\Gaming\Library\Gameboy Advanced (Please fix)
+
+    Dim GameboyDir As String = GameLibDir + "\Gameboy Advanced" 'A:\Software\Gaming\Library\Gameboy Advanced (Please fix)
+
+    Dim PlayStationDir As String = GameLibDir + "\PlayStation"
+    Dim PlayStation2Dir As String = GameLibDir + "\PlayStation2"
+    Dim PlayStation3Dir As String = GameLibDir + "\PlayStation3"
+    Dim WinDir As String = GameLibDir + "\Windows"
+    Dim XboxDir As String = GameLibDir + "\Xbox"
+    Dim Xbox360Dir As String = GameLibDir + "\Xbox360"
+    Dim Nintendo64Dir As String = GameLibDir + "\Nintendo64"
+    Dim GameCubeDir As String = GameLibDir + "\GameCube"
+    Dim WiiDir As String = GameLibDir + "\Wii"
+    Dim WiiUDir As String = GameLibDir + "\WiiU"
+    Dim SwitchDir As String = GameLibDir + "\Switch"
+
     Dim CurrentDir As String = GameLibDir
 
     'Buttons
@@ -42,10 +52,15 @@ Public Class FormGame
         GameListBuilder("Xbox")
         GameListBuilder("Nintendo")
 
-        ListGamesWin.SelectedIndex = 0
-        ListGamesXbox.SelectedIndex = 0
-        ListGamesPlaystation.SelectedIndex = 0
-        ListGamesNintendo.SelectedIndex = 0
+        Try
+            ListGamesWin.SelectedIndex = 0
+            ListGamesXbox.SelectedIndex = 0
+            ListGamesPlaystation.SelectedIndex = 0
+            ListGamesNintendo.SelectedIndex = 0
+        Catch ex As Exception
+
+        End Try
+
 
 
         'Debug Features
@@ -66,29 +81,36 @@ Public Class FormGame
         Select Case Platform
 
             Case = "Windows"
-                CurrentDir = GameWinDir
+                CurrentDir = WinDir
                 TargetList = ListGamesWin
 
             Case = "Playstation"
-                CurrentDir = GamePlaystationDir + "\roms"
+                CurrentDir = PlayStationDir + "\rom"
                 TargetList = ListGamesPlaystation
 
             Case = "Xbox"
-                CurrentDir = GameXboxDir + "\roms"
+                CurrentDir = XboxDir + "\rom"
                 TargetList = ListGamesXbox
 
             Case = "Nintendo"
-                CurrentDir = GameNintendoDir + "\roms"
+                CurrentDir = GameboyDir + "\rom"
                 TargetList = ListGamesNintendo
 
         End Select
 
 
-        For Each item In Directory.EnumerateDirectories(CurrentDir)
+        Try
+            For Each item In Directory.EnumerateDirectories(CurrentDir)
 
-            TargetList.Items.Add(item.Remove(0, CurrentDir.Length + 1))
+                TargetList.Items.Add(item.Remove(0, CurrentDir.Length + 1))
 
-        Next
+            Next
+        Catch ex As Exception
+
+            MsgBox("Warning, directory issue: " & ex.ToString)
+
+        End Try
+
 
         If ShowTemplate = False Then
 
@@ -216,19 +238,19 @@ Public Class FormGame
 
             Case = "Win"
                 GameList = ListGamesWin
-                CurrentDir = GameWinDir
+                CurrentDir = WinDir
 
             Case = "Xbox"
                 GameList = ListGamesXbox
-                CurrentDir = GameXboxDir + "\roms"
+                CurrentDir = XboxDir + "\rom"
 
             Case = "Playstation"
                 GameList = ListGamesPlaystation
-                CurrentDir = GamePlaystationDir + "\roms"
+                CurrentDir = PlayStationDir + "\rom"
 
             Case = "Nintendo"
                 GameList = ListGamesNintendo
-                CurrentDir = GameNintendoDir + "\roms"
+                CurrentDir = GameboyDir + "\rom"
 
         End Select
 
@@ -268,18 +290,18 @@ Public Class FormGame
         Dim CurrentTab As String = TabControlGameLists.SelectedTab.Text
         Dim GameLauncher As New ProcessStartInfo
         Dim Game As String
-        Dim WorkingDir As String = ArgusDir + CurrentDir
+        Dim WorkingDir As String = CurrentDir
 
         Select Case CurrentTab
 
             Case = "Win" 'Check for 'play' file
 
-                If System.IO.File.Exists(ArgusDir + CurrentDir + "\" + App) = False Then
+                If System.IO.File.Exists(CurrentDir + "\" + App) = False Then
 
                     MsgBox("This game is not configured correctly")
                     GoTo endsub
 
-                ElseIf System.IO.File.Exists(ArgusDir + CurrentDir + "\steam") = True Then
+                ElseIf System.IO.File.Exists(CurrentDir + "\steam") = True Then
 
                     Dim SteamLaunch As Integer
 
@@ -287,7 +309,7 @@ Public Class FormGame
 
                     If SteamLaunch = 1 Then
 
-                        Using FileReader As StreamReader = File.OpenText(ArgusDir + CurrentDir + "\Steam")
+                        Using FileReader As StreamReader = File.OpenText(CurrentDir + "\Steam")
 
                             Dim s As String
 
@@ -303,12 +325,28 @@ Public Class FormGame
 
 
             Case = "Xbox"
+
+                If System.IO.File.Exists(CurrentDir + "\default.xbe") = True Then
+
+                    GameLauncher.FileName = XboxDir + "\emulator\cxbx-reloaded\cxbx.exe"
+                    GameLauncher.WorkingDirectory = WorkingDir
+                    WorkingDir = WorkingDir & "\default.xbe"
+
+
+                    GameLauncher.Arguments = """" + WorkingDir + """"
+
+                    Process.Start(GameLauncher)
+
+                End If
+
+                GoTo endsub
+
             Case = "Playstation"
 
-                WorkingDir = ArgusDir + GamePlaystationDir + "\emulator\PCSX2"
-                GameLauncher.FileName = ArgusDir + GamePlaystationDir + "\emulator\PCSX2\pcsx2.exe"
+                WorkingDir = PlayStationDir + "\emulator\PCSX2"
+                GameLauncher.FileName = PlayStationDir + "\emulator\PCSX2\pcsx2.exe"
                 GameLauncher.WorkingDirectory = WorkingDir
-                Game = ArgusDir + GamePlaystationDir + "\roms\" + ListGamesPlaystation.SelectedItem.ToString + "\" + ListGamesPlaystation.SelectedItem.ToString + ".iso"
+                Game = PlayStationDir + "\roms\" + ListGamesPlaystation.SelectedItem.ToString + "\" + ListGamesPlaystation.SelectedItem.ToString + ".iso"
 
                 GameLauncher.Arguments = """" + Game + """" + " --portable --nogui --fullscreen"
 
@@ -333,13 +371,13 @@ Public Class FormGame
         End Select
 
 
-        Using FileReader As StreamReader = File.OpenText(ArgusDir + CurrentDir + "\" + App)
+        Using FileReader As StreamReader = File.OpenText(CurrentDir + "\" + App)
 
             Dim s As String
 
             s = FileReader.ReadLine()
 
-            GameLauncher.FileName = ArgusDir + CurrentDir + "\" + s
+            GameLauncher.FileName = CurrentDir + "\" + s
 
             GameLauncher.WorkingDirectory = WorkingDir
 
@@ -364,7 +402,7 @@ endsub:
     'Open Current Folder
     Private Sub ButtonOpenGameFolder_Click(sender As Object, e As EventArgs) Handles ButtonOpenGameFolder.Click
 
-        Process.Start("explorer.exe", ArgusDir + CurrentDir)
+        Process.Start("explorer.exe", CurrentDir)
 
     End Sub
 

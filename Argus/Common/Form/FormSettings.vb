@@ -46,7 +46,7 @@
         'Personalization
         picFavColor.BackColor = My.Settings.FavColor
         ComboBoxTheme.Text = My.Settings.ThemeUniversal
-        tstUsernameSet.Text = My.Settings.UserName
+        tstUsernameSet.Text = My.Settings.OperatorName
         ComboBoxLauncherPOS.Text = My.Settings.LauncherPos
         ComboBoxCollectionsPOS.Text = My.Settings.CollectionsPos
 
@@ -297,5 +297,61 @@ jump:
         ToolTipAlpha.Show("True - Hides user menu when another applet is clicked" + vbCrLf + "False - Doesn't . . .", lblAutohideUserMenu)
     End Sub
 
+    Private Sub ButtonESave_Click(sender As Object, e As EventArgs) Handles ButtonESave.Click
 
+        ESave()
+
+    End Sub
+
+    Private Sub ButtonERead_Click(sender As Object, e As EventArgs) Handles ButtonERead.Click
+
+        ERead()
+
+    End Sub
+
+    Private Sub picUserImage_Click(sender As Object, e As MouseEventArgs) Handles picUserImage.MouseDown
+
+        If e.Button = Windows.Forms.MouseButtons.Right Then
+
+            Process.Start("explorer.exe", "%USERPROFILE%")
+
+        ElseIf e.Button = Windows.Forms.MouseButtons.Middle Then
+
+            If FormBorderStyle = FormBorderStyle.None Then
+                FormBorderStyle = FormBorderStyle.FixedSingle
+            Else
+                FormBorderStyle = FormBorderStyle.None
+            End If
+
+        ElseIf e.Button = Windows.Forms.MouseButtons.Left Then
+
+            Dim PicDialog As New OpenFileDialog ' Create OFD to select new operator image
+            Dim OperatorPictureChoice As String ' Store source of chosen image
+
+            PicDialog.Filter = ("Images | *.png; *.bmp; *.jpg;")
+
+            If PicDialog.ShowDialog = Windows.Forms.DialogResult.OK Then ' Everything Okay? 
+
+                OperatorPictureChoice = PicDialog.FileName ' Set image source to selected file
+
+                PicDialog.Dispose()
+
+            ElseIf Windows.Forms.DialogResult.Cancel Or Windows.Forms.DialogResult.Abort Then ' Anything Wrong?
+
+                PicDialog.Dispose()
+
+                GoTo 1
+
+            End If
+
+            Dim OperatorPicture As Image = Image.FromFile(OperatorPictureChoice) ' Set image from file
+
+            FormHeader.PictureBoxOperator.Image = ResizeImage(OperatorPicture, FormHeader.PictureBoxOperator.Width, FormHeader.PictureBoxOperator.Height) ' Resize imported image and apply
+
+            My.Settings.DirOperatorImage = OperatorPictureChoice ' Save image URL
+            ASave()
+1:
+        End If
+
+    End Sub
 End Class

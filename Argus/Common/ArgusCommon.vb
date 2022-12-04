@@ -1,4 +1,8 @@
-﻿Imports MadMilkman.Ini ' https://github.com/MarioZ/MadMilkman.Ini
+﻿Imports System.Collections.ObjectModel
+Imports System.IO
+Imports System.Windows
+Imports MadMilkman.Ini ' https://github.com/MarioZ/MadMilkman.Ini
+Imports Newtonsoft.Json
 
 ' Legacy code in Chronological order
 ' Modern code in Alphabetical order
@@ -17,6 +21,10 @@
 ' Summon(Form) - Shows and activates a specified form
 
 Module ArgusCommon
+
+
+    Dim settings As New Dictionary(Of String, Object) ' Create a dictionary for our settings.
+
 
     ' Available Forms - Returns Array of Forms
     Public Function AvailableForms()
@@ -246,9 +254,8 @@ Module ArgusCommon
 
     End Sub
 
-    'Settings Saver
+    ' Save Settings To My.Settings
     Public Sub ASave() ' Hi
-
 
         My.Settings.Save()
 
@@ -256,11 +263,122 @@ Module ArgusCommon
 
     End Sub
 
+    ' Save Settings To File
     Public Sub ESave()
+
+        settings.Add("AppLocalRunPref", My.Settings.AppLocalRunPref)
+        settings.Add("ArgusDir", My.Settings.ArgusDir)
+        settings.Add("ArgusMood", My.Settings.ArgusMood)
+        settings.Add("AutohideOpMenu", My.Settings.AutohideOpMenu)
+        settings.Add("AutohideSearch", My.Settings.AutohideSearch)
+        settings.Add("Blur", My.Settings.Blur)
+        settings.Add("BrowserDir", My.Settings.BrowserDir)
+        settings.Add("Collection1", My.Settings.Collection1)
+        settings.Add("Collection2", My.Settings.Collection2)
+        settings.Add("Collection3", My.Settings.Collection3)
+        settings.Add("Collection4", My.Settings.Collection4)
+        settings.Add("Collection5", My.Settings.Collection5)
+        settings.Add("Collection6", My.Settings.Collection6)
+        settings.Add("Collection7", My.Settings.Collection7)
+        settings.Add("Collection8", My.Settings.Collection8)
+        settings.Add("Collection9", My.Settings.Collection9)
+        settings.Add("CollectionsLastPos", My.Settings.CollectionsLastPos)
+        settings.Add("CollectionsPos", My.Settings.CollectionsPos)
+        settings.Add("DebugFeatures", My.Settings.DebugFeatures)
+        settings.Add("Ding", My.Settings.Ding)
+        settings.Add("DirOperatorImage", My.Settings.DirOperatorImage)
+        settings.Add("FavColor", My.Settings.FavColor)
+        settings.Add("FirstRun", My.Settings.FirstRun)
+        settings.Add("Focus", My.Settings.Focus)
+        settings.Add("FocusSearch", My.Settings.FocusSearch)
+        settings.Add("GameLib", My.Settings.GameLib)
+        settings.Add("Homepage", My.Settings.Homepage)
+        settings.Add("LauncherAoT", My.Settings.LauncherAoT)
+        settings.Add("LauncherLastPos", My.Settings.LauncherLastPos)
+        settings.Add("LauncherPos", My.Settings.LauncherPos)
+        settings.Add("OperatorName", My.Settings.OperatorName)
+        settings.Add("PersistCollections", My.Settings.PersistCollections)
+        settings.Add("PersistHome", My.Settings.PersistHome)
+        settings.Add("PersistMusic", My.Settings.PersistMusic)
+        settings.Add("PersistSearch", My.Settings.PersistSearch)
+        settings.Add("PersistSocial", My.Settings.PersistSocial)
+        settings.Add("PersistToolbox", My.Settings.PersistToolbox)
+        settings.Add("PersistWallet", My.Settings.PersistWallet)
+        settings.Add("StartupFocus", My.Settings.StartupFocus)
+        settings.Add("ThemeUniversal", My.Settings.ThemeUniversal)
+        settings.Add("WebSearchProvider", My.Settings.WebSearchProvider)
+        settings.Add("WindowsTheme", My.Settings.WindowsTheme)
+
+        Dim json As String = JsonConvert.SerializeObject(settings) ' Serialize the dictionary to a JSON string.
+
+        File.WriteAllText("settings.json", json) ' Write JSON string to the .json file.
+
+        ASave()
 
 
 
     End Sub
+
+    ' Load Settings from File
+    Public Sub ERead()
+
+        Dim readJson As String = File.ReadAllText("settings.json")
+        Dim readValues As Dictionary(Of String, Object) = JsonConvert.DeserializeObject(Of Dictionary(Of String, Object))(readJson)
+
+        Dim PosCollections() As String = readValues("CollectionsLastPos").Split(",")
+        Dim PosCollectionsx As Integer = Integer.Parse(PosCollections(0))
+        Dim PosCollectionsy As Integer = Integer.Parse(PosCollections(1))
+
+        Dim PosLauncher() As String = readValues("LauncherLastPos").Split(",")
+        Dim PosLauncherx As Integer = Integer.Parse(PosLauncher(0))
+        Dim PosLaunchery As Integer = Integer.Parse(PosLauncher(1))
+
+
+        My.Settings.AppLocalRunPref = readValues("AppLocalRunPref")
+        My.Settings.ArgusDir = readValues("ArgusDir")
+        My.Settings.ArgusMood = readValues("ArgusMood")
+        My.Settings.AutohideOpMenu = readValues("AutohideOpMenu")
+        My.Settings.AutohideSearch = readValues("AutohideSearch")
+        My.Settings.Blur = readValues("Blur")
+        My.Settings.BrowserDir = readValues("BrowserDir")
+        My.Settings.Collection1 = readValues("Collection1")
+        My.Settings.Collection2 = readValues("Collection2")
+        My.Settings.Collection3 = readValues("Collection3")
+        My.Settings.Collection4 = readValues("Collection4")
+        My.Settings.Collection5 = readValues("Collection5")
+        My.Settings.Collection6 = readValues("Collection6")
+        My.Settings.Collection7 = readValues("Collection7")
+        My.Settings.Collection8 = readValues("Collection8")
+        My.Settings.Collection9 = readValues("Collection9")
+        My.Settings.CollectionsLastPos = New Point(PosCollectionsx, PosCollectionsy)
+        My.Settings.CollectionsPos = readValues("CollectionsPos")
+        My.Settings.DebugFeatures = readValues("DebugFeatures")
+        My.Settings.Ding = readValues("Ding")
+        My.Settings.DirOperatorImage = readValues("DirOperatorImage")
+        My.Settings.FavColor = Color.FromName(readValues("FavColor"))
+        My.Settings.FirstRun = readValues("FirstRun")
+        My.Settings.Focus = readValues("Focus")
+        My.Settings.FocusSearch = readValues("FocusSearch")
+        My.Settings.GameLib = readValues("GameLib")
+        My.Settings.Homepage = readValues("Homepage")
+        My.Settings.LauncherAoT = readValues("LauncherAoT")
+        My.Settings.LauncherLastPos = New Point(PosLauncherx, PosLaunchery)
+        My.Settings.LauncherPos = readValues("LauncherPos")
+        My.Settings.OperatorName = readValues("OperatorName")
+        My.Settings.PersistCollections = readValues("PersistCollections")
+        My.Settings.PersistHome = readValues("PersistHome")
+        My.Settings.PersistMusic = readValues("PersistMusic")
+        My.Settings.PersistSearch = readValues("PersistSearch")
+        My.Settings.PersistSocial = readValues("PersistSocial")
+        My.Settings.PersistToolbox = readValues("PersistToolbox")
+        My.Settings.PersistWallet = readValues("PersistWallet")
+        My.Settings.StartupFocus = readValues("StartupFocus")
+        My.Settings.ThemeUniversal = readValues("ThemeUniversal")
+        My.Settings.WebSearchProvider = readValues("WebSearchProvider")
+        My.Settings.WindowsTheme = readValues("WindowsTheme")
+
+    End Sub
+
 
     'Button Glow
     Public Sub ButtonGlow(TLabel As Label)

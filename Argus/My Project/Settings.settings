@@ -8,7 +8,7 @@
     <Setting Name="FirstRun" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="UserName" Type="System.String" Scope="User">
+    <Setting Name="OperatorName" Type="System.String" Scope="User">
       <Value Profile="(Default)">Panoptes</Value>
     </Setting>
     <Setting Name="WindowsTheme" Type="System.String" Scope="User">
@@ -20,7 +20,7 @@
     <Setting Name="ArgusDir" Type="System.String" Scope="User">
       <Value Profile="(Default)">\Argus</Value>
     </Setting>
-    <Setting Name="UserImageDir" Type="System.String" Scope="User">
+    <Setting Name="DirOperatorImage" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="ThemeUniversal" Type="System.String" Scope="User">

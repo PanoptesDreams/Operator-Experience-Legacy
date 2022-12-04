@@ -4,8 +4,6 @@ Public Class FormMusic
 
     Dim MusicDir As String = Environment.GetEnvironmentVariable("userprofile") & "\Music"
     Dim SongSelected As String
-    Dim MusicPlaylistLength As Integer = 0
-    Dim MusicPlaylistPosition As Integer = 1
 
     Private Sub frmMusic_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -56,13 +54,6 @@ Public Class FormMusic
 
 #End Region
 
-    Private Sub MediaPlayer1_EndOfStream(sender As Object, e As AxWMPLib._WMPOCXEvents_EndOfStreamEvent) Handles MediaPlayer1.EndOfStream
-
-        MusicPlaylistPosition = +1
-
-        ListBoxMusic.SelectedIndex = MusicPlaylistPosition + 1
-
-    End Sub
 
     Private Sub ButtonRefresh_Click(sender As Object, e As EventArgs) Handles ButtonRefresh.Click
 
@@ -84,7 +75,6 @@ Public Class FormMusic
 
             ListBoxMusic.Items.Add(item.Remove(0, MusicDir.Length + 1))
 
-            MusicPlaylistLength = +1
 
 jump:
 
@@ -94,8 +84,7 @@ jump:
 
     Private Sub ListBoxMusic_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBoxMusic.SelectedIndexChanged
 
-        ' This goes in here for something
-        ' MusicPlaylistLength - ListBoxMusic.SelectedIdex
+
 
         SongSelected = MusicDir & "\" & ListBoxMusic.SelectedItem.ToString
 
@@ -122,6 +111,5 @@ jump:
         MediaPlayer1.URL = OFD.FileName
 
     End Sub
-
 
 End Class

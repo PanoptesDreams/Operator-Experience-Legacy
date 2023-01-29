@@ -18,22 +18,17 @@ jobs:
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v1.0.5
 
-    - name: Build
+    - name: Build and Package
       run: |
-        msbuild.exe Argus.sln /p:platform="Any CPU" /p:configuration="Debug"
-
-    - name: Package build product
-      run: |
-        cd Argus\bin
-        7z a -tzip Argus.zip Debug
+        msbuild.exe Argus.sln /p:platform="Any CPU" /p:configuration="Win"
 
     - name: Create Release
       uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: "0"
+        tag_name: "${{ env.PUBLIC_BUILD }}"
         release_name: Latest Build
         draft: false
         prerelease: false
-        assets: 'Argus.zip'
+        assets: '${{ env.Win }}/bin/Debug/*.zip'

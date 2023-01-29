@@ -6,7 +6,11 @@ Public Class FormWallet
 
     Private Sub FormWallet_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        UniThemer(Me)
+        ' We are disabled until we are upgraded, if you wish to re-enable, remove the line below
+        Banish(Me)
+
+
+        ' UniThemer(Me)
 
     End Sub
 

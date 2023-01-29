@@ -18,9 +18,14 @@ jobs:
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v1.0.5
 
-    - name: Build and Package
+    - name: Build
       run: |
         msbuild.exe Argus.sln /p:platform="Any CPU" /p:configuration="Debug"
+
+    - name: Package build product
+      run: |
+        cd bin
+        7z a -tzip Argus.zip Debug
 
     - name: Create Release
       uses: actions/create-release@v1
@@ -31,4 +36,4 @@ jobs:
         release_name: Latest Build
         draft: false
         prerelease: false
-        assets: '*.zip'
+        assets: 'Argus.zip'

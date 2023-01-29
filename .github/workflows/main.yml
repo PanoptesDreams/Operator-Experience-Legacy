@@ -20,7 +20,7 @@ jobs:
 
     - name: Build and Package
       run: |
-        msbuild.exe Argus.sln /p:platform="x64" /p:configuration="Win"
+        msbuild.exe Argus.sln
 
     - name: Create Release
       uses: actions/create-release@v1

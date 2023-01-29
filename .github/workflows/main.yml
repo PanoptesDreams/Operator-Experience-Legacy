@@ -24,7 +24,7 @@ jobs:
 
     - name: Package build product
       run: |
-        cd bin
+        cd Argus\bin
         7z a -tzip Argus.zip Debug
 
     - name: Create Release

@@ -84,7 +84,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>argus.ico</ApplicationIcon>
@@ -254,7 +254,6 @@
     <Compile Include="Common\Form\FormWallet.Designer.vb">
       <DependentUpon>FormWallet.vb</DependentUpon>
     </Compile>
-    <None Include="Argus_TemporaryKey.pfx" />
     <None Include="Common\Form\FormWallet.vb">
       <SubType>Form</SubType>
     </None>

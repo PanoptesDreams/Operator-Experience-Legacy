@@ -31,4 +31,4 @@ jobs:
         release_name: Latest Build
         draft: false
         prerelease: false
-        assets: '${{ env.Win }}/bin/Debug/*.zip'
+        assets: '${{ env.Win }}/bin/Release/*.zip'

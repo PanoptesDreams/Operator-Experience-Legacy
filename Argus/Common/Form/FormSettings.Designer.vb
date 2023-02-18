@@ -605,7 +605,7 @@ Partial Class FormSettings
         '
         Me.picUserImage.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.picUserImage.BackColor = System.Drawing.Color.Transparent
-        Me.picUserImage.BackgroundImage = Global.Argus.My.Resources.Resources.user
+        Me.picUserImage.BackgroundImage = Global.Argus.My.Resources.Resources.OperatorDefault
         Me.picUserImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.picUserImage.Cursor = System.Windows.Forms.Cursors.Hand
         Me.picUserImage.Location = New System.Drawing.Point(567, 29)
@@ -734,7 +734,7 @@ Partial Class FormSettings
         '
         Me.PictureBox10.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PictureBox10.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox10.BackgroundImage = Global.Argus.My.Resources.Resources.user
+        Me.PictureBox10.BackgroundImage = Global.Argus.My.Resources.Resources.OperatorDefault
         Me.PictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox10.Location = New System.Drawing.Point(567, 31)
         Me.PictureBox10.Margin = New System.Windows.Forms.Padding(5)

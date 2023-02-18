@@ -125,6 +125,7 @@
     <Import Include="System.Data" />
     <Import Include="System.Drawing" />
     <Import Include="System.Diagnostics" />
+    <Import Include="System.IO" />
     <Import Include="System.Windows.Forms" />
     <Import Include="System.Linq" />
     <Import Include="System.Xml.Linq" />
@@ -143,6 +144,12 @@
       <DependentUpon>FormOOBEOffice.vb</DependentUpon>
     </Compile>
     <Compile Include="Common\Form\FormOOBEOffice.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\Form\FormOperatorSelect.Designer.vb">
+      <DependentUpon>FormOperatorSelect.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Form\FormOperatorSelect.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Common\Form\FormReplicationChamber.Designer.vb">
@@ -292,6 +299,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Common\Form\FormOOBEOffice.resx">
       <DependentUpon>FormOOBEOffice.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Form\FormOperatorSelect.resx">
+      <DependentUpon>FormOperatorSelect.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Common\Form\FormReplicationChamber.resx">
       <DependentUpon>FormReplicationChamber.vb</DependentUpon>

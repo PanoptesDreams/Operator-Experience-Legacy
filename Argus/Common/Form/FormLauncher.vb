@@ -383,6 +383,10 @@ Public Class FormHeader
 
     End Sub
 
+    Private Sub labelOperatorName_Click(sender As Object, e As EventArgs) Handles labelOperatorName.Click
+        Summon(FormOperatorSelect)
+    End Sub
+
 
 
 

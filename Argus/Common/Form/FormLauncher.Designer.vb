@@ -129,7 +129,7 @@ Partial Class FormHeader
         '
         Me.PictureBoxOperator.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.PictureBoxOperator.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBoxOperator.BackgroundImage = Global.Argus.My.Resources.Resources.user
+        Me.PictureBoxOperator.BackgroundImage = Global.Argus.My.Resources.Resources.OperatorDefault
         Me.PictureBoxOperator.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBoxOperator.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBoxOperator.Location = New System.Drawing.Point(275, 0)

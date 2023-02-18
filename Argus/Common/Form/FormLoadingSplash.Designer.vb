@@ -89,7 +89,7 @@ Partial Class FormLoadingSplash
         Me.Copyright.Name = "Copyright"
         Me.Copyright.Size = New System.Drawing.Size(241, 40)
         Me.Copyright.TabIndex = 2
-        Me.Copyright.Text = "Copyright Adam 2020"
+        Me.Copyright.Text = "Copyright Hart Media 2023"
         '
         'ApplicationTitle
         '

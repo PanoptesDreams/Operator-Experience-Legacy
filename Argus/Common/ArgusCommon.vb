@@ -1,7 +1,5 @@
 ﻿Imports System.Collections.ObjectModel
-Imports System.IO
 Imports System.Windows
-Imports MadMilkman.Ini ' https://github.com/MarioZ/MadMilkman.Ini
 Imports Newtonsoft.Json
 
 ' Legacy code in Chronological order
@@ -29,9 +27,65 @@ Module ArgusCommon
     ' Available Forms - Returns Array of Forms
     Public Function AvailableForms()
 
-        Dim AvailForms As Form() = {FormBlur, FormCollections, FormDocuments, FormEditor, FormGame, FormHeader, FormHomepage, FormLoadingSplash, FormLogin, FormMusic, FormOOBEPrivacy, FormOOBESystem, FormReplicationChamber, FormSearch, FormSettings, FormSocial, FormSoftware, FormSteamLinkGenerater, FormOpMenu, FormWallet}
+        Dim AvailForms As Form() = {FormBlur, FormCollections, FormDocuments, FormEditor, FormGame, FormHeader, FormHomepage, FormLoadingSplash, FormLogin, FormMusic, FormOOBEPrivacy, FormOOBESystem, FormOperatorSelect, FormReplicationChamber, FormSearch, FormSettings, FormSocial, FormSoftware, FormSteamLinkGenerater, FormOpMenu, FormWallet}
 
         Return AvailForms
+
+    End Function
+
+    Public Function CreateOperator(Optional ByVal OperatorName As String = "NewOperator")
+
+
+        Dim folderPath As String = Path.Combine("R:\", OperatorName)
+        Dim junctionPath As String = Path.Combine("A:\", OperatorName)
+
+        If Directory.Exists(folderPath) Then ' Check if the folder already exists in R:
+
+            If Directory.Exists(junctionPath) Then ' Folder exists check if Junction already exists
+
+                MessageBox.Show("Operator already exists.", "Big Sad")
+
+            Else ' Junction does not exist, prompt to create one
+
+                Dim result As DialogResult = MessageBox.Show("Operator found in Root. Do you want to create a junction?", "Attention Duelist's!", MessageBoxButtons.YesNo)
+
+                If result = DialogResult.Yes AndAlso CreateJunction(junctionPath, folderPath) Then ' Junction created successfully
+
+                    MessageBox.Show("Operator created successfully.", "Success")
+
+
+                Else ' Junction creation failed or user canceled, show error message
+
+                    MessageBox.Show("Failed to create Operator.", "Error")
+
+                    Return 0
+
+                End If
+
+            End If
+
+        Else ' Folder does not exist, create it and the junction
+
+            Directory.CreateDirectory(folderPath)
+
+            If CreateJunction(junctionPath, folderPath) Then ' Folder and junction created successfully
+
+                MessageBox.Show("Folder and junction created successfully.", "Success")
+
+
+            Else ' Junction creation failed, show error message and delete the folder
+
+                MessageBox.Show("Failed to create junction.", "Error")
+
+                Directory.Delete(folderPath)
+
+                Return 0
+
+            End If
+
+        End If
+
+        Return 1
 
     End Function
 
@@ -469,30 +523,7 @@ Module ArgusCommon
 
     Public Sub GenerateSettings()
 
-        Dim FileINI As New IniFile() 'Create new file with a default formatting.
-
-        Dim SectionArgus As IniSection = FileINI.Sections.Add("Argus Data") 'Add Argus section.
-        Dim KeyA As IniKey 'Add new key
-
-        KeyA = SectionArgus.Keys.Add("First Run", "yes")
-        KeyA.LeadingComment.Text = "Have we run before?"
-
-        Dim SectionUser As IniSection = FileINI.Sections.Add("User Data") 'Add user section.
-        Dim KeyU As IniKey 'Add new key
-
-        KeyU = SectionUser.Keys.Add("Favorite Color", "R20 G80 B90")
-        KeyU.LeadingComment.Text = "RGB Value formatted as R20 G80 B90"
-
-        KeyU = SectionUser.Keys.Add("Username", "Operator") '
-
-        KeyU = SectionUser.Keys.Add("USEFULDATA", "Important Value") 'and its value.
-
-
-
-        SectionUser.TrailingComment.Text = "I don't want to be here" 'Add trailing comment.
-
-
-        FileINI.Save("Settings.ini") 'Save file.
+        MsgBox("I don't do anything anymore")
 
     End Sub
 
@@ -586,5 +617,31 @@ Module ArgusCommon
 
 
     End Sub
+
+
+
+End Module
+
+Module WindowsCommon
+
+    Public Function CreateJunction(ByVal junctionPath As String, ByVal targetPath As String) As Boolean
+
+        Try
+
+            Dim process As New Process()
+            process.StartInfo.FileName = "cmd.exe"
+            process.StartInfo.Arguments = $"/c mklink /j ""{junctionPath}"" ""{targetPath}"""
+            process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden
+            process.Start()
+            process.WaitForExit()
+            Return (process.ExitCode = 0)
+
+        Catch ex As Exception
+
+            Return False
+
+        End Try
+
+    End Function
 
 End Module

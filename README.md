@@ -10,7 +10,7 @@ This is achieved by placing known applications and data into an appropriate dire
 An example of the hierarchy can be found in the [Argus Software](https://github.com/PanoptesDreams/argus) repository.
 
 
-## Requirements
+## Runtime Requirements
 
 Windows 7 +
 
@@ -18,7 +18,7 @@ DotNet 4.7.2 Runtime
 
 Windows Media Player 12
 
-K-lite Codec Pack
+K-lite Codec Pack (lite)
 
 
 ## Nomenclature
@@ -49,7 +49,7 @@ Windows 7 +
 
 DotNet 4.7.2 Development Pack
 
-Visual Studio 2017
+Visual Studio 2017 +
 
 Windows Media Player 12
 

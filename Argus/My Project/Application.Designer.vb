@@ -27,12 +27,12 @@ Namespace My
             Me.IsSingleInstance = true
             Me.EnableVisualStyles = false
             Me.SaveMySettingsOnExit = true
-            Me.ShutDownStyle = Global.Microsoft.VisualBasic.ApplicationServices.ShutdownMode.AfterMainFormCloses
+            Me.ShutDownStyle = Global.Microsoft.VisualBasic.ApplicationServices.ShutdownMode.AfterAllFormsClose
         End Sub
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.Argus.FormHeader
+            Me.MainForm = Global.Argus.FormOperatorSelect
         End Sub
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _

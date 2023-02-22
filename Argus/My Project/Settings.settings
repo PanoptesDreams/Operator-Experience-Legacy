@@ -9,7 +9,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="OperatorName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Panoptes</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="WindowsTheme" Type="System.String" Scope="User">
       <Value Profile="(Default)">Argus Purple Dark</Value>
@@ -57,7 +57,7 @@
       <Value Profile="(Default)">25, 25</Value>
     </Setting>
     <Setting Name="LauncherAoT" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="GameLib" Type="System.String" Scope="User">
       <Value Profile="(Default)">\Software\Game\Library</Value>
@@ -126,6 +126,18 @@
       <Value Profile="(Default)">C:\Users\argus\AppData\Local\Vivaldi\Application\vivaldi.exe</Value>
     </Setting>
     <Setting Name="PersistMusic" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ActiveOperator" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="OperatorDirectory" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="AutoSignIn" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="OperatorChange" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>

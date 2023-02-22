@@ -2,6 +2,20 @@
 
     Private Sub ButtonSearch_Click(sender As Object, e As EventArgs) Handles ButtonSearch.Click
 
+        Dim path As New System.Drawing.Drawing2D.GraphicsPath()
+        Dim rectangle As Rectangle = Me.ClientRectangle
+        path.StartFigure()
+        path.AddArc(rectangle.X, rectangle.Y, 50, 50, 180, 90)
+        path.AddLine(rectangle.X + 50, rectangle.Y, rectangle.Width - 50, rectangle.Y)
+        path.AddArc(rectangle.X + rectangle.Width - 50, rectangle.Y, 50, 50, 270, 90)
+        path.AddLine(rectangle.Width, rectangle.Y + 50, rectangle.Width, rectangle.Height - 50)
+        path.AddArc(rectangle.X + rectangle.Width - 50, rectangle.Y + rectangle.Height - 50, 50, 50, 0, 90)
+        path.AddLine(rectangle.Width - 50, rectangle.Height, rectangle.X + 50, rectangle.Height)
+        path.AddArc(rectangle.X, rectangle.Y + rectangle.Height - 50, 50, 50, 90, 90)
+        path.CloseFigure()
+        Me.Region = New System.Drawing.Region(path)
+
+
         If SearchBox.Text = "" Then
             SearchBox.Text = "how to use a search engine"
         End If
@@ -38,8 +52,6 @@
             Cursor.Current = Cursors.Arrow
 
         End Try
-
-        Banish(Me)
 
     End Sub
 

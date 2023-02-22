@@ -6,12 +6,13 @@ Public Class FormHeader
     Dim WebToggle As Int16 = 0
     Dim lastPOS As Point = My.Settings.LauncherLastPos
 
-    Dim FirstRun As Boolean = True
+    Dim FirstRun As Boolean
     Dim HideMode As Boolean = False
 
-    Dim OperatorPicture As Image = Image.FromFile(My.Settings.DirOperatorImage) ' Set image from file
+    Dim OperatorPicture As Image
 
-
+    Dim ActiveOperator As String = My.Settings.ActiveOperator
+    Dim OperatorDirectory As String = My.Settings.OperatorDirectory
 
     'Start/Load
     Private Sub Launcher_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -23,21 +24,15 @@ Public Class FormHeader
         End Try
 
 
-
         DebugFeatures() ' Are we in debug mode?
 
         Portable() ' Check if we are in portable mode
 
+        OperatorLoader() ' Load Operator Settings
+
         UniThemer(Me) ' Set theme
 
         Positioner(Me, My.Settings.LauncherPos, My.Settings.LauncherLastPos) ' Position Form
-
-        labelGreeter.Text = Greeting() ' Greet the user
-
-        labelOperatorName.Text = My.Settings.OperatorName ' Retrieve name
-
-        PictureBoxOperator.Image = ResizeImage(OperatorPicture, PictureBoxOperator.Width, PictureBoxOperator.Height) ' Resize imported image and apply
-
 
         SetTime() ' Sets all timedate labels to their respective nows
 
@@ -47,14 +42,11 @@ Public Class FormHeader
 
         PersitingApp() ' Launch persiting apps
 
-        Opacity = 100 ' Finished Loading and Setting, show form
-
         ArgFocus()
 
     End Sub
 
-
-    'Activation
+    ' Form Activation
     Private Sub FormHeader_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
 
         If FirstRun = True Then
@@ -65,16 +57,43 @@ Public Class FormHeader
 
     End Sub
 
-
-    'AlwaysOnTop
+    ' AlwaysOnTop
     Public Sub AlwaysOnTop()
 
         Me.TopMost = My.Settings.LauncherAoT
 
     End Sub
 
+    ' Operator Loader
+    Public Sub OperatorLoader()
 
-    'Debug Features
+        labelOperatorName.Text = My.Settings.OperatorName ' Retrieve name
+
+        OperatorDirectory = Path.Combine("A:\" + My.Settings.OperatorName)
+
+        My.Settings.OperatorDirectory = OperatorDirectory
+
+        labelGreeter.Text = Greeting() ' Greet the Operator
+
+        Try
+
+            OperatorPicture = Image.FromFile(My.Settings.DirOperatorImage)
+
+        Catch ex As Exception
+
+            OperatorPicture = My.Resources.OperatorDefault
+
+        End Try
+
+        PictureBoxOperator.Image = ResizeImage(OperatorPicture, PictureBoxOperator.Width, PictureBoxOperator.Height) ' Resize imported image and apply
+
+        ASave()
+
+    End Sub
+
+
+
+    ' Debug Features
     Public Sub DebugFeatures()
 
         Dim DebugOn As Boolean = My.Settings.DebugFeatures
@@ -233,7 +252,7 @@ Public Class FormHeader
     'Debug Button 2
     Private Sub btnDebug2_Click(sender As Object, e As EventArgs) Handles ButtonDebug2.Click
 
-
+        BuildOperatorTree()
 
 1:
 
@@ -384,6 +403,8 @@ Public Class FormHeader
     End Sub
 
     Private Sub labelOperatorName_Click(sender As Object, e As EventArgs) Handles labelOperatorName.Click
+        My.Settings.OperatorChange = True
+        ASave()
         Summon(FormOperatorSelect)
     End Sub
 

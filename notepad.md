@@ -12,3 +12,4 @@ Categories:
 
 ---
 
+restore visual stdio direct download link

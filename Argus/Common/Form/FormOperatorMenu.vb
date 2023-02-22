@@ -98,13 +98,13 @@ Public Class FormOpMenu
     'Exit - Option Button (4)
     Private Sub lblExit_Click(sender As Object, e As EventArgs) Handles LabelOption4.Click
 
-        Banish(FormHeader)
+        Application.Exit()
 
     End Sub
 
     Private Sub picExit_Click(sender As Object, e As EventArgs) Handles PicOption4.Click
 
-        Banish(FormHeader)
+        Application.Exit()
 
     End Sub
 #End Region
@@ -159,7 +159,7 @@ Public Class FormOpMenu
     'Close
     Private Sub ButtonCloseUserMenu_Click(sender As Object, e As EventArgs) Handles ButtonCloseUserMenu.Click
 
-        Banish(Me)
+        Application.Exit()
 
     End Sub
 

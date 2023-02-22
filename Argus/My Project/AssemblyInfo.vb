@@ -9,11 +9,11 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("Argus")>
-<Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("Argus")>
-<Assembly: AssemblyCopyright("© 2022")>
+<Assembly: AssemblyTitle("Oexl")>
+<Assembly: AssemblyDescription("Operator Experience Legacy")>
+<Assembly: AssemblyCompany("Hart Media")>
+<Assembly: AssemblyProduct("Argus Oexl")>
+<Assembly: AssemblyCopyright("© Hart Media 2023")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>

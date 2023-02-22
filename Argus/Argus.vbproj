@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <StartupObject>Argus.My.MyApplication</StartupObject>
     <RootNamespace>Argus</RootNamespace>
-    <AssemblyName>Argus</AssemblyName>
+    <AssemblyName>Oexl</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -98,10 +98,6 @@
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MadMilkman.Ini, Version=1.0.6.0, Culture=neutral, PublicKeyToken=4e0b5157a7ffbb74, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>.\MadMilkman.Ini.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -263,6 +259,7 @@
     <Compile Include="Common\Form\FormWallet.Designer.vb">
       <DependentUpon>FormWallet.vb</DependentUpon>
     </Compile>
+    <Compile Include="Settings.vb" />
     <None Include="Common\Form\FormWallet.vb">
       <SubType>Form</SubType>
     </None>
@@ -289,10 +286,10 @@
     <Compile Include="Common\Form\FormSocial.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Common\Form\FormOpMenu.Designer.vb">
-      <DependentUpon>FormOpMenu.vb</DependentUpon>
+    <Compile Include="Common\Form\FormOperatorMenu.Designer.vb">
+      <DependentUpon>FormOperatorMenu.vb</DependentUpon>
     </Compile>
-    <Compile Include="Common\Form\FormOpMenu.vb">
+    <Compile Include="Common\Form\FormOperatorMenu.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -357,8 +354,8 @@
     <EmbeddedResource Include="Common\Form\FormSteamLinkGenerater.resx">
       <DependentUpon>FormSteamLinkGenerater.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Common\Form\FormOpMenu.resx">
-      <DependentUpon>FormOpMenu.vb</DependentUpon>
+    <EmbeddedResource Include="Common\Form\FormOperatorMenu.resx">
+      <DependentUpon>FormOperatorMenu.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Common\Form\FormWallet.resx">
       <DependentUpon>FormWallet.vb</DependentUpon>
@@ -432,9 +429,6 @@
     <Content Include="argus.ico" />
     <None Include="Resources\prereq\klite.exe" />
     <None Include="Resources\img\weather\bg\75.jpg" />
-    <EmbeddedResource Include="MadMilkman.Ini.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
     <None Include="Resources\icons\core.png" />
     <None Include="Resources\img\frame_empty.png" />
     <None Include="Resources\img\strip_light.png" />

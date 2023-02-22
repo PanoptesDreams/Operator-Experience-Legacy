@@ -15,7 +15,7 @@
 
     Private Sub pickBlurImg_Click(sender As Object, e As EventArgs) Handles pickBlurImg.Click
 
-        FormHeader.Hide() ' Must be hidden - closing will end argus
+        FormHeader.Hide() ' Must be hidden - closing will end argus - This is no longer true, update me
 
         Banish(FormCollections)
 

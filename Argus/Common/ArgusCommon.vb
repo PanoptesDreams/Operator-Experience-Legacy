@@ -35,7 +35,6 @@ Module ArgusCommon
 
     Public Function CreateOperator(Optional ByVal OperatorName As String = "NewOperator")
 
-
         Dim folderPath As String = Path.Combine("R:\", OperatorName)
         Dim junctionPath As String = Path.Combine("A:\", OperatorName)
 
@@ -169,6 +168,8 @@ Module ArgusCommon
     ' Drawer of Borders
     Public Sub BorderDrawerer(Sender As Form, e As PaintEventArgs)
 
+        ' Draw Borders
+        Dim g As Graphics = e.Graphics
         Dim ThemePen As New Pen(Brushes.Silver) 'Set a default pen
 
         ' Choose Pen
@@ -185,15 +186,16 @@ Module ArgusCommon
 
         End Select
 
-        ' Draw Borders - Height is reduced by 1 to keep render inside of form
-        e.Graphics.DrawLine(ThemePen, 0, 0, Sender.Width - 1, 0) ' Top
-        e.Graphics.DrawLine(ThemePen, 0, 1, 0, Sender.Height - 1) ' Left
-        e.Graphics.DrawLine(ThemePen, Sender.Width - 1, 1, Sender.Width - 1, Sender.Height - 1) ' Right
-        e.Graphics.DrawLine(ThemePen, 0, Sender.Height - 1, Sender.Width - 1, Sender.Height - 1) ' Bottom
+        ' Draw Border - Height is reduced by 1 to keep render inside of form
+        g.DrawRectangle(ThemePen, 0, 0, Sender.Width - 1, Sender.Height - 1)
 
     End Sub
 
     ' Summoner of Forms
+    ''' <summary>
+    ''' Opens Forms and Focus' them, also respects autohide rules
+    ''' </summary>
+    ''' <param name="Sender">Form to Summon</param>
     Public Sub Summon(Sender As Object)
 
         If Sender.Visible = True Then ' If the form is already visible
@@ -218,15 +220,7 @@ Module ArgusCommon
 
         End If
 
-        If Sender IsNot FormSearch Then
 
-            If My.Settings.AutohideSearch = True Then ' If Search autohide is 'True' Banish Search
-
-                Banish(FormSearch)
-
-            End If
-
-        End If
 
 
 
@@ -234,6 +228,7 @@ Module ArgusCommon
 
     ' Universal Themer
     Public Sub UniThemer(Sender As Object)
+
 
         Dim UniversalTheme As String = My.Settings.ThemeUniversal
         Dim FontyPen As Color
@@ -277,7 +272,6 @@ Module ArgusCommon
                 Sender.BackgroundImage = My.Resources.game_poster_mask
 
         End Select
-
 
 1:
 
@@ -365,7 +359,9 @@ Module ArgusCommon
 
         Dim json As String = JsonConvert.SerializeObject(settings) ' Serialize the dictionary to a JSON string.
 
-        File.WriteAllText("settings.json", json) ' Write JSON string to the .json file.
+        Dim ourdir As String = Path.Combine(My.Settings.OperatorDirectory & "\Operator")
+
+        File.WriteAllText(ourdir & "\settings.json", json) ' Write JSON string to the .json file.
 
         ASave()
 
@@ -376,7 +372,8 @@ Module ArgusCommon
     ' Load Settings from File
     Public Sub ERead()
 
-        Dim readJson As String = File.ReadAllText("settings.json")
+        Dim readJson As String = File.ReadAllText(My.Settings.OperatorDirectory & "\Operator\settings.json")
+
         Dim readValues As Dictionary(Of String, Object) = JsonConvert.DeserializeObject(Of Dictionary(Of String, Object))(readJson)
 
         Dim PosCollections() As String = readValues("CollectionsLastPos").Split(",")
@@ -524,6 +521,10 @@ Module ArgusCommon
     Public Sub GenerateSettings()
 
         MsgBox("I don't do anything anymore")
+        MsgBox("See the ESave() Function")
+        MsgBox("Maybe these functions will be merged?")
+        MsgBox("Why are these messages in message boxes?")
+        MsgBox("I dunno")
 
     End Sub
 
@@ -616,6 +617,31 @@ Module ArgusCommon
 
 
 
+    End Sub
+
+    ' Create Tree Structure
+    Public Sub BuildOperatorTree()
+
+        Dim BasePaths() As String = {".tmp", ".cloud", "Media", "Operator", "Software"}
+        Dim MediaPaths() As String = {"Book", "Font", "Image", "Model", "Theme", "Video"}
+        Dim OperatorPaths() As String = {"Document", "Keyring", "Media", "Note", "Shortcut", "Template", "Wallet"}
+        Dim SoftwarePaths() As String = {".template", ".unsorted", "Crypto", "Development", "Driver", "Education", "Emulation", "File Distribution", "Game", "Media", "Operating System", "Productivity", "Repository", "Remote Control", "Security", "Script", "Shell", "System", "Utility", "Web"}
+
+        For Each item In BasePaths
+            Directory.CreateDirectory(Path.Combine(My.Settings.OperatorDirectory & "\" & item))
+        Next
+
+        For Each item In MediaPaths
+            Directory.CreateDirectory(Path.Combine(My.Settings.OperatorDirectory & "\Media\" & item))
+        Next
+
+        For Each item In OperatorPaths
+            Directory.CreateDirectory(Path.Combine(My.Settings.OperatorDirectory & "\Operator\" & item))
+        Next
+
+        For Each item In SoftwarePaths
+            Directory.CreateDirectory(Path.Combine(My.Settings.OperatorDirectory & "\Software\" & item))
+        Next
     End Sub
 
 

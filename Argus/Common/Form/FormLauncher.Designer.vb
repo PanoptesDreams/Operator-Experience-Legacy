@@ -317,7 +317,6 @@ Partial Class FormHeader
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FormHeader"
-        Me.Opacity = 0R
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Here Be Dragons"
         Me.TopMost = True

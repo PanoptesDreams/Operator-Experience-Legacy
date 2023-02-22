@@ -38,7 +38,7 @@ Partial Class FormLoadingSplash
         '
         'MainLayoutPanel
         '
-        Me.MainLayoutPanel.BackColor = System.Drawing.Color.DarkViolet
+        Me.MainLayoutPanel.BackColor = System.Drawing.Color.Transparent
         Me.MainLayoutPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.MainLayoutPanel.ColumnCount = 2
         Me.MainLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 243.0!))
@@ -48,8 +48,8 @@ Partial Class FormLoadingSplash
         Me.MainLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.MainLayoutPanel.Location = New System.Drawing.Point(0, 0)
         Me.MainLayoutPanel.Name = "MainLayoutPanel"
-        Me.MainLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 218.0!))
-        Me.MainLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38.0!))
+        Me.MainLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 220.0!))
+        Me.MainLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36.0!))
         Me.MainLayoutPanel.Size = New System.Drawing.Size(496, 303)
         Me.MainLayoutPanel.TabIndex = 0
         '
@@ -62,11 +62,11 @@ Partial Class FormLoadingSplash
         Me.DetailsLayoutPanel.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 142.0!))
         Me.DetailsLayoutPanel.Controls.Add(Me.Version, 0, 0)
         Me.DetailsLayoutPanel.Controls.Add(Me.Copyright, 0, 1)
-        Me.DetailsLayoutPanel.Location = New System.Drawing.Point(246, 221)
+        Me.DetailsLayoutPanel.Location = New System.Drawing.Point(246, 223)
         Me.DetailsLayoutPanel.Name = "DetailsLayoutPanel"
         Me.DetailsLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.0!))
         Me.DetailsLayoutPanel.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.0!))
-        Me.DetailsLayoutPanel.Size = New System.Drawing.Size(247, 79)
+        Me.DetailsLayoutPanel.Size = New System.Drawing.Size(247, 77)
         Me.DetailsLayoutPanel.TabIndex = 1
         '
         'Version
@@ -85,9 +85,9 @@ Partial Class FormLoadingSplash
         Me.Copyright.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Copyright.BackColor = System.Drawing.Color.Transparent
         Me.Copyright.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Copyright.Location = New System.Drawing.Point(3, 39)
+        Me.Copyright.Location = New System.Drawing.Point(3, 38)
         Me.Copyright.Name = "Copyright"
-        Me.Copyright.Size = New System.Drawing.Size(241, 40)
+        Me.Copyright.Size = New System.Drawing.Size(241, 39)
         Me.Copyright.TabIndex = 2
         Me.Copyright.Text = "Copyright Hart Media 2023"
         '
@@ -96,7 +96,7 @@ Partial Class FormLoadingSplash
         Me.ApplicationTitle.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.ApplicationTitle.BackColor = System.Drawing.Color.Transparent
         Me.ApplicationTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ApplicationTitle.Location = New System.Drawing.Point(246, 3)
+        Me.ApplicationTitle.Location = New System.Drawing.Point(246, 4)
         Me.ApplicationTitle.Name = "ApplicationTitle"
         Me.ApplicationTitle.Size = New System.Drawing.Size(247, 212)
         Me.ApplicationTitle.TabIndex = 0
@@ -107,6 +107,7 @@ Partial Class FormLoadingSplash
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = Global.Argus.My.Resources.Resources.bg_light
         Me.ClientSize = New System.Drawing.Size(496, 303)
         Me.ControlBox = False
         Me.Controls.Add(Me.MainLayoutPanel)

@@ -136,6 +136,12 @@
     <Compile Include="argus_launcher.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Common\Form\FormDriveLabeler.Designer.vb">
+      <DependentUpon>FormDriveLabeler.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Form\FormDriveLabeler.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Common\Form\FormOOBEOffice.Designer.vb">
       <DependentUpon>FormOOBEOffice.vb</DependentUpon>
     </Compile>
@@ -256,6 +262,12 @@
     <Compile Include="Common\Form\FormSteamLinkGenerater.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Common\Form\FormToolBox.Designer.vb">
+      <DependentUpon>FormToolBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Form\FormToolBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Common\Form\FormWallet.Designer.vb">
       <DependentUpon>FormWallet.vb</DependentUpon>
     </Compile>
@@ -294,6 +306,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Common\Form\FormDriveLabeler.resx">
+      <DependentUpon>FormDriveLabeler.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Common\Form\FormOOBEOffice.resx">
       <DependentUpon>FormOOBEOffice.vb</DependentUpon>
     </EmbeddedResource>
@@ -356,6 +371,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Common\Form\FormOperatorMenu.resx">
       <DependentUpon>FormOperatorMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\Form\FormToolBox.resx">
+      <DependentUpon>FormToolBox.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Common\Form\FormWallet.resx">
       <DependentUpon>FormWallet.vb</DependentUpon>

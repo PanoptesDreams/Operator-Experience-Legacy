@@ -18,6 +18,12 @@
 
         End Sub
 
+
+        Public Sub A_AppStarting() Handles Me.Startup
+
+
+
+        End Sub
     End Class
 
 End Namespace

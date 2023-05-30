@@ -33,6 +33,7 @@ Module ArgusCommon
 
     End Function
 
+    ' Create Operator - EXPORTED
     Public Function CreateOperator(Optional ByVal OperatorName As String = "NewOperator")
 
         Dim folderPath As String = Path.Combine("R:\", OperatorName)
@@ -135,7 +136,7 @@ Module ArgusCommon
     End Function
 
 
-    ' Image Resizer
+    ' Image Resizer - EXPORTED
     Public Function ResizeImage(ByVal InputImage As Image, ByVal ImageWidth As Integer, ByVal ImageHeight As Integer) As Image
 
         Return New Bitmap(InputImage, New Size(ImageWidth, ImageHeight))
@@ -165,7 +166,7 @@ Module ArgusCommon
 
     End Sub
 
-    ' Drawer of Borders
+    ' Drawer of Borders - DEPRECATED
     Public Sub BorderDrawerer(Sender As Form, e As PaintEventArgs)
 
         ' Draw Borders
@@ -191,7 +192,7 @@ Module ArgusCommon
 
     End Sub
 
-    ' Summoner of Forms
+    ' Summoner of Forms - EXPORTED
     ''' <summary>
     ''' Opens Forms and Focus' them, also respects autohide rules
     ''' </summary>
@@ -220,13 +221,9 @@ Module ArgusCommon
 
         End If
 
-
-
-
-
     End Sub
 
-    ' Universal Themer
+    ' Universal Themer - EXPORTED
     Public Sub UniThemer(Sender As Object)
 
 
@@ -277,12 +274,8 @@ Module ArgusCommon
 
     End Sub
 
-    'Fonty
-    Public Sub Fonty(Sender As Form)
 
-    End Sub
-
-    'Positioner
+    'Positioner - EXPORTED
     Public Sub Positioner(Sender As Form, Place As String, LastPos As Point)
 
         Select Case Place
@@ -303,7 +296,7 @@ Module ArgusCommon
     End Sub
 
     ' Save Settings To My.Settings
-    Public Sub ASave() ' Hi
+    Public Sub ASave()
 
         My.Settings.Save()
 
@@ -482,7 +475,7 @@ Module ArgusCommon
 
 
 
-#Region "Form Mover"
+#Region "Form Mover" - Deprecated
     Dim CursorX As Integer
     Dim CursorY As Integer
 
@@ -556,7 +549,7 @@ Module ArgusCommon
 
     End Sub
 
-    ' Summon ArgusHome
+    ' Summon ArgusHome - do not use
     Public Sub SummonArgusHome()
 
         Process.Start("A:\Software\Repository\Argus Repos\argushome\release-builds\home-win32-ia32\home.exe")
@@ -564,14 +557,6 @@ Module ArgusCommon
     End Sub
 
 
-    'Arguments - Returns an array of strings containing application arguments
-    Public Function Arguments() As String()
-
-        Arguments = Environment.GetCommandLineArgs()
-        ' element 0 = executable file name
-        ' elements 1+ = additional arguments
-
-    End Function
 
     Public Sub Ding()
         Try
@@ -584,9 +569,10 @@ Module ArgusCommon
 
     End Sub
 
+    ' DO NOT USE - EXPORTED
     Public Sub ArgFocus()
 
-        Dim Args As String() = Arguments()
+        Dim Args As String() = Environment.GetCommandLineArgs()
         Dim ArgsB As String = "argus://"
 
         Try
@@ -619,7 +605,7 @@ Module ArgusCommon
 
     End Sub
 
-    ' Create Tree Structure
+    ' Create Tree Structure - EXPORTED
     Public Sub BuildOperatorTree()
 
         Dim BasePaths() As String = {".tmp", ".cloud", "Media", "Operator", "Software"}
@@ -650,6 +636,7 @@ End Module
 
 Module WindowsCommon
 
+    ' Create Junction - Exported
     Public Function CreateJunction(ByVal junctionPath As String, ByVal targetPath As String) As Boolean
 
         Try
